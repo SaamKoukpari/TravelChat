@@ -23,7 +23,9 @@ default: &default
 
 development:
   <<: *default
-  database: letsjet_development
+  database: letsjet_finals_development
+  username: labber
+  password: labber
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -55,9 +57,10 @@ development:
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-test:
-  <<: *default
-  database: letsjet_test
+
+# test:
+#   <<: *default
+#   database: letsjet_finals_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -78,8 +81,9 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: letsjet_production
-  username: letsjet
-  password: <%= ENV['LETSJET_DATABASE_PASSWORD'] %>
+
+# production:
+#   <<: *default
+#   database: letsjet_finals_production
+#   username: letsjet
+#   password: <%= ENV['LETSJET_DATABASE_PASSWORD'] %>
