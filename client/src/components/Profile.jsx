@@ -1,7 +1,11 @@
-import React from 'react'
+import React from 'react';
+import Layout from './Layout';
 
 export default function Profile () {
   return (
-    <h1>Profile</h1>
+    <div>
+      <h1>test</h1>
+      <Layout/>
+    </div>
   );
 };
