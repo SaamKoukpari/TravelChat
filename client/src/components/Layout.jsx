@@ -4,6 +4,7 @@ import Profile from './Profile'
 import Chat from './Chat'
 import FriendsList from './FriendsList'
 import FindFriends from './FindFriends'
+import { Link } from 'react-router-dom'
 
 export default function Layout () {
   return (
@@ -16,7 +17,8 @@ export default function Layout () {
         />
         <nav className="sidebar__menu">
           <Newsfeed/>
-          <Profile/>
+          <Link to='/profile'>Profile
+          </Link>
           <Chat/>
           <FriendsList/>
           <FindFriends/>

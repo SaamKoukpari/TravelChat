@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
-  root 'home#index'
+  scope '/api' do 
+    resources :users
+  end 
+  root 'users#index'
   # match '*path', to 'home#index', via: :all
   end

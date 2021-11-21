@@ -10,6 +10,7 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout/>} />
+          <Route path="/profile" element={<Profile/>} />
         </Routes>
       </BrowserRouter>
     );
