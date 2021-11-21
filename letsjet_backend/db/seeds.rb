@@ -8,7 +8,7 @@
 
 User.destroy_all
 
-# lucy = User.create(name: 'Lucy', password: 'password')
+lucy = User.create(name: 'Lucy', password: 'password')
 
 # lucy.avatar.attach(
 #   io: File.open('./public/avatars/goTeam.png'),
@@ -21,7 +21,7 @@ User.create!(
   email: 'StaffSoftware@Engineer',
 )
 
-User.create!(
-  name: 'Microsoft',
-  email: 'Engineer@Engineer',
-)
+# User.create!(
+#   name: 'Microsoft',
+#   email: 'Engineer@Engineer',
+# )
