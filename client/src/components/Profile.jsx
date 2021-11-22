@@ -20,11 +20,7 @@ export default function Profile () {
 
   return (
     <div>
-<<<<<<< HEAD
-      <h1>test</h1>
-=======
       <h1>{user[0].name}</h1> 
->>>>>>> c9df452ed8bf88cdf05eb8b1f18ca0f1d1fd3713
     </div>
   );
 };
