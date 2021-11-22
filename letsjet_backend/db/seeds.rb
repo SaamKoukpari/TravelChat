@@ -6,12 +6,22 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.destroy_all
+
+lucy = User.create(name: 'Lucy', password: 'password')
+
+# lucy.avatar.attach(
+#   io: File.open('./public/avatars/goTeam.png'),
+#   filename: 'goTeam.png',
+#   content_type: 'application/png'
+# )
+
 User.create!(
   name: 'Amazon',
   email: 'StaffSoftware@Engineer',
 )
 
-User.create!(
-  name: 'Microsoft',
-  email: 'Engineer@Engineer',
-)
+# User.create!(
+#   name: 'Microsoft',
+#   email: 'Engineer@Engineer',
+# )

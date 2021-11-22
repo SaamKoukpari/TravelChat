@@ -1,9 +1,5 @@
 import React from 'react'
-import Newsfeed from './Newsfeed'
-import Profile from './Profile'
-import Chat from './Chat'
-import FriendsList from './FriendsList'
-import FindFriends from './FindFriends'
+import { Link } from 'react-router-dom'
 
 export default function Layout () {
   return (
@@ -15,11 +11,13 @@ export default function Layout () {
           alt="Lets Jet"
         />
         <nav className="sidebar__menu">
-          <Newsfeed/>
-          <Profile/>
-          <Chat/>
-          <FriendsList/>
-          <FindFriends/>
+          <ul>
+            <li><Link to='/newsfeed'>Newsfeed</Link></li>
+            <li><Link to='/profile'>Profile</Link></li>
+            <li><Link to='/chat'>Chat</Link></li>
+            <li><Link to='/friends_list'>Friends List</Link></li>
+            <li><Link to='/find_friends'>Find Friends</Link></li>
+          </ul>
         </nav>
       </section>
     </main>
