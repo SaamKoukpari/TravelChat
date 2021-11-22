@@ -10,17 +10,17 @@ export default function Profile () {
   useEffect(() => {
     axios.get('/api/users')
     .then(response => {
-      //const name = user[0].data;
-      setUser(response.data)
+      // const name = response.data;
+      setUser(response.data[0])
     })
     .catch(error => console.log("error:", error))
     }, [])
     
-    console.log(user)
+    // console.log(user)
 
   return (
     <div>
-      <h1>{user[0].name}</h1> 
+      <h1>{user.name}</h1> 
     </div>
   );
 };
