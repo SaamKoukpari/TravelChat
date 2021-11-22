@@ -5,7 +5,7 @@ import axios from 'axios';
 export default function Profile () {
   const [user, setUser] = useState([])
 
-  useEffect(() =>{
+  useEffect(() => {
   axios.get('/api/users')
   .then(response => {
     setUser(response.data)
@@ -14,6 +14,8 @@ export default function Profile () {
   }, [])
 
   return (
+    <div>
       <h1>{user[0].name}</h1>
+    </div>
   );
 };
