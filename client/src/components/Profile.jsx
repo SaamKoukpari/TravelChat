@@ -11,16 +11,16 @@ export default function Profile () {
     axios.get('/api/users')
     .then(response => {
       //const name = user[0].data;
-      setUser(response.data)
+      setUser(response.data[1])
     })
     .catch(error => console.log("error:", error))
     }, [])
     
-    console.log(user)
+    console.log("User array:", user)
 
   return (
     <div>
-      <h1>{user[0].name}</h1> 
+      <h1>{user.name}</h1> 
     </div>
   );
 };

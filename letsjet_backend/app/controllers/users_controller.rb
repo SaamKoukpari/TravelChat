@@ -8,7 +8,6 @@ class UsersController < ApplicationController
   end 
 
   def show
-    byebug
   end 
 
   def update
