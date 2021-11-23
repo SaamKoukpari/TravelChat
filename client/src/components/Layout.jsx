@@ -17,6 +17,7 @@ export default function Layout () {
             <li><Link to='/chat'>Chat</Link></li>
             <li><Link to='/friends_list'>Friends List</Link></li>
             <li><Link to='/find_friends'>Find Friends</Link></li>
+            <li><Link to='/signup'>Signup</Link></li>
           </ul>
         </nav>
       </section>
