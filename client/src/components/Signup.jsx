@@ -8,7 +8,7 @@ export default function Signup() {
   const navigate = useNavigate()
 
   const [state, setState] = useState({
-    name: "will be blank",
+    name: "",
     email: "",
     password: ""
   });
