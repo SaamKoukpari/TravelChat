@@ -7,6 +7,8 @@ import Chat from './Chat';
 import FriendsList from './FriendsList';
 import FindFriends from './FindFriends';
 import Signup from './Signup';
+import './App.scss';
+import '../index.scss';
  
 export default function App() {
   return (

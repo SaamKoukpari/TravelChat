@@ -66,7 +66,7 @@ export default function Signup(props) {
               name='name'
               type='text'
               placeholder='Enter Name'  
-              // value={props.name}
+              value={props.name}
             />
             
             <br/>
