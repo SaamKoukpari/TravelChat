@@ -2,10 +2,12 @@
 
 one:
   user_id: 1
-  post_id: 1
-  url: MyString
+  location: MyString
+  arrive: 2021-11-22
+  leave: 2021-11-22
 
 two:
   user_id: 1
-  post_id: 1
-  url: MyString
+  location: MyString
+  arrive: 2021-11-22
+  leave: 2021-11-22
