@@ -34,7 +34,7 @@ export default function Layout () {
         <img src="https://cdn.icon-icons.com/icons2/2643/PNG/512/male_man_boy_black_tone_people_person_avatar_icon_159356.png" alt="user" />
         Login
         </section>  
-        <section class="profileContainer">
+        <section className="profileContainer">
           <h1>blah</h1>
         </section>
       </section>

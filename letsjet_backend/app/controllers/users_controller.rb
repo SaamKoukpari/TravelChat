@@ -9,14 +9,13 @@ class UsersController < ApplicationController
   end
 
   def create
+  params.inspect
     user = User.new(user_params)
     if user.save!
       session[:user_id] = user.id
-      render "hit this save point!!"
-      # redirect_to 'users#index'
+      # render "hit this save point!!"
     else
-      render "html"
-      #redirect_to '/signup'
+      # render "html"
     end
   end
   

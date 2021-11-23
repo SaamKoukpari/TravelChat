@@ -1,34 +1,31 @@
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
-export default function Signup(props) {  
-  //const { name, email, password } = props;
 
-  // const [name, setName] = useState(props.name || "");
-  // const [email, setEmail] = useState(props.email || "");
-  // const [password, setPassword] = useState(props.password || "");
-
-  // const [error, setError] = useState("");
+export default function Signup() { 
+  const navigate = useNavigate()
 
   const [state, setState] = useState({
-    name: "props.name",
-    email: "props.email",
-    password: "props.password"
+    name: "will be blank",
+    email: "",
+    password: ""
   });
 
-  const handleSubmit = (event) => {
+  const handleSubmit = () => {
+    const user = {
+      name: state.name,
+      email: state.email,
+      password: state.password
+    }
+    console.log(user)
     axios
       .post('/api/users', {
-        name: state.name,
-        email: state.email,
-        password: state.password
+        user
       })
-      .then(response => {   
-      const name = response[0].data.name;
-      const email = response[0].data.email;
-      const password = response[0].data.password;
-      setState(prev => ({...prev, name, email, password }))
+      .then(response => {
+        navigate('/newsfeed')
       })
       .catch((error) => {
         console.log("Error: ", error);
@@ -66,7 +63,8 @@ export default function Signup(props) {
               name='name'
               type='text'
               placeholder='Enter Name'  
-              value={props.name}
+              value={state.name}
+              onChange={(e) => setState(prev => ({...prev, name: e.target.value}))}
             />
             
             <br/>
@@ -76,7 +74,8 @@ export default function Signup(props) {
               name='email'
               type='text'
               placeholder='Enter email'
-              value={props.email}  
+              value={state.email}
+              onChange={(e) => setState(prev => ({...prev, email: e.target.value}))} 
             />
             
             <h5>Password:</h5>
@@ -85,7 +84,8 @@ export default function Signup(props) {
               name='password'
               type='password'
               placeholder='Create password'
-              value={props.password}  
+              value={state.password}
+              onChange={(e) => setState(prev => ({...prev, password: e.target.value}))}
             />
           </form>
 
