@@ -7,7 +7,18 @@ Rails.application.routes.draw do
     # resources :photos
     resources :comments
   end 
+  
+  #Signup
+  get '/signup' => 'users#new'
+  post '/users' => 'users#create'
+
+  #Login/logout
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+
+  get '/newsfeed' => 'posts#index' 
 
   root 'users#index'
 
-  end
+end

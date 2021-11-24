@@ -20,6 +20,11 @@ class UsersController < ApplicationController
     end
   end
   
+  # def findFriends
+  #   @user = User.find(1)
+  #   User.where(id: @user[:friend_id])
+  # end
+
   private 
   
   def user_params

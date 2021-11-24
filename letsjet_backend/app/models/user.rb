@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :request 
   has_many :post
   has_many :calendar
+  has_many :comment
 
   # has_secure_password  
 

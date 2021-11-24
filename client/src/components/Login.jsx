@@ -1,40 +1,84 @@
-// import React, { Component, useState } from 'react';
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
-// export default function Login () {
-//   const [state, setState] = useState({});
 
-//   handleOnChange = (event) => {
-//     setState({
-//       [event.target.name]: event.target.value
-//     })
-//   }
+export default function Login() { 
+  const navigate = useNavigate()
 
-//   handleSubmit = (event) => {
-//     event.preventDefault()
+  const [state, setState] = useState({
+    email: "",
+    password: ""
+  });
 
-//     let user = {
-//       name: state.name,
-//       password: state.password
-//     }
+  const handleSubmit = () => {
+    const user = {
+      email: state.email,
+      password: state.password
+    }
 
-//     fetch('http://localhost:3000/login', {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json',
-//         'Accept': 'application/json'
-//       },
-//       body: JSON.stringify(user)
-//     })
-//     .then(response => response.json())
-//     .then(data => console.log(data))
-//   }
-//     return (
-//       <form onSubmit={this.handleSubmit} >
-//         <label>Name:</label>
-//         <input type='text' name='name' value={state.name} onChange={handleOnChange} />
-//         <label>Password:</label>
-//         <input type='password' name='password' value={this.state.password} onChange={handleOnChange} />
-//         <input type='submit' value='Login'/>
-//       </form>
-//     )
-//   }
+    axios
+      .get('/api/users', {
+        user
+      })
+      .then(response => {
+        setState(response.data)
+        navigate('/newsfeed')
+      })
+      .catch((error) => {
+        console.log("Error: ", error);
+      });
+  }
+
+  // function validate() {
+  //   if (name === "") {
+  //     setError("Name cannot be blank");
+  //     return;
+  //   }
+
+  //   if (email === "") {
+  //     setError("Email cannot be blank");
+  //     return;
+  //   }
+
+  //   if (password === "") {
+  //     setError("Password cannot be blank");
+  //     return;
+  //   }
+    
+  //   setError("");
+  //   // props.onSave(name, email, password);
+  // }
+
+  return(
+    <div>
+      <h1>Login</h1>
+        <section className='login_circle'>
+          <form>
+
+            <h5>Email:</h5>
+            <input
+              className='login__create-input'
+              name='email'
+              type='text'
+              placeholder='Enter email'
+              value={state.email}
+              onChange={(e) => setState(prev => ({...prev, email: e.target.value}))} 
+            />
+            
+            <h5>Password:</h5>
+            <input
+              className='login__create-input'
+              name='password'
+              type='password'
+              placeholder='Create password'
+              value={state.password}
+              onChange={(e) => setState(prev => ({...prev, password: e.target.value}))}
+            />
+          </form>
+
+        <button onClick={handleSubmit}>Submit</button>
+        </section>
+    </div>
+  )
+}
