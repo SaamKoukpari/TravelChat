@@ -56,7 +56,7 @@ User.create!(
   hometown: 'Toronto',
   location: 'Bali',
   profile_picture: 'https://images.goodsmile.info/cgm/images/product/20200114/9164/66743/large/04c45b878e5a2be879d9137a18905611.jpg',
-  description: 'Lion from the Jungle looking to travel and ATV in the Saharan Desert',
+  description: 'Lion from the Jungle looking to do yoga in the Saharan Desert',
   active: true,
   traveller: true,
   local: false
