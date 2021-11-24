@@ -19,7 +19,8 @@ export default function Signup() {
       email: state.email,
       password: state.password
     }
-    console.log(user)
+
+    // console.log(user)
     axios
       .post('/api/users', {
         user
