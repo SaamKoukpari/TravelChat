@@ -7,6 +7,7 @@ export default function Newsfeed () {
   const userID = 1;
 
   useEffect(() => {
+<<<<<<< HEAD
     Promise.all([
       axios.get('./api/users'),
       axios.get('./api/posts'),
@@ -69,6 +70,18 @@ export default function Newsfeed () {
     )
   })
   console.log("NEWS", {newsfeedPosts}) //undefined props
+=======
+    axios.get('./api/posts')
+    .then(response => {
+      const posts = response.data
+      const user = response.data.find((user) => { //filtered to userID=1
+        return user.id === userID 
+      })
+    })
+    .catch(err => console.log(err))
+  }, [])
+
+>>>>>>> 3fc2816148d6e1c5ab77b5911d0b9d6e180778f5
 
   return (
     <div>
