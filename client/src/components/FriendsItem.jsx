@@ -2,9 +2,12 @@ import React from "react";
 
 export default function FriendsItem(props){
   return(
-    <div>
-      <img src={props.avatar} />
-      <h1>{props.name}</h1>
-    </div>
+    <section>
+      <div>
+        <img src={props.avatar} alt="user avatar"/>
+        <h1>{props.name}</h1>
+      </div>
+    </section>
+
   )
 }

@@ -9,13 +9,12 @@ export default function FriendsList() {
   useEffect(() => {
     axios.get('/api/users')
     .then(response => {
-     
       const users = response.data //all the users
       const user = response.data.find((user) => { //filtered to userID=1
         return user.id === userID 
       })
 
-      const friends = user.friend_id.map((id) => { //list of friends
+      const friends = user.friend_id.map((id) => { //array of friend_ids
         const friend = users.find((user) => user.id === id) //looking for where friend's user.id matches id from array
         return friend;
       }) 

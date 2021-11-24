@@ -3,10 +3,7 @@ import FriendsItem from './FriendsItem';
 import axios from 'axios';
 
 export default function FindFriends() {
-  const [search, setSearch] = useState({
-    location: ""
-  });
-  
+  const [search, setSearch] = useState([]); //must be an array for .map function to work
   const userID = 1
 
   useEffect(() => {
@@ -21,27 +18,48 @@ export default function FindFriends() {
       //if users.location === search.location, return user name + avatar EXCEPT for user
       // const searchlocation = "Bali";
     
-      const searched = users.map(user => {
+      // const searched = users.map(user => {
+      //   const result = [];
+      //   if (user.location === "Bali") {
+      //     result.push(user.name)
+      //   }
+      //   return result; 
+      // })
+      // console.log("SEARCH", searched)
+      
+      const searched = function(users) {
+        const query = 'Bali';
         const result = [];
-        if (user.location === "Bali") {
-          result.push(user.name)
+
+        for (let obj of users) {
+          if (obj.location === query && obj.id !== user.id) {
+            result.push(obj.name)
+          }
         }
-        return result; 
+        return result;
+      }
+      console.log("SEARCH HERE >>> ", searched(users)); //array of names ['Simba', 'George', 'Tim']
+      
+      const find = searched(users).map(name => {
+        const friend = users.find(user => user.name === name);
+        return friend;
       })
-      console.log("SEARCH", searched)
+      
+      setSearch(find)
     })  
     .catch(error => console.log("error:", error))
   }, [])
 
-  // const friendListItem = friends.map(user => {
-  //   return(
-  //     <FriendsItem
-  //       key={user.id}
-  //       name={user.name}
-  //       avatar={user.profile_picture}
-  //     />
-  //   )
-  // })
+  const findFriendsItem = search.map(user => {
+    return(
+      <FriendsItem
+        key={user.id}
+        name={user.name}
+        avatar={user.profile_picture}
+      />
+    )
+  })
+  console.log("FIND FRIENDS??", findFriendsItem)
   
   // const handleSubmit = () => {}
 
@@ -62,17 +80,17 @@ export default function FindFriends() {
             
             <br/>
             <h5>Interest</h5>
-            {/* <input
+            <input
               className='findFriends__create-input'
               name='interest'
               type='text'
               placeholder='Search interests'
               value={search.description}
               onChange={(e) => setSearch(prev => ({...prev, description: e.target.value}))} 
-            /> */}
+            />
           </form>
-
           {/* <button onClick={handleSubmit}>Submit</button> */}
+          {findFriendsItem}
         </section>
     </div>
   )
