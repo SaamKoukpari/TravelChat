@@ -11,7 +11,7 @@ User.destroy_all
 #user.id = 1
 User.create!(
   friend_id: [2, 3, 4, 5],
-  post_id: [1],
+  post_id: [1, 2],
   calendar_id: [],
   name: 'Lucy', 
   email: 'lucy@littlemermaid.com',
@@ -29,7 +29,7 @@ User.create!(
 #user.id = 2
 User.create!(
   friend_id: [1],
-  post_id: [4],
+  post_id: [4, 5],
   calendar_id: [],
   name: 'Shaun', 
   email: 'shaun@robs.ca',
@@ -47,7 +47,7 @@ User.create!(
 #user.id = 3
 User.create!(
   friend_id: [1],
-  post_id: [],
+  post_id: [6],
   calendar_id: [],
   name: 'Simba', 
   email: 'lions@google.com',
@@ -56,7 +56,7 @@ User.create!(
   hometown: 'Toronto',
   location: 'Bali',
   profile_picture: 'https://images.goodsmile.info/cgm/images/product/20200114/9164/66743/large/04c45b878e5a2be879d9137a18905611.jpg',
-  description: 'Lion from the Jungle looking to travel and ATV in the Saharan Desert',
+  description: 'Lion from the Jungle looking to do yoga in the Saharan Desert',
   active: true,
   traveller: true,
   local: false
@@ -83,7 +83,7 @@ User.create!(
 #user.id = 5
 User.create!(
   friend_id: [1],
-  post_id: [],
+  post_id: [3],
   calendar_id: [],
   name: 'Tim', 
   email: 'cookingwithtime@hotmail.com',
@@ -115,7 +115,7 @@ Post.create!(
 user_id: 1,
 photo_id: [2],
 comment_ids: [],
-content: "Absolute ledgends!",
+content: "Absolute legends!",
 likes: 220,
 published: true,
 posted_at: '2000-04-12 15:26:38 UTC'
@@ -132,30 +132,55 @@ published: true,
 posted_at: '2020-04-27 20:23:38 UTC'
 )
   
-  #post.id = 4
-  Post.create!(
-    user_id: 2,
-    photo_id: [],
-    comment_ids: [],
-    content: "GOING CLIFF-DIVING IF ANYBODY WANTS TO COME!!!",
-    likes: 5,
-    published: true,
-    posted_at: '2020-07-01 15:16:38 UTC'
-    )
-    
-    #photo.id = 1
-    Photo.create!(
-      user_id: 3,
-      post_id: 1,
-      url: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/11/22/15/gettyimages-1304408.jpg?width=982&height=726&auto=webp&quality=75"
-      )
+#post.id = 4
+Post.create!(
+  user_id: 2,
+  photo_id: [],
+  comment_ids: [],
+  content: "GOING CLIFF-DIVING IF ANYBODY WANTS TO COME!!!",
+  likes: 5,
+  published: true,
+  posted_at: '2020-07-01 15:16:38 UTC'
+)
+
+#post.id = 5
+Post.create!(
+  user_id: 2,
+  photo_id: [],
+  comment_ids: [],
+  content: "Howdy YALL! 🤠🤠🤠🤠",
+  likes: 55,
+  published: true,
+  posted_at: '2010-07-01 15:16:38 UTC'
+)
+
+#post.id = 6
+Post.create!(
+  user_id: 3,
+  photo_id: [],
+  comment_ids: [],
+  content: "Hey guys, this is my first post. Simba here just treking with my lion pack.",
+  likes: 101,
+  published: true,
+  posted_at: '2012-10-01 18:16:38 UTC'
+)
+
+
+
+  
+#photo.id = 1
+Photo.create!(
+  user_id: 3,
+  post_id: 1,
+  url: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/11/22/15/gettyimages-1304408.jpg?width=982&height=726&auto=webp&quality=75"
+)
       
-      #photo.id = 2
-      Photo.create!(
-        user_id: 5,
-        post_id: 1,
-        url: "https://files.worldwildlife.org/wwfcmsprod/images/Mountains_New_Hero_Image/story_full_width/5c6n24n4pm_mountains_hero.jpg"
-        )
+#photo.id = 2
+Photo.create!(
+  user_id: 5,
+  post_id: 1,
+  url: "https://files.worldwildlife.org/wwfcmsprod/images/Mountains_New_Hero_Image/story_full_width/5c6n24n4pm_mountains_hero.jpg"
+)
         
 #photo.id = 1
 Photo.create!(
@@ -164,37 +189,37 @@ post_id: 1,
 url: "https://www.hinduamerican.org/wp-content/uploads/2020/06/20120510012-scaled.jpg"
 )
               
-  #comment.id = 1
-  Comment.create!(
-    user_id: 2, 
-    post_id: 1,
-    content: "So awesome!! Can't wait to see it!"
-  )
+#comment.id = 1
+Comment.create!(
+  user_id: 2, 
+  post_id: 1,
+  content: "So awesome!! Can't wait to see it!"
+)
                   
-  #comment.id = 2
-  Comment.create!(
-    user_id: 4, 
-    post_id: 1,
-    content: "So great working with you talented people! "
-  )
+#comment.id = 2
+Comment.create!(
+  user_id: 4, 
+  post_id: 1,
+  content: "So great working with you talented people! "
+)
                     
-  #comment.id = 3
-  Comment.create!(
-    user_id: 2,  
-    post_id: 2,
-    content: "Omg what a snooze"
-  )
+#comment.id = 3
+Comment.create!(
+  user_id: 2,  
+  post_id: 2,
+  content: "Omg what a snooze"
+)
         
-  #comment.id = 4
-  Comment.create!(
-    user_id: 5,  
-    post_id: 4,
-    content: "Wish I could be there! I miss Vancouver"
-  )
-        
-  #comment.id = 5
-  Comment.create!(
-    user_id: 2,  
-    post_id: 4,
-    content: "My car is full guys! Anybody want to meet us up at Squamish, we'll be there for noon!"
-  )
+#comment.id = 4
+Comment.create!(
+  user_id: 5,  
+  post_id: 4,
+  content: "Wish I could be there! I miss Vancouver"
+)
+      
+#comment.id = 5
+Comment.create!(
+  user_id: 2,  
+  post_id: 4,
+  content: "My car is full guys! Anybody want to meet us up at Squamish, we'll be there for noon!"
+)

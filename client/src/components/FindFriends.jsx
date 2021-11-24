@@ -3,66 +3,57 @@ import FriendsItem from './FriendsItem';
 import axios from 'axios';
 
 export default function FindFriends() {
-  const [search, setSearch] = useState([]); //must be an array for .map function to work
+  const [search, setSearch] = useState([]); 
   const userID = 1
 
-  useEffect(() => {
+  const handleSubmit = () => {
     axios.get('/api/users')
     .then(response => {
       const users = response.data //all the users
       const user = response.data.find((user) => { //filters the user that is logged in 
         return user.id === userID 
       })
-
-      //finds users with description match and location match
-      //if users.location === search.location, return user name + avatar EXCEPT for user
-      // const searchlocation = "Bali";
-    
-      // const searched = users.map(user => {
-      //   const result = [];
-      //   if (user.location === "Bali") {
-      //     result.push(user.name)
-      //   }
-      //   return result; 
-      // })
-      // console.log("SEARCH", searched)
       
       const searched = function(users) {
-        const query = 'Bali';
+        const query = search.location;
+        const query2 = search.description;
         const result = [];
-
+ 
         for (let obj of users) {
-          if (obj.location === query && obj.id !== user.id) {
-            result.push(obj.name)
-          }
+          if(!query2) {
+            if (obj.location.toLowerCase() === query.toLowerCase() && obj.id !== user.id) {
+              result.push(obj.name)
+            }
+          } else if (obj.location.toLowerCase() === query.toLowerCase() && obj.id !== user.id) {
+            if (obj.description.includes(query2.toLowerCase())) {
+              result.push(obj.name)
+            }
+          }         
         }
         return result;
       }
-      console.log("SEARCH HERE >>> ", searched(users)); //array of names ['Simba', 'George', 'Tim']
+      console.log("SEARCH HERE >>> ", searched(users)); //array of names who match the search inputs
       
-      const find = searched(users).map(name => {
+      const find = searched(users).map(name => { //find the friends who match those names
         const friend = users.find(user => user.name === name);
         return friend;
-      })
-      
+      });
       setSearch(find)
     })  
     .catch(error => console.log("error:", error))
-  }, [])
+  }
 
-  const findFriendsItem = search.map(user => {
-    return(
-      <FriendsItem
-        key={user.id}
-        name={user.name}
-        avatar={user.profile_picture}
-      />
-    )
-  })
-  console.log("FIND FRIENDS??", findFriendsItem)
+  // const findFriendsItem = search.map(user => { //passes props down
+  //   return(
+  //     <FriendsItem
+  //       key={user.id}
+  //       name={user.name}
+  //       avatar={user.profile_picture}
+  //     />
+  //   )
+  // })
+  // console.log("FIND FRIENDS??", findFriendsItem)
   
-  // const handleSubmit = () => {}
-
   return(
     <div>
       <h1>Find new friends</h1>
@@ -89,8 +80,8 @@ export default function FindFriends() {
               onChange={(e) => setSearch(prev => ({...prev, description: e.target.value}))} 
             />
           </form>
-          {/* <button onClick={handleSubmit}>Submit</button> */}
-          {findFriendsItem}
+          <button onClick={handleSubmit}>Submit</button>
+          {/* {findFriendsItem} */}
         </section>
     </div>
   )
