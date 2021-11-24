@@ -77,11 +77,7 @@ export default function FindFriends(props) {
             />
           </form>
           <button onClick={handleSubmit}>Submit</button>
-<<<<<<< HEAD
-          {/* {findFriendsItem} */}
-=======
           {findFriendsItem}
->>>>>>> 3fc2816148d6e1c5ab77b5911d0b9d6e180778f5
         </section>
     </div>
   )
