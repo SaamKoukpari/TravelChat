@@ -61,8 +61,6 @@ export default function FindFriends() {
   })
   console.log("FIND FRIENDS??", findFriendsItem)
   
-  // const handleSubmit = () => {}
-
   return(
     <div>
       <h1>Find new friends</h1>
