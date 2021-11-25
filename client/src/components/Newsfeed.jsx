@@ -7,7 +7,6 @@ export default function Newsfeed () {
   const userID = 1;
 
   useEffect(() => {
-<<<<<<< HEAD
     Promise.all([
       axios.get('./api/users'),
       axios.get('./api/posts'),
@@ -21,14 +20,14 @@ export default function Newsfeed () {
       const user1 = users.find(user => {
         return user.id === userID 
       })
-      console.log("LUCY", user1);
+      // console.log("LUCY", user1);
 
       //filter user1 friends
       const usersFriends = user1.friend_id.map(id => {
         const friends = users.find(user => user.id === id);
         return friends;
       })
-      console.log("LUCY'S FRIENDS:::", usersFriends) // 4 friends
+      // console.log("LUCY'S FRIENDS:::", usersFriends) // 4 friends
       
       // //if friend has a post_id, then return the posts
       const postsByFriends = function(usersFriends) { //array of post.ids
@@ -40,16 +39,16 @@ export default function Newsfeed () {
         }
         return result.flat(Infinity); //remove inner Arrays
       }
-      console.log("postsByFriends", postsByFriends(usersFriends))
+      // console.log("postsByFriends", postsByFriends(usersFriends))
 
       //match the postsByFriends item to the post.id, return content, likes, comments, posted_at
       const getPosts = postsByFriends(usersFriends).map(id => {
         const post = posts.find(x => x.id === id); 
-        // return post;
-        return [post.user_id, post.content, post.likes, post.posted_at];
+        const findUser = Object.values(users).find(user => user.post_id.includes(id));
+        // console.log("FIND USER:::", findUser);
+        return [findUser, post.content, post.likes, post.posted_at];
       })
-      console.log("GETPOSTS:", getPosts);
-
+      // console.log("GETPOSTS:", getPosts);
       setState(getPosts);
 
       //if the post has comments, return the comments
@@ -57,31 +56,19 @@ export default function Newsfeed () {
     }).catch(err => console.log(err))
   }, [])
 
-  console.log("STATE", state) 
+  // console.log("STATE", state) 
 
   const newsfeedPosts = state.map(post => { //state is an ARRAY not an object
     return(
       <PostItem
-        user={post[0]}
+        user={post[0]} //this is an object
         content={post[1]}
         likes={post[2]}
         time={post[3]}
       />
     )
   })
-  console.log("NEWS", {newsfeedPosts}) //undefined props
-=======
-    axios.get('./api/posts')
-    .then(response => {
-      const posts = response.data
-      const user = response.data.find((user) => { //filtered to userID=1
-        return user.id === userID 
-      })
-    })
-    .catch(err => console.log(err))
-  }, [])
-
->>>>>>> 3fc2816148d6e1c5ab77b5911d0b9d6e180778f5
+  // console.log("NEWS", {newsfeedPosts}) //undefined props
 
   return (
     <div>
