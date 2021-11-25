@@ -18,7 +18,7 @@ export default function FriendsList() {
       const friend = users.find((user) => user.id === id) //looking for where friend's user.id matches id from array
       return friend;
       }) 
-      // console.log("friends INSIDE", friends);
+      console.log("friends INSIDE", friends);
       setFriends(friends) //set the state
     })
     .catch(error => console.log("error:", error))

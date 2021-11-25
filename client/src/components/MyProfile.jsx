@@ -20,41 +20,12 @@ export default function Profile (props) {
     .catch(error => console.log("error:", error))
     }, [])
 
-  console.log("user OUTSIDE axios", user)
-
-  const userProps = user.map(loggedInUser => {
-    <ProfileEditForm 
-      name={loggedInUser.name}
-    />
-  })
+  // console.log("user OUTSIDE axios", user)
 
   return (
     <div>
-
-      {/* <form className="profile">
-        <h4>Description</h4>
-          <input className="description"/>
-      </form> */}
-      {/* <h1>{user.name}</h1>  */}
-        {/* {profileItem} */}
-        <div> 
-          <ul>
-            {/* <li>Name: {props.user.name}</li> */}
-            <li>From</li>
-            <li>Here I am</li>
-          </ul> 
-        </div>
-        <div>
-          Discription
-        </div>
-        <div> 
-            {/* <Button
-                onClick={cancel} 
-                danger>Edit</Button> */}
-        </div>
-        <div>
-          {/* <button>onClick={Edit}</button> */}
-        </div>
+      <h1>{user.name}</h1> 
+      <h4>{user.location}</h4>
     </div>
   );
 };

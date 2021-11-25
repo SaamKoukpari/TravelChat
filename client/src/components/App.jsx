@@ -10,7 +10,7 @@ import FindFriends from './FindFriends';
 import Signup from './Signup';
 import './App.scss';
 import '../index.scss';
-import PostItem from './PostItem';
+import ProfileEditForm from './ProfileEditForm';
 
 
 export default function App() {  
@@ -25,7 +25,7 @@ export default function App() {
           <Route path="/find_friends" element={<FindFriends/>} />
           <Route path="/signup" element={<Signup/>} />
           <Route path="/login" element={<Login/>} />
-          <Route path="/temporary" element={<PostItem/>} />
+          <Route path="/temporary" element={<ProfileEditForm/>} />
         </Routes>
       </BrowserRouter>
     );
