@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     puts params[:description]
     puts params[:id]
     # Whatever you want do it
-    @description = { "description" => params[:description]}
+    @description = { "user" => params[:id], "description" => params[:description]}
     render json: @description
   end 
   

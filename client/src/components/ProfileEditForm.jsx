@@ -11,9 +11,10 @@ export default function Form() {
   const handleEdit = (description) => {
     console.log("Testing", description);
     let data = {description: description};
-    axios.put("/api/users/1", data)
+    axios.put('/api/users/1', data)
     .then(response => {
-      console.log("Rails has sent the following response ",response);
+      setTextAreaText(response);
+      console.log("TEST", response)
     })
     .catch(err => err)
     //console.log(props)

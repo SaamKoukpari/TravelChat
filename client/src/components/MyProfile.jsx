@@ -20,8 +20,6 @@ export default function Profile (props) {
     .catch(error => console.log("error:", error))
     }, [])
 
-  // console.log("user OUTSIDE axios", user)
-
   return (
     <div>
       <h1>{user.name}</h1> 
