@@ -34,7 +34,6 @@ export default function FindFriends(props) {
       
       setResults(result)
       console.log("SEARCH HERE >>> ", result);
-      // setSearch(search)
     })  
     .catch(error => console.log("error:", error))
   

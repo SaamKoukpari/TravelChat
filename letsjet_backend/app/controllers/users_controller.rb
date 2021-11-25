@@ -19,6 +19,15 @@ class UsersController < ApplicationController
       # render "html"
     end
   end
+
+  def update
+    #puts params.inspect
+    puts params[:description]
+    puts params[:id]
+    # Whatever you want do it
+    @description = { "description" => params[:description]}
+    render json: @description
+  end 
   
   # def findFriends
   #   @user = User.find(1)

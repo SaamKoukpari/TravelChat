@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-// import useVisualMode from '../hooks/useVisualMode';
+import useVisualMode from '../hooks/useVisualMode';
 import ProfileEditForm from './ProfileEditForm';
 
-export default function MyProfile () {
+export default function Profile (props) {
   const [user, setUser] = useState([]);
   const userID = 1;
   
@@ -13,8 +13,9 @@ export default function MyProfile () {
       const profile = response.data.find((user) => {
         return user.id === userID;
       })
-      // console.log("INSIDE AXIOSSS", profile)
-      setUser(profile)
+      const userArray = Object.values(profile);
+      console.log("INSIDE AXIOSSS", userArray)
+      setUser(userArray)
     })
     .catch(error => console.log("error:", error))
     }, [])

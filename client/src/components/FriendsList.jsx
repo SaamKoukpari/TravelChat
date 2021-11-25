@@ -15,9 +15,8 @@ export default function FriendsList() {
       })
 
       const friends = user.friend_id.map((id) => { //array of friend_ids
-        const friend = users.find((user) => user.id === id) //looking for where friend's user.id matches id from array
-        console.log("friend", friend)
-        return friend;
+      const friend = users.find((user) => user.id === id) //looking for where friend's user.id matches id from array
+      return friend;
       }) 
       console.log("friends INSIDE", friends);
       setFriends(friends) //set the state

@@ -1,6 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+// import { BrowserRouter, Routes, Route } from 'react-router-dom'
+// import MyProfile from './MyProfile';
+// import Login from './Login';
+// import Newsfeed from './Newsfeed';
+// import Chat from './Chat';
+// import FriendsList from './FriendsList';
+// import FindFriends from './FindFriends';
+// import Signup from './Signup';
+// import PostItem from './PostItem';
 import './App.scss';
+
 
 
 export default function Layout () {
@@ -36,6 +46,18 @@ export default function Layout () {
         </section>  
         <section className="profileContainer">
           <h1>blah</h1>
+          {/* <BrowserRouter>
+            <Routes>
+              <Route path="/newsfeed" element={<Newsfeed/>} />
+              <Route path="/profile" element={<MyProfile/>} />
+              <Route path="/chat" element={<Chat/>} />
+              <Route path="/friends_list" element={<FriendsList/>} />
+              <Route path="/find_friends" element={<FindFriends/>} />
+              <Route path="/signup" element={<Signup/>} />
+              <Route path="/login" element={<Login/>} />
+              <Route path="/temporary" element={<PostItem/>} />
+            </Routes>
+          </BrowserRouter> */}
         </section>
       </section>
     </main>
