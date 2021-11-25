@@ -1,6 +1,6 @@
 import './App.scss';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Profile from './Profile';
+import MyProfile from './MyProfile';
 import Login from './Login';
 import Layout from './Layout';
 import Newsfeed from './Newsfeed';
@@ -13,13 +13,13 @@ import '../index.scss';
 import PostItem from './PostItem';
 
 
-export default function App() {
+export default function App() {  
   return (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout/>} />
           <Route path="/newsfeed" element={<Newsfeed/>} />
-          <Route path="/profile" element={<Profile/>} />
+          <Route path="/profile" element={<MyProfile/>} />
           <Route path="/chat" element={<Chat/>} />
           <Route path="/friends_list" element={<FriendsList/>} />
           <Route path="/find_friends" element={<FindFriends/>} />
