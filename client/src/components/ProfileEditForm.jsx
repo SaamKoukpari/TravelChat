@@ -1,9 +1,11 @@
 import React from 'react';
 
 export default function Form(props) {
+
+
   return (
     <div>
-      {props.name}
+      <button>Edit</button>
     </div>
   )
 };
