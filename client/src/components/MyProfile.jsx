@@ -13,7 +13,6 @@ export default function Profile (props) {
       const profile = response.data.find((user) => {
         return user.id === userID;
       })
-      // const userArray = Object.values(profile);
       setUser(profile)
     })
     .catch(error => console.log("error:", error))

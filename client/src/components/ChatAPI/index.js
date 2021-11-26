@@ -43,7 +43,7 @@ export default function Application() {
   //         id: 'little-tooth-2',
   //         name: 'little',
   //         image: 'https://getstream.io/random_png/?id=little-tooth-2&name=little',
-  //       },
+  //      },
   //       userToken,
   //     );
 
