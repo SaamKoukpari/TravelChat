@@ -13,7 +13,7 @@ export default function Form() {
     let data = {description: description};
     axios.put('/api/users/1', data)
     .then(response => {
-      setTextAreaText(response);
+      setTextAreaText("");
       console.log("TEST", response)
     })
     .catch(err => err)

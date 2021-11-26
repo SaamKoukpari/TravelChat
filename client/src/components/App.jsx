@@ -4,10 +4,10 @@ import MyProfile from './MyProfile';
 import Login from './Login';
 import Layout from './Layout';
 import Newsfeed from './Newsfeed';
-import Chat from './Chat';
 import FriendsList from './FriendsList';
 import FindFriends from './FindFriends';
 import Signup from './Signup';
+import Application from './ChatAPI/index.js';
 import './App.scss';
 import '../index.scss';
 import ProfileEditForm from './ProfileEditForm';
@@ -20,7 +20,7 @@ export default function App() {
           <Route path="/" element={<Layout/>} />
           <Route path="/newsfeed" element={<Newsfeed/>} />
           <Route path="/profile" element={<MyProfile/>} />
-          <Route path="/chat" element={<Chat/>} />
+          <Route path="/chat" element={<Application/>} />
           <Route path="/friends_list" element={<FriendsList/>} />
           <Route path="/find_friends" element={<FindFriends/>} />
           <Route path="/signup" element={<Signup/>} />
