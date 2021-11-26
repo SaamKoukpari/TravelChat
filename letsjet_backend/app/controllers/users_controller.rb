@@ -21,26 +21,19 @@ class UsersController < ApplicationController
   end
 
   def update
-    #puts params.inspect
     puts params[:description]
     puts params[:id]
-    # Whatever you want do it
 
     user = User.find(params[:id])
     user.update(description: params[:description])
+
     render status: 200
   end 
-  
-  # def findFriends
-  #   @user = User.find(1)
-  #   User.where(id: @user[:friend_id])
-  # end
+
 
   private 
   
   def user_params
     params.require(:user).permit(:name, :email, :password)
   end
-
-
 end

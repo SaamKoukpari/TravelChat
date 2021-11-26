@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
-import FriendsItem from './FriendsItem';
+import MyFriendItem from './MyFriendItem';
 import axios from 'axios';
 
 
 export default function FindFriends(props) {
-  const [search, setSearch] = useState({}); 
+  const [location, setLocation] = useState("");
+  const [description, setDescription] = useState("");
   const [results, setResults] = useState([]);
   const userID = 1
+  console.log(location)
 
   const handleSubmit = () => {
     axios.get('/api/users')
@@ -16,24 +18,26 @@ export default function FindFriends(props) {
         return user.id === userID;
       }) 
 
-      const query = search.location;
-      const query2 = search.description;
+      const query = location;
+      const query2 = description;
       const result = [];
-          
+        
+      
+      //For the purpose of MVD 
         for (let obj of users) {
           if(!query2) {
-            if (obj.location.toLowerCase() === query.toLowerCase() && obj.id !== user.id) {
+            if (obj.location === query && obj.id !== user.id) {
               result.push(obj)
             }
-          } else if (obj.location.toLowerCase() === query.toLowerCase() && obj.id !== user.id) {
-            if (obj.description.includes(query2.toLowerCase())) {
+          } else if (obj.location === query && obj.id !== user.id) {
+            if (obj.description.includes(query2)) {
               result.push(obj)
             }
           }         
         }
       
       setResults(result)
-      console.log("SEARCH HERE >>> ", result);
+     // console.log("SEARCH HERE >>> ", result);
     })  
     .catch(error => console.log("error:", error))
   
@@ -41,10 +45,11 @@ export default function FindFriends(props) {
 
   const findFriendsItem = results.map(user => { //passes props down
     return(
-      <FriendsItem
+      <MyFriendItem
         key={user.id}
         name={user.name}
         avatar={user.profile_picture}
+        friend={user.friend_id}
       />
     )
   })
@@ -61,8 +66,8 @@ export default function FindFriends(props) {
               name='location'
               type='text'
               placeholder='Location'  
-              value={search.location}
-              onChange={(e) => setSearch(prev => ({...prev, location: e.target.value}))} 
+              value={location}
+              onChange={(e) => setLocation(e.target.value)} 
             />            
             <br/>
             <h5>Interest</h5>
@@ -71,8 +76,8 @@ export default function FindFriends(props) {
               name='interest'
               type='text'
               placeholder='Search interests'
-              value={search.description}
-              onChange={(e) => setSearch(prev => ({...prev, description: e.target.value}))} 
+              value={description}
+              onChange={(e) => setDescription(e.target.value)} 
             />
           </form>
           <button onClick={handleSubmit}>Submit</button>
