@@ -1,4 +1,5 @@
 import './App.scss';
+import '../index.scss';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import MyProfile from './MyProfile';
 import Login from './Login';
@@ -8,13 +9,12 @@ import FriendsList from './FriendsList';
 import FindFriends from './FindFriends';
 import Signup from './Signup';
 import Application from './ChatAPI/index.js';
-import './App.scss';
-import '../index.scss';
 import ProfileEditForm from './ProfileEditForm';
 
 
 export default function App() {  
   return (
+
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout/>} />
@@ -29,4 +29,15 @@ export default function App() {
         </Routes>
       </BrowserRouter>
     );
-  }
+}
+
+
+// side bar, top bar
+// main section 
+// content compent changes based on state, click button, have a state change
+// set conditionals { && }
+
+//link on signup back to home/login
+//link on login to signup
+
+//home component >> signup, login, main app, home 
