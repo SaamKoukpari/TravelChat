@@ -25,8 +25,10 @@ class UsersController < ApplicationController
     puts params[:description]
     puts params[:id]
     # Whatever you want do it
-    @description = { "description" => params[:description]}
-    render json: @description
+
+    user = User.find(params[:id])
+    user.update(description: params[:description])
+    render status: 200
   end 
   
   # def findFriends
