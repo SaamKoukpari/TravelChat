@@ -6,15 +6,13 @@ import { useNavigate } from 'react-router-dom';
 export default function Login() { 
   const navigate = useNavigate()
 
-  const [state, setState] = useState({
-    email: "",
-    password: ""
-  });
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
 
   const handleSubmit = () => {
     const user = {
-      email: state.email,
-      password: state.password
+      email: email,
+      password: password
     }
 
     axios
@@ -22,8 +20,8 @@ export default function Login() {
         user
       })
       .then(response => {
-        setState(response.data)
-        navigate('/newsfeed')
+        setEmail(response.data)
+        navigate('/')
       })
       .catch((error) => {
         console.log("Error: ", error);
@@ -62,8 +60,8 @@ export default function Login() {
               name='email'
               type='text'
               placeholder='Enter email'
-              value={state.email}
-              onChange={(e) => setState(prev => ({...prev, email: e.target.value}))} 
+              value={email}
+              onChange={(e) => setEmail(e.target.value)} 
             />
             
             <h5>Password:</h5>
@@ -72,8 +70,8 @@ export default function Login() {
               name='password'
               type='password'
               placeholder='Create password'
-              value={state.password}
-              onChange={(e) => setState(prev => ({...prev, password: e.target.value}))}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </form>
 

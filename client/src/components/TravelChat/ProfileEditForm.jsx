@@ -10,7 +10,9 @@ export default function Form() {
 
   const handleEdit = (description) => {
     console.log("Testing", description);
+    
     let data = {description: description};
+    
     axios.put('/api/users/1', data)
     .then(response => {
       setTextAreaText("");

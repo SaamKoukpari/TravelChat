@@ -12,6 +12,7 @@ export default function FriendsList() {
     .then(response => {
       const users = response.data //all the users
       const user = response.data.find((user) => { //filtered to userID=1
+        console.log("LOOK:", user.id)
         return user.id === userID 
       })
 
@@ -19,7 +20,7 @@ export default function FriendsList() {
       const friend = users.find((user) => user.id === id) //looking for where friend's user.id matches id from array
       return friend;
       }) 
-      console.log("friends INSIDE", friends);
+      //console.log("friends INSIDE", friends);
       setFriends(friends) //set the state
     })
     .catch(error => console.log("error:", error))
@@ -30,12 +31,13 @@ export default function FriendsList() {
     return(
       <FriendsItem
         key={user.id}
+        userId={user.id}
         name={user.name}
         avatar={user.profile_picture}
       />
     )
   })
-  console.log("LOOP:", friendListItem)
+  //console.log("LOOP:", friendListItem)
   
   
   return (
