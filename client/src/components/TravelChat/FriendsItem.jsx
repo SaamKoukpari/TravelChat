@@ -1,53 +1,66 @@
 import axios from "axios";
 import React, { useState } from "react";
-import './smallAvatar.scss';
-import Application from './Application/index.js'
+import { Avatar, Button } from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
+import SendIcon from "@mui/icons-material/Send";
+import "./smallAvatar.scss";
+import "./FriendsItem.scss";
 
 export default function FriendsItem(props) {
-  const [friend, setFriend] = useState([]) 
-  const [page, setPage] = useState(3) 
-  
+  const [friend, setFriend] = useState([]);
+  const [page, setPage] = useState(3);
+
   const removeFriend = (friend_id) => {
     const userID = 1;
-    console.log("FRIEND ID:", friend_id)
-    // let data = {friend_id: friend_id};
-    // console.log("Testing friends_id", data)
 
-    axios.get('/api/users')
-    .then(response => {
-      const user = response.data.find((user) => {
-        return user.id === userID;
+    axios
+      .get("/api/users")
+      .then((response) => {
+
+        const user = response.data.find((user) => {
+          return user.id === userID;
+        });
+        
+        const array = user.friend_id;
+
+        axios.put("/api/users/1", array).then((response) => {
+          console.log("ARRAY: ", array);
+          const index = array.indexOf(friend_id);
+          if (index > -1) {
+            array.splice(index, 1);
+          }
+          setFriend(array);
+          console.log("NEW ARRAY: ", array);
+        });
       })
-      const array = user.friend_id
-      // console.log("ARRAY:", array)
-              axios.put('/api/users/1', array)
-              .then(response => {
-              // const array = response
-              console.log("ARRAY: ", array)
-              const index = array.indexOf(friend_id);
-              console.log("FRIEND ID: ", friend_id)
-                if (index > -1) {
-                  array.splice(index, 1);
-                }
-                setFriend(array);
-            })
-          })
-    .catch(err => err)
-  }
-  
-  // console.log("props id", props.userId)
+      .catch((err) => err);
+  };
 
-  return(
+
+  return (
     <section>
-      <div>
-        <img className="smallAvatar" src={props.avatar} alt="user avatar" />
-        <h1>{props.name}</h1>
+      <div className="friend_item">
+        <div className="friend_photo">
+          <Avatar
+            alt="Remy Sharp"
+            src={props.avatar}
+            sx={{ width: 56, height: 56 }}
+          />
+        </div>
+
+        <div className="friend_name">
+          <h1>{props.name}</h1>
+        </div>
+
+        <div className="add_message">
+          <Button
+            variant="outlined"
+            startIcon={<DeleteIcon />}
+            onClick={() => removeFriend(props.userId)}
+          ></Button>
+          <Button variant="outlined" endIcon={<SendIcon />}></Button>
+        </div>
       </div>
-
-    <button className='add__friend' onClick={() => removeFriend(props.userId)}>Remove Friend</button>
-    <button className='add__friend' onClick={() => setPage()}>Message</button>
-     
     </section>
-
-  )
+  );
 }

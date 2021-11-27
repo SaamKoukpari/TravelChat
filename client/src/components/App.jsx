@@ -10,12 +10,8 @@ export default function App() {
 
 return (
   <main>
-    <section className="profileAndStatusContainer">
-      {/* <section className="statusContainer">
-      <img src="https://cdn.icon-icons.com/icons2/2643/PNG/512/male_man_boy_black_tone_people_person_avatar_icon_159356.png" alt="user" />
-      Login
-      </section>   */}
     
+     
 
         <BrowserRouter>
           <Routes>
@@ -25,7 +21,7 @@ return (
           </Routes>
         </BrowserRouter>
 
-    </section>
+    
   </main>    
   )
 };
