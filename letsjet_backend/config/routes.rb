@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :posts
     # resources :photos
     resources :comments
+    resources :requests
   end 
   
   #Signup
@@ -18,6 +19,8 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
 
   get '/newsfeed' => 'posts#index' 
+
+  post '/requests' => 'requests#create'
 
   root 'users#index'
 

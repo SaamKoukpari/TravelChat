@@ -26,10 +26,10 @@ export default function FindFriends(props) {
       //For the purpose of MVD 
         for (let obj of users) {
           if(!query2) {
-            if (obj.location === query && obj.id !== user.id) {
+            if (obj.location.toLowerCase() === query.toLowerCase() && obj.id !== user.id) {
               result.push(obj)
             }
-          } else if (obj.location === query && obj.id !== user.id) {
+          } else if (obj.location.toLowerCase() === query.toLowerCase() && obj.id !== user.id) {
             if (obj.description.includes(query2)) {
               result.push(obj)
             }
@@ -47,6 +47,7 @@ export default function FindFriends(props) {
     return(
       <MyFriendItem
         key={user.id}
+        user={user.id}
         name={user.name}
         avatar={user.profile_picture}
         friend={user.friend_id}

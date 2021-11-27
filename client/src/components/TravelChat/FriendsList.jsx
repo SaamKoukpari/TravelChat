@@ -12,6 +12,7 @@ export default function FriendsList() {
     .then(response => {
       const users = response.data //all the users
       const user = response.data.find((user) => { //filtered to userID=1
+        console.log("LOOK:", user.id)
         return user.id === userID 
       })
 

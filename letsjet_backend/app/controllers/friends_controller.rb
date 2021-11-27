@@ -4,6 +4,16 @@ class FriendsController < ApplicationController
     render json: friends
   end
 
+  def create
+    friend = Friend.new(user_params)
+    if friend.save!
+      session[:friend_id] = friend.id
+      # render "hit this save point!!"
+    else
+      # render "html"
+    end
+  end 
+
   def update
     puts params[:friend_Id]
     puts params[:id]

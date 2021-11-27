@@ -18,7 +18,7 @@ export default function FriendsItem(props) {
   }
 
   
-  console.log("props id", props.userId)
+  // console.log("props id", props.userId)
 
   return(
     <section>

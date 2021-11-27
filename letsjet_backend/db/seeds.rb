@@ -97,6 +97,24 @@ User.create!(
   traveller: true,
   local: false
 )
+
+#user.id = 6
+User.create!(
+  friend_id: [],
+  post_id: [3],
+  calendar_id: [],
+  name: 'NoFriendFred', 
+  email: 'lonelyme@hotmail.com',
+  password: 'password',
+  birthday: '1989-03-10',
+  hometown: 'Toronto',
+  location: 'Vancouver',
+  profile_picture: 'http://pm1.narvii.com/7234/e77bfd73a13901d675d3ca234e48654d2f0d9128r1-279-282v2_uhq.jpg',
+  description: 'I am so lonely',
+  active: true,
+  traveller: true,
+  local: false
+)
       
 
 #post.id = 1
@@ -222,4 +240,12 @@ Comment.create!(
   user_id: 2,  
   post_id: 4,
   content: "My car is full guys! Anybody want to meet us up at Squamish, we'll be there for noon!"
+)
+
+#request.id = 1
+Requests.create!(
+  user1_id: 1,
+  user2_id: 2,
+  status: true,
+  accepted: false
 )
