@@ -1,0 +1,62 @@
+.main_container{
+display: flex;
+flex-direction: row;
+
+}
+
+
+
+.profile_photo{
+  position: relative;
+  left: 164px;
+  top: 148px;
+
+  img {
+    width: 28%;
+  }  
+}
+
+.profile_information{
+  position: relative;
+  left: -155px;
+  top: 150px;
+  
+}
+
+.profile_discription{
+  position: relative;
+  left: -76px;
+  top: -64px;
+}
+
+.age{
+  position: relative;
+  will-change: top, left;
+  left: -91px;
+  top: 54px;
+
+  h1{
+    position: relative;
+    left: -3px;
+    top: 1px;
+  }
+
+  h4{
+
+  }
+}
+
+.from{
+position: relative;
+will-change: top, left;
+left: 5px;
+top: -24px;
+}
+
+.where_i_am{
+
+  position: relative;
+  left: 143px;
+  top: -103px;
+
+}
