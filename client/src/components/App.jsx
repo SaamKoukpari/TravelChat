@@ -1,36 +1,41 @@
-import './App.scss';
-import '../index.scss';
+import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import MyProfile from './MyProfile';
 import Login from './Login';
-import Layout from './Layout';
-import Newsfeed from './Newsfeed';
-import FriendsList from './FriendsList';
-import FindFriends from './FindFriends';
 import Signup from './Signup';
-import Application from './ChatAPI/index.js';
-import ProfileEditForm from './ProfileEditForm';
+import TravelChat from './TravelChat/index.jsx'
+import './App.scss';
+// import MyProfile from './MyProfile';
+// import Newsfeed from './Newsfeed';
+// import FriendsList from './FriendsList';
+// import FindFriends from './FindFriends';
+// import Application from './ChatAPI/index.js';
+// import ProfileEditForm from './ProfileEditForm';
 
 
-export default function App() {  
-  return (
+export default function App() {
 
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout/>} />
-          <Route path="/newsfeed" element={<Newsfeed/>} />
-          <Route path="/profile" element={<MyProfile/>} />
-          <Route path="/chat" element={<Application/>} />
-          <Route path="/friends_list" element={<FriendsList/>} />
-          <Route path="/find_friends" element={<FindFriends/>} />
-          <Route path="/signup" element={<Signup/>} />
-          <Route path="/login" element={<Login/>} />
-          <Route path="/temporary" element={<ProfileEditForm/>} />
-        </Routes>
-      </BrowserRouter>
-    );
-}
+return (
+  <main className="layout">
+    <section className= "profileAndStatusContainer">
+      <section className="statusContainer">
+      <img src="https://cdn.icon-icons.com/icons2/2643/PNG/512/male_man_boy_black_tone_people_person_avatar_icon_159356.png" alt="user" />
+      Login
+      </section>  
+      <section className="profileContainer">
 
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<TravelChat/>} />
+            <Route path="/signup" element={<Signup/>} />
+            <Route path="/login" element={<Login/>} />
+          </Routes>
+        </BrowserRouter>
+
+      </section>
+    </section>
+  </main>    
+  )
+};
 
 // side bar, top bar
 // main section 
@@ -39,5 +44,3 @@ export default function App() {
 
 //link on signup back to home/login
 //link on login to signup
-
-//home component >> signup, login, main app, home 

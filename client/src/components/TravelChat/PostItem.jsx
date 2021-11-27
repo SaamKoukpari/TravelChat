@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-
+import React, {  useState } from "react";
 
 export default function PostItem(props){
   const [countLike, setCountLike] = useState(props.likes)

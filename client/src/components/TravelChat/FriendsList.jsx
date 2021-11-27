@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import FriendsItem from './FriendsItem';
 import axios from 'axios';
+import FriendsItem from './FriendsItem';
+
 
 export default function FriendsList() {
   const [friends, setFriends] = useState([]);

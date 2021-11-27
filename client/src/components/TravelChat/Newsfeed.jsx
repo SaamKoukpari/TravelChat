@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios';
-import PostItem from './PostItem'
+import PostItem from './PostItem';
+
 
 export default function Newsfeed () {
   const [state, setState] = useState([]);

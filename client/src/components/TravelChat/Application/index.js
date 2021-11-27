@@ -56,7 +56,6 @@ export default function Application() {
   // if (!chatClient) {
   //   return <LoadingIndicator />;
   // }
-  
   const streamTest = async function (id) {
     await chatClient.connectUser(
       {
@@ -72,10 +71,12 @@ export default function Application() {
   };
 
   
-  streamTest("Violet");
+  streamTest("Ramon");
   // chatClient.disconnectUser("Lucy")
   // streamTest("Thierry");
   
+
+  console.log("hit");
   const channel = chatClient.channel("messaging", "nothing", {
     // add as many custom fields as you'd like
     name: "Talk about React",

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import FriendsItem from './FriendsItem';
 import axios from 'axios';
 
@@ -55,7 +55,7 @@ export default function FindFriends(props) {
         <section className='findFriends_circle'>
           <form>
             <h5>Location:</h5>
-            <span>text{props.users}</span>
+            <span>{props.users}</span>
             <input
               className='findFriends__create-input'
               name='location'
