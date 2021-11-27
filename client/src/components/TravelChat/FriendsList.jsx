@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import FriendsItem from './FriendsItem';
+import './FriendsList.scss'
 
 
 export default function FriendsList() {
@@ -41,6 +42,11 @@ export default function FriendsList() {
   
   
   return (
-    <div>{friendListItem}</div>
+    
+    <div>
+      <h1>Friends</h1>
+      {/* Friend List  */}
+      {friendListItem}
+    </div>
   );
 };

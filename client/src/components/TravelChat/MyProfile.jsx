@@ -15,6 +15,21 @@ export default function MyProfile (props) {
       const profile = response.data.find((user) => {
         return user.id === userID;
       })
+      
+      const age = profile.birthday
+      const usersAge = (string) =>{
+
+        const stringToArray = string.split("-");
+        const usersYearBorn = stringToArray[0]
+        const d = new Date();
+        let year = d.getFullYear();
+
+       return year - usersYearBorn
+  
+      }
+  
+      
+      setBday(usersAge(age))
       setUser(profile)
     })
     .catch(error => console.log("error:", error))
@@ -23,22 +38,7 @@ export default function MyProfile (props) {
 
    // const bday = user.birthday
     
-    const usersAge = (string) =>{
-     
-      console.log("STRING ENTERED INTO FUNC",string);
-      const stringToArray = string.split("-");
-      const usersYearBorn = stringToArray[0]
-      console.log(usersYearBorn);
-      
-      const d = new Date();
-      let year = d.getFullYear();
-      console.log(d)
-      console.log(year)
-
-
-     return year - usersYearBorn
-
-    }
+ 
 
     //let usersDayOfBirth = usersAge(bday);
 
@@ -58,7 +58,7 @@ export default function MyProfile (props) {
         <div className="users_about">
           <section className="age">
             <h1>AGE</h1>
-            <h4>{setBday}</h4>
+            <h4>{bday}</h4>
           </section>
           <section className="from">
             <h1>FROM</h1>
