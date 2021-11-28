@@ -40,7 +40,6 @@ export default function FindFriends(props) {
      // console.log("SEARCH HERE >>> ", result);
     })  
     .catch(error => console.log("error:", error))
-  
 }
 
   const findFriendsItem = results.map(user => { //passes props down

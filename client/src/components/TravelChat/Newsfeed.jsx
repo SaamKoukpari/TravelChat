@@ -63,6 +63,7 @@ export default function Newsfeed () {
   const newsfeedPosts = state.map(post => { //state is an ARRAY not an object
     return(
       <PostItem
+        key={post.id}
         user={post[0]} //this is an object
         content={post[1]}
         likes={post[2]}

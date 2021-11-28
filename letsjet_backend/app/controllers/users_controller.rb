@@ -20,19 +20,18 @@ class UsersController < ApplicationController
   end
 
   def update
-    puts params[:description]
-    puts params[:id]
-
     user = User.find(params[:id])
-    user.update(description: params[:description])
-
-    render status: 200
-  end 
+    if user.update_attributes(user_params)
+      render json: user
+    else 
+      puts user.errors.full_messages
+    end
+  end  
 
 
   private 
   
   def user_params
-    params.require(:user).permit(:name, :email, :password)
+    params.require(:user).permit(:name, :email, :password, :description, :comments, friend_id:[])
   end
 end
