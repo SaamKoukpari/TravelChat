@@ -239,13 +239,5 @@ Comment.create!(
 Comment.create!(
   user_id: 2,  
   post_id: 4,
-  content: "My car is full guys! Anybody want to meet us up at Squamish, we'll be there for noon!"
-)
-
-#request.id = 1
-Requests.create!(
-  user1_id: 1,
-  user2_id: 2,
-  status: true,
-  accepted: false
+  content: "My car is full of guys! Anybody want to meet us up at Squamish, we'll be there for noon!"
 )
