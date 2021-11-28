@@ -1,0 +1,20 @@
+.main_newsfeed_container{
+  overflow:scroll;
+  overflow-x:hidden;
+  height: 100%;
+
+}
+
+
+.main_newsfeed_container::-webkit-scrollbar {
+  // width: 1em;
+  width: 0 !important 
+}
+// .main_newsfeed_container::-webkit-scrollbar-track {
+//   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+// }
+ 
+// .main_newsfeed_container::-webkit-scrollbar-thumb {
+//   background-color: #ffffffb8;
+//   outline: 1px solid #add5996d;
+// }

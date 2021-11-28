@@ -1,3 +1,5 @@
+
+
 * {
   box-sizing: border-box;
 }
@@ -15,8 +17,12 @@ body {
   display: flex;
   flex-direction: row;
   min-height: 100vh;
-  background: rgb(209,196,220);
-  background: linear-gradient(0deg, rgba(209,196,220,1) 0%, rgba(250,197,215,1) 0%, rgba(162,211,233,1) 39%);
+  //background: rgb(209,196,220);
+  //background: linear-gradient(0deg, rgba(209,196,220,1) 0%, rgba(250,197,215,1) 0%, rgba(162,211,233,1) 39%);
+  background-image: url('http://localhost:3000/backgroud.jpg');
+  background-position: top left;
+  background-size: cover;
+ 
 
 }
 

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios';
 import PostItem from './PostItem';
+import './Newsfeed.scss';
 
 
 export default function Newsfeed () {
@@ -69,12 +70,23 @@ export default function Newsfeed () {
       />
     )
   })
+
+  
+
+
+  
+
+
   // console.log("NEWS", {newsfeedPosts}) //undefined props
 
   return (
-    <div>
-      {newsfeedPosts}
+    
+    <div className="main_newsfeed_container">
+
+
+      <div>
+          {newsfeedPosts}
+        </div>
     </div>
-    // <h1>Newsfeed</h1>
   );
 };

@@ -15,8 +15,9 @@ export default function TravelChat() {
     <section className="sidebar">
       <img
         className="sidebar--centered" 
-        src="./public/images/logo2.png"
+        src="/travelChat.png"
         alt="Lets Jet"
+        
       />
       <nav className="sidebar__menu">
         <ul>
@@ -36,7 +37,7 @@ export default function TravelChat() {
     <section className= "profile__status__container">
       <section className="status__container">
       <img src="https://cdn.icon-icons.com/icons2/2643/PNG/512/male_man_boy_black_tone_people_person_avatar_icon_159356.png" alt="user" />
-      Login
+      Logout
     </section>
     <section className='component__container'>
       {page === 1 && <Newsfeed/>}

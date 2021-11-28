@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import { Avatar, Button } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
 import SendIcon from '@mui/icons-material/Send';
+import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
+//import DeleteIcon from '@mui/icons-material/Delete';
 import './smallAvatar.scss';
 import './FriendsItem.scss'
 
@@ -30,24 +32,27 @@ export default function FriendsItem(props) {
     
       <div className="friend_item">
         
-        <div className="friend_photo">
+        <div className="friend_photo_friend_name">
             <Avatar alt="Remy Sharp" src={props.avatar} sx={{ width: 56, height: 56 }} />
+        <h1>{props.name}</h1>
         </div>
       
-      <div className="friend_name">
-        <h1>{props.name}</h1>
-      </div>
+      {/* <div className="friend_name">
+      </div> */}
 
         <div className="add_message">
-          <Button variant="outlined" startIcon={<DeleteIcon />} onClick={() => removeFriend(props.userId)}>
+          
+
+          <DeleteIcon  fontSize="large" style={{ color: '#ffffffdb' }}onClick={() => removeFriend(props.userId)}> AddCircleIcon </DeleteIcon>
+          <ChatBubbleIcon fontSize="large" style={{ color: '#ffffffdb' }}onClick={() => removeFriend(props.userId)}> ChatBubbleIcon </ChatBubbleIcon>
+          
+         
             
-          </Button>
-          <Button variant="outlined" endIcon={<SendIcon />}>
-            
-          </Button>
+       
           </div>
       </div>
     </section>
 
   )
 }
+
