@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;300&display=swap');
+
+
+.find_frineds_main_container{
+
+}
+
+.find_friends_nav{
+  display: flex;
+  flex-direction: column;
+  padding-top:15px;
+  background-color: #ffffff5d;
+  padding-bottom: 30px;
+
+}
+
+.find_friends_title{
+  display: flex;
+  justify-content: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.location_interest_container{
+  display: flex;
+  justify-content: space-around;
+  padding-top:25px;
+  
+}
+
+.location_container{
+  display: flex;
+  flex-direction: column;
+  // padding-top: 20px;
+  padding-left: 100px;
+  
+  span{
+    display: flex;
+    justify-content: center;
+    
+    font-family: 'Raleway', sans-serif;
+  }
+}
+
+.interest_container{
+  display: flex;
+  flex-direction: column;
+  padding-left: 30px;
+  span{
+    display: flex;
+    justify-content: center;
+    font-family: 'Raleway', sans-serif;
+    
+  }
+}
+
+.button_container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+
+}

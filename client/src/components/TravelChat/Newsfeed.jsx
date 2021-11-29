@@ -8,6 +8,48 @@ export default function Newsfeed() {
   const [newPost, setNewPost] = useState([]);
   const userID = 1;
 
+<<<<<<< HEAD
+=======
+
+  const createPost = () => {
+    
+    const posted = {
+      user_id: 1,
+      content: newPost,
+    };
+
+    console.log("POST", posted);
+
+    axios
+      .post("/api/posts", posted)
+      .then((response) => {
+        console.log("DATA", response);
+        // setNewPost(response.data);
+        
+        axios
+        .get('/api/posts')
+        .then((response) => {
+          console.log("RENDER PLEASE: ", response.data)
+          setNewPost(response.data)
+        })
+      })
+      .catch((err) => err);
+  };
+
+  const newsfeedPost = state.map((post) => {
+    //state is an ARRAY not an object
+    return (
+      <PostItem
+        key={post.id}
+        user={post[0]} //this is an object
+        content={post[1]}
+        likes={post[2]}
+        time={post[3]}
+      />
+    );
+  });
+
+>>>>>>> 303622a8cf82c17f2d51b6de0616d9f7ef44144f
   useEffect(() => {
     Promise.all([
       axios.get("./api/users"),
@@ -97,7 +139,9 @@ export default function Newsfeed() {
 
   return (
     <div className="main_newsfeed_container">
-      <section className="create_post">
+      <section 
+        className="create_post"
+        >
         <div>
           <h1></h1>
           <form>
@@ -114,7 +158,7 @@ export default function Newsfeed() {
         <button onClick={createPost}>post</button>
       </section>
 
-      <div>{newsfeedPosts}</div>
+      <div>{newsfeedPost}</div>
     </div>
   );
 }
