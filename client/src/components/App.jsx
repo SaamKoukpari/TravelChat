@@ -5,7 +5,6 @@ import Signup from './Signup';
 import TravelChat from './TravelChat/index.jsx'
 import './App.scss';
 
-
 export default function App() {
 
 return (

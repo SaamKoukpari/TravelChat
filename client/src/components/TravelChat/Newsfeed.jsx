@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react'
 import axios from 'axios';
 import PostItem from './PostItem';
 
-
 export default function Newsfeed () {
   const [state, setState] = useState([]);
   const userID = 1;
@@ -21,14 +20,12 @@ export default function Newsfeed () {
       const user1 = users.find(user => {
         return user.id === userID 
       })
-      // console.log("LUCY", user1);
 
       //filter user1 friends
       const usersFriends = user1.friend_id.map(id => {
         const friends = users.find(user => user.id === id);
         return friends;
       })
-      // console.log("LUCY'S FRIENDS:::", usersFriends) // 4 friends
       
       // //if friend has a post_id, then return the posts
       const postsByFriends = function(usersFriends) { //array of post.ids
@@ -40,7 +37,6 @@ export default function Newsfeed () {
         }
         return result.flat(Infinity); //remove inner Arrays
       }
-      // console.log("postsByFriends", postsByFriends(usersFriends))
 
       //match the postsByFriends item to the post.id, return content, likes, comments, posted_at
       const getPosts = postsByFriends(usersFriends).map(id => {
@@ -57,8 +53,6 @@ export default function Newsfeed () {
     }).catch(err => console.log(err))
   }, [])
 
-  // console.log("STATE", state) 
-
   const newsfeedPosts = state.map(post => { //state is an ARRAY not an object
     return(
       <PostItem
@@ -70,12 +64,15 @@ export default function Newsfeed () {
       />
     )
   })
-  // console.log("NEWS", {newsfeedPosts}) //undefined props
+
 
   return (
     <div>
-      {newsfeedPosts}
+      <section>
+      </section>
+      <section>
+        {newsfeedPosts}
+      </section>
     </div>
-    // <h1>Newsfeed</h1>
   );
 };

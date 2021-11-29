@@ -3,6 +3,7 @@ import { Avatar, useChatContext } from 'stream-chat-react';
 import { XButton } from './assets/XButton'
 import { XButtonBackground } from './assets/XButtonBackground';
 import './CreateChannel.css';
+import _debounce from 'lodash.debounce';
 
 const UserResult = ({ user }) => (
   <li className='messaging-create-channel__user-result'>
@@ -44,7 +45,7 @@ const CreateChannel = ({ onClose, toggleMobile }) => {
     return () => document.removeEventListener('click', clickListener);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const findUsers = async () => {
+  const findUsers = async () => { //users that were created: Lucy, Ramon, Jackie, Violet, Carrie, Melissa, Kamil, Alexis, Aaron, Toby
     if (searching) return;
     setSearching(true);
 
@@ -54,7 +55,7 @@ const CreateChannel = ({ onClose, toggleMobile }) => {
           id: { $ne: client.userID },
           $and: [
             { name: { $autocomplete: inputText } },
-            { name: { $nin: ['Daniel Smith', 'Kevin Rosen', 'Jen Alexander'] } },
+            { name: { $nin: ['Shaun Robins', 'Simba King', 'Tim Cruise', 'George OMally'] } },
           ],
         },
         { id: 1 },
@@ -76,15 +77,15 @@ const CreateChannel = ({ onClose, toggleMobile }) => {
     setSearching(false);
   };
 
-  // const findUsersDebounce = _debounce(findUsers, 100, {
-  //   trailing: true,
-  // });
+  const findUsersDebounce = _debounce(findUsers, 100, {
+    trailing: true,
+  });
 
-  // useEffect(() => {
-  //   if (inputText) {
-  //     findUsersDebounce();
-  //   }
-  // }, [inputText]); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    if (inputText) {
+      findUsersDebounce();
+    }
+  }, [inputText]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const createChannel = async () => {
     const selectedUsersIds = selectedUsers.map((u) => u.id);
