@@ -9,9 +9,9 @@ export default function FindFriends(props) {
   const [location, setLocation] = useState("");
   const [description, setDescription] = useState("");
   const [results, setResults] = useState([]);
-  const userID = 1;
-  console.log(location);
+  const userID = 1
 
+  
   const handleSubmit = () => {
     axios
       .get("/api/users")

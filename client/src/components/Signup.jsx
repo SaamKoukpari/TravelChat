@@ -20,7 +20,7 @@ export default function Signup() {
         user,
       })
       .then((response) => {
-        navigate("/newsfeed");
+        navigate("/");
       })
       .catch((error) => {
         console.log("Error: ", error);

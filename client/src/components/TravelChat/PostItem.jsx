@@ -19,8 +19,8 @@ export default function PostItem(props){
   // const muiTheme = createMuiTheme({ palette: { primary: lightBlue, secondary: pink, }, })
  
     
+  // console.log(countLike)
   
-
   return(
     <div>
     <title>HELLO WORLD</title>
