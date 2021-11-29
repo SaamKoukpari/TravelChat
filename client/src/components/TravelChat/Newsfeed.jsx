@@ -47,8 +47,18 @@ export default function Newsfeed () {
       const getPosts = postsByFriends(usersFriends).map(id => {
         const post = posts.find(x => x.id === id); 
         const findUser = Object.values(users).find(user => user.post_id.includes(id));
+
+
+        let x = post.posted_at
+        let dateTime = x.split("T");
+
+        console.log(dateTime)
+
+
+
+        console.log("POSTED AT ", x)
         // console.log("FIND USER:::", findUser);
-        return [findUser, post.content, post.likes, post.posted_at];
+        return [findUser, post.content, post.likes, dateTime[0] ];
       })
       // console.log("GETPOSTS:", getPosts);
       setState(getPosts);
