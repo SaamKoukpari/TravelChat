@@ -110,19 +110,18 @@ export default function Newsfeed() {
   return (
     <div className="main_newsfeed_container">
       <section className="create_post">
-      <Avatar alt="user_loggedin" src="./user-Lucy.jpeg" sx={{ width: 46, height: 46 }} />
-          <form>
-            <input
-              className="create_post_field"
-              type="text"
-              placeholder="write something"
-              value={newPost}
-              onChange={(e) => setNewPost(e.target.value)}
-            />
-          </form>
-        <button onClick={createPost}>post</button>
+        <Avatar className="user-post" alt="user_loggedin" src="./user-Lucy.jpeg" sx={{ width: 46, height: 46 }} />
+        <form>
+          <input
+            className="create_post_field"
+            type="text"
+            placeholder="Share something"
+            value={newPost}
+            onChange={(e) => setNewPost(e.target.value)}
+          />
+        </form>
+        <button className="post-save" onClick={createPost}>POST</button>
       </section>
-
       <section className="load_posts">{newsfeedPosts}</section>
     </div>
   );
