@@ -84,11 +84,22 @@ export default function Newsfeed() {
 
         const update = {
           post_id: currentPost.id
+          //.array.isRequired
         }
 
-        axios.put('/api/users/3', update)
-        .then(res => {
+        const updateArray = Object.keys(update)
+
+        axios.put('/api/users/3', updateArray)
+        .then(user3 => {
           console.log("PUT RES", res.data)
+
+          const posts = user3.data.post_id.map((id) => {
+      
+             const post = res.data.find((post) => post.id === id); 
+             return post;
+          });
+          console.log("LOOK: ", posts)
+          setNewPost(posts)
         })
 
       })

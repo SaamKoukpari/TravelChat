@@ -1,13 +1,16 @@
 import React from "react";
+// import axios from "axios";
+import { Link } from "react-router-dom";
 import { Avatar } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
-// import SendIcon from '@mui/icons-material/Send';
 import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
-//import DeleteIcon from '@mui/icons-material/Delete';
+// import DeleteIcon from '@mui/icons-material/Delete';
 import "./smallAvatar.scss";
 import "./FriendsItem.scss";
 
+
 export default function FriendsItem(props) {
+  
   
   return(
     <section>
@@ -17,6 +20,8 @@ export default function FriendsItem(props) {
             alt="Remy Sharp"
             src={props.avatar}
             sx={{ width: 56, height: 56 }}
+            component={Link} to='/myfriends'
+            // onClick={props.loadFriend(props.userId)}
           />
           <h1>{props.name}</h1>
         </div>

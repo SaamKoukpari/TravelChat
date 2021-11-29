@@ -65,6 +65,25 @@ export default function FriendsList() {
       .catch((err) => err);
   };
 
+  const loadFriend = () => {
+    const userID = 1;
+    
+    axios
+      .get('/api/users')
+      .then((response) => {
+        const user = response.data.find((user) => {
+          return user.id === userID;
+        });
+
+        const friends = user.friend_id.map((id) => {
+          
+          const friend = user.find((user) => user.id === id);
+          return friend;
+        });
+        setFriends(friends)
+      })
+  }
+
   // console.log("Friends OUTSIDE", friends)
   const friendListItem = friends.map((user) => {
     return (
@@ -74,6 +93,7 @@ export default function FriendsList() {
         userId={user.id}
         name={user.name}
         avatar={user.profile_picture}
+        // load={loadFriend}
       />
     );
   });
