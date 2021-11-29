@@ -1,5 +1,6 @@
 //@import "./styles/variables.scss";
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;800&display=swap');
 
 .sidebar{
   display: flex;
@@ -29,7 +30,7 @@
 
   a{
     color: inherit; /* blue colors for links too */
-  text-decoration: inherit; /* no underline */
+    text-decoration: inherit; /* no underline */
   }
 
   hr{
@@ -63,7 +64,7 @@
     padding: 10px 10px;
     border-radius: 12px;
     font-family: 'Raleway', sans-serif;
-    font-size: 18px;
+    font-size: 28px;
     font-weight: bold;
     background-color: Transparent;
     background-repeat:no-repeat;
@@ -71,13 +72,13 @@
     cursor:pointer;
     overflow: hidden;   
   }
- 
- }
+}
 
 .sidebar:before{
   content: "";
   position: absolute;
-  background: inherit;
+  // background: inherit;
+  background-color: #eafeff;
   z-index: -1;
   top: 0;
   left: 0;
@@ -90,11 +91,10 @@
 
 .sidebar__menu{
   position: relative;
-  left: -8px;
-  top: 72px;
-
+  // left: -8px;
+  // top: 72px;
+  text-align: right;
 }
-
 
 .profile__status__container{
   flex-direction: column;
