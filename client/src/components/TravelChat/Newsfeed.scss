@@ -18,3 +18,16 @@
 //   background-color: #ffffffb8;
 //   outline: 1px solid #add5996d;
 // }
+
+.create_post{
+  display: flex;
+  flex-direction: column;
+  width: 94%;
+  padding-left: 2%;
+  padding-right: 2%;
+  background-color: #ffffff5d;
+  border-radius: 25px;
+  padding: 20px;
+  height: 150px;
+  margin: 15px;
+}
