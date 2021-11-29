@@ -82,13 +82,6 @@ export default function Newsfeed () {
     )
   })
 
-  
-
-
-  
-
-
-  // console.log("NEWS", {newsfeedPosts}) //undefined props
 
   return (
     
