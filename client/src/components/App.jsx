@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Login from './Login';
 import Signup from './Signup';
@@ -9,9 +9,6 @@ export default function App() {
 
 return (
   <main>
-    
-     
-
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<TravelChat/>} />
@@ -19,8 +16,6 @@ return (
             <Route path="/login" element={<Login/>} />
           </Routes>
         </BrowserRouter>
-
-    
   </main>    
   )
 };

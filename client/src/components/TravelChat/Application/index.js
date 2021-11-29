@@ -13,6 +13,7 @@ import MessagingChannelPreview from "./MessagingChannelPreview";
 import MessagingChannelHeader from "./MessagingChannelHeader";
 import MessagingChannelList from "./MessagingChannelList";
 import CreateChannel from "./CreateChannel";
+import './chat.scss'
 
 const stream = require("getstream");
 const secret = process.env.REACT_APP_SECRET_KEY;
@@ -85,6 +86,7 @@ export default function Application() {
   const sort = { last_message_at: -1 };
 
   return (
+    <div className="chatcontainer">
     <Chat client={chatClient} theme="messaging light">
       <ChannelList 
         sort={sort} 
@@ -105,5 +107,6 @@ export default function Application() {
         </Window>
       </Channel>
     </Chat>
+    </div>
   );
 }

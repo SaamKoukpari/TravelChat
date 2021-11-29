@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
-import axios from 'axios';
 
 
 export default function MyFriendItem (props) {
-
   const [buttonText, setButtonText] = useState("Add Friend");
 
   const changeText = (text) => setButtonText(text);
+
 
   return (
     <div>
@@ -15,8 +14,9 @@ export default function MyFriendItem (props) {
       <button className='add__friend'>Message</button>
     </div>
   )
+}
 
-  // const userId = 1;
+// const userId = 1;
   // const [addfriend, setAddFriend] = useState([]) 
   // const [friend, setFriend] = useState("notFriends");
   // const friendsButton = () => setFriend((friend === "notFriend") ? "Add Friend" : "Friends ✅");
@@ -49,4 +49,3 @@ export default function MyFriendItem (props) {
 
   //   </div>
   // )
-}

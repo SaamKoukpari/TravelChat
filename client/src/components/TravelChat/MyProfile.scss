@@ -1,62 +1,59 @@
-.main_container{
-display: flex;
-flex-direction: row;
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
 
+img{
+  max-width:200px;
 }
 
-
-
-.profile_photo{
-  position: relative;
-  left: 164px;
-  top: 148px;
-
-  img {
-    width: 28%;
-  }  
+.main_profile_container{
+  display: flex;
+  flex-direction: row;
+  padding-left: 8%;
+  padding-top: 13%;
 }
 
-.profile_information{
-  position: relative;
-  left: -155px;
-  top: 150px;
-  
+.profile_about{
+  display:flex;
+  flex-direction: column;
+  padding-top: 5%;
 }
 
-.profile_discription{
-  position: relative;
-  left: -76px;
-  top: -64px;
+.name{
+  flex-direction: row;
+  display: flex;
+  justify-content: center; 
+  padding-bottom: 30px; 
+  font-weight: bold;
+  font-family: 'Raleway', sans-serif;
+  font-size: 30px;
 }
 
-.age{
-  position: relative;
-  will-change: top, left;
-  left: -91px;
-  top: 54px;
+.static_data{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 
   h1{
-    position: relative;
-    left: -3px;
-    top: 1px;
+    padding: 0px 25px;
+    margin:0;
   }
+}
+.dynamic_data{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
 
-  h4{
-
+  
+  justify-content: center;
+  h1{
+    padding: 0px 25px
   }
 }
 
-.from{
-position: relative;
-will-change: top, left;
-left: 5px;
-top: -24px;
-}
-
-.where_i_am{
-
-  position: relative;
-  left: 143px;
-  top: -103px;
-
+.discrip{
+  flex-direction: row;
+  display: flex;
+  justify-content: center; 
+  padding-bottom: 30px; 
+  padding-left: 5%;
+  // width:20%;
 }

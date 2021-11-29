@@ -8,8 +8,8 @@ export default function FindFriends(props) {
   const [description, setDescription] = useState("");
   const [results, setResults] = useState([]);
   const userID = 1
-  console.log(location)
 
+  
   const handleSubmit = () => {
     axios.get('/api/users')
     .then(response => {

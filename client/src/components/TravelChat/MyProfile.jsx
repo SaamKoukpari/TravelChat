@@ -36,58 +36,38 @@ export default function MyProfile (props) {
     }, [])
 
 
-   // const bday = user.birthday
-    
- 
-
-    //let usersDayOfBirth = usersAge(bday);
-
-    //usersAge(bday)
-    // console.log("USER", user.birthday)
   return (
-    <div className="main_container">
-     
+    <section className="main_profile_container">
+      
       <section className="profile_photo">
         <img src={user.profile_picture}></img>
       </section>
 
-      <section className="profile_information">
+      <section className="profile_about">
+        <span className="name">
+          {user.name}
+        </span>
+                
+        <span className="static_data">
+          <h1>AGE</h1>
+          <h1>FROM</h1>
+          <h1>HERE I AM</h1>
+        </span>
+        <span className="dynamic_data">
+          <h1>{bday}</h1>
+          <h1>{user.hometown}</h1>
+          <h1>{user.location}</h1>
+        </span>
+        <span className="discrip">
+          {user.description}
+        </span>
        
-        <div className="users_name">{user.name}</div>
-       
-        <div className="users_about">
-          <section className="age">
-            <h1>AGE</h1>
-            <h4>{bday}</h4>
-          </section>
-          <section className="from">
-            <h1>FROM</h1>
-            <h4>{user.hometown}</h4>
-          </section>
-          <section className="where_i_am">
-            <h1>HERE I AM</h1>
-            <h4>{user.location}</h4>
-          </section>
-        </div>
 
-
-        <div className="profile_discription">{user.description}</div>
       </section>
 
 
 
-
-      {/* <h1>{user.name}</h1> 
-      <section className="about__user">
-        <div className="discription"></div>
-        <div className="discription"></div>
-        <div className="discription"></div>
-      </section>
-      <h1><button onClick={()=>(setPage(1))}>Edit Profile</button></h1>
-      <h4>{user.location}</h4>
-      <section>
-      {page === 1 && <ProfileEditForm/>}
-      </section> */}
-    </div>
+      
+    </section>
   );
 };
