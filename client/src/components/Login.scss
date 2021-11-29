@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+body{
+  background-image: linear-gradient(to bottom right, #b4e6e9, #bba2ed);
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+
+}
+.login__container{
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  align-items: center;
+}
+
+.login_circle{
+
+
+}
+
+main{
+  display: flex;
+  justify-content: center;
+}

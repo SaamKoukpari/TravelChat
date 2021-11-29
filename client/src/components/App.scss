@@ -2,6 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;800&display=swap');
 
+
+
+
 .sidebar{
   display: flex;
   flex-direction: column;
@@ -91,8 +94,8 @@
 
 .sidebar__menu{
   position: relative;
-  // left: -8px;
-  // top: 72px;
+  left: -8px;
+  top: 72px;
   text-align: right;
 }
 
@@ -110,10 +113,16 @@
   width: 90%;
   margin-top: 1rem;
  
-  img {
-    width: 5%;
-    height: auto;
+  span{
+    padding-left: 10px;
   }
+
+  a{
+    text-decoration: none;
+  }
+  // img {
+  //   padding-right: 5px;
+  // }
 
 }
 

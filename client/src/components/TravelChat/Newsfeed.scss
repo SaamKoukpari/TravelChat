@@ -1,3 +1,5 @@
+@import "styles/variables.scss";
+
 .main_newsfeed_container{
   overflow:scroll;
   overflow-x:hidden;
@@ -25,7 +27,7 @@
   width: 94%;
   padding-left: 2%;
   padding-right: 2%;
-  background-color: #ffffff5d;
+  background-color: $top-nav-color; 
   border-radius: 25px;
   padding: 20px;
   height: 150px;
