@@ -15,7 +15,7 @@ export default function TravelChat() {
     <section className="sidebar">
       <img
         className="sidebar--centered" 
-        src="/chatLogo2.png"
+        src="/chat.png"
         alt="Travel Chat logo"
       />
       <nav className="sidebar__menu">
@@ -35,7 +35,7 @@ export default function TravelChat() {
     </section>
     <section className= "profile__status__container">
       <section className="status__container">
-      <Avatar alt="user_loggedin" src="./user-Lucy.jpeg" sx={{ width: 46, height: 46 }} />
+      <Avatar alt="user_loggedin" src="./user-Lucy.jpeg" sx={{ width: 30, height: 30 }} />
       <span className="logout_status"><a href="/login">Logout</a> </span>
     </section>
     <section className='component__container'>
