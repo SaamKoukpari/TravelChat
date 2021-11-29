@@ -20,15 +20,15 @@ export default function TravelChat() {
       />
       <nav className="sidebar__menu">
         <ul>
-          <h1><button onClick={()=>(setPage(1))}>Newsfeed</button></h1>
+          <h1><button className="nav-button" onClick={()=>(setPage(1))}>Newsfeed</button></h1>
           {/* <hr className="sidebar__separator sidebar--centered" /> */}
-          <h1><button onClick={()=>(setPage(2))}>MyProfile</button></h1>
+          <h1><button className="nav-button" onClick={()=>(setPage(2))}>My Profile</button></h1>
           {/* <hr className="sidebar__separator sidebar--centered" /> */}
-          <h1><button onClick={()=>(setPage(3))}>Friends List</button></h1>
+          <h1><button className="nav-button" onClick={()=>(setPage(3))}>Friends List</button></h1>
           {/* <hr className="sidebar__separator sidebar--centered" /> */}
-          <h1><button onClick={()=>(setPage(4))}>Chat</button></h1>
+          <h1><button className="nav-button" onClick={()=>(setPage(4))}>Chat</button></h1>
           {/* <hr className="sidebar__separator sidebar--centered" /> */}
-          <h1><button onClick={()=>(setPage(5))}>Find Friends</button></h1>
+          <h1><button className="nav-button" onClick={()=>(setPage(5))}>Find Friends</button></h1>
           {/* <hr className="sidebar__separator sidebar--centered" /> */}
         </ul>
       </nav>
