@@ -8,48 +8,6 @@ export default function Newsfeed() {
   const [newPost, setNewPost] = useState([]);
   const userID = 1;
 
-<<<<<<< HEAD
-=======
-
-  const createPost = () => {
-    
-    const posted = {
-      user_id: 1,
-      content: newPost,
-    };
-
-    console.log("POST", posted);
-
-    axios
-      .post("/api/posts", posted)
-      .then((response) => {
-        console.log("DATA", response);
-        // setNewPost(response.data);
-        
-        axios
-        .get('/api/posts')
-        .then((response) => {
-          console.log("RENDER PLEASE: ", response.data)
-          setNewPost(response.data)
-        })
-      })
-      .catch((err) => err);
-  };
-
-  const newsfeedPost = state.map((post) => {
-    //state is an ARRAY not an object
-    return (
-      <PostItem
-        key={post.id}
-        user={post[0]} //this is an object
-        content={post[1]}
-        likes={post[2]}
-        time={post[3]}
-      />
-    );
-  });
-
->>>>>>> 303622a8cf82c17f2d51b6de0616d9f7ef44144f
   useEffect(() => {
     Promise.all([
       axios.get("./api/users"),
@@ -109,33 +67,33 @@ export default function Newsfeed() {
     );
   });
   
-  const createPost = (e) => {
-    e.preventDefault();
+  // const createPost = (e) => {
+  //   e.preventDefault();
 
-    const posted = {
-      user_id: 3,
-      content: newPost,
-    };
-    console.log("POST", posted);
+  //   const posted = {
+  //     user_id: 3,
+  //     content: newPost,
+  //   };
+  //   console.log("POST", posted);
 
-    axios.post("/api/posts", posted)
-      .then(res => {
-        const currentPost = res.data;
+  //   axios.post("/api/posts", posted)
+  //     .then(res => {
+  //       const currentPost = res.data;
 
-        const update = {
-          post_id: 3
-        }
+  //       const update = {
+  //         post_id: 3
+  //       }
 
-        axios.put('/api/users/3', update)
-        .then(res => {
+  //       axios.put('/api/users/3', update)
+  //       .then(res => {
           
-        })
+  //       })
 
-        //make the axios put!? to update the user's post_id array
+  //       //make the axios put!? to update the user's post_id array
 
-      })
-      .catch(err => err)
-  }
+  //     })
+  //     .catch(err => err)
+  // }
 
   return (
     <div className="main_newsfeed_container">

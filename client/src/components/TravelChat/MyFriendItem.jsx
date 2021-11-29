@@ -1,17 +1,10 @@
-<<<<<<< HEAD
-import React, { useState } from 'react'
-
-
-export default function MyFriendItem (props) {
-=======
 import React, { useState } from "react";
-import { Avatar, Button } from "@mui/material";
+import { Avatar } from "@mui/material";
 import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import "./MyFriendItem.scss";
 
 export default function MyFriendItem(props) {
->>>>>>> 303622a8cf82c17f2d51b6de0616d9f7ef44144f
   const [buttonText, setButtonText] = useState("Add Friend");
 
   const changeText = (text) => setButtonText(text);
