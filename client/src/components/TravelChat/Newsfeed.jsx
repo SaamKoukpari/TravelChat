@@ -9,47 +9,43 @@ export default function Newsfeed() {
   const userID = 1;
 
 
-  const createPost = (e) => {
-    e.preventDefault()
+  const createPost = () => {
+    
     const posted = {
       user_id: 1,
       content: newPost,
     };
+
     console.log("POST", posted);
 
     axios
       .post("/api/posts", posted)
       .then((response) => {
         console.log("DATA", response);
-
-        setNewPost(response.data);
-
-        // return response.data
-        // const postArray = user.post_id;
-        // console.log("USER_POST_ARRAY: ", post_id);
-
-        // newPostArray.push(postArray);
-
-        // const patchObj = {
-        //   user: {
-        //     post_id: newPostsArray,
-        //   },
-        // };
-
-        // axios
-        //   .put(`/api/users/${userID}`, patchObj)
-        //   .then((user1) => {
-        //     const posts = user1.data.post_id.map((id) => {
-        //       const newPost = response.data.find((user) => user.id === id);
-        //       return newPost;
-        //     });
-        //     setPost(posts);
-        //   })
-        //   .catch((err) => err);
+        // setNewPost(response.data);
+        
+        axios
+        .get('/api/posts')
+        .then((response) => {
+          console.log("RENDER PLEASE: ", response.data)
+          setNewPost(response.data)
+        })
       })
       .catch((err) => err);
-    // setNewPost(prev => [...prev, response.data]);
   };
+
+  const newsfeedPost = state.map((post) => {
+    //state is an ARRAY not an object
+    return (
+      <PostItem
+        key={post.id}
+        user={post[0]} //this is an object
+        content={post[1]}
+        likes={post[2]}
+        time={post[3]}
+      />
+    );
+  });
 
   useEffect(() => {
     Promise.all([
@@ -98,22 +94,24 @@ export default function Newsfeed() {
       .catch((err) => err);
   }, []);
 
-  const newsfeedPosts = state.map((post) => {
-    //state is an ARRAY not an object
-    return (
-      <PostItem
-        key={post.id}
-        user={post[0]} //this is an object
-        content={post[1]}
-        likes={post[2]}
-        time={post[3]}
-      />
-    );
-  });
+  // const newsfeedPosts = state.map((post) => {
+  //   //state is an ARRAY not an object
+  //   return (
+  //     <PostItem
+  //       key={post.id}
+  //       user={post[0]} //this is an object
+  //       content={post[1]}
+  //       likes={post[2]}
+  //       time={post[3]}
+  //     />
+  //   );
+  // });
 
   return (
     <div className="main_newsfeed_container">
-      <section className="create_post">
+      <section 
+        className="create_post"
+        >
         <div>
           <h1></h1>
           <form>
@@ -130,7 +128,7 @@ export default function Newsfeed() {
         <button onClick={createPost}>post</button>
       </section>
 
-      <div>{newsfeedPosts}</div>
+      <div>{newsfeedPost}</div>
     </div>
   );
 }
