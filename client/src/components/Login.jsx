@@ -49,8 +49,55 @@ export default function Login() {
   // }
 
   return(
-    <div className="login__container">
+    <div className="full_page">
+
+    <div className="login_container">
+
+     
+
       <h1>Login</h1>
+
+
+
+
+      <form>
+
+            Email:
+            <input
+              className='login__create-input'
+              name='email'
+              type='text'
+              placeholder='Enter email'
+              value={email}
+              onChange={(e) => setEmail(e.target.value)} 
+            />
+            
+            Password:
+            <input
+              className='login__create-input'
+              name='password'
+              type='password'
+              placeholder='Create password'
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </form>
+          <button onClick={handleSubmit}>Submit</button>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+      {/* <div className="loging_padded_box">
+    <div className="login__container">
+         <h1>Login</h1>
         <section className='login_circle'>
           <form>
 
@@ -78,5 +125,7 @@ export default function Login() {
         <button onClick={handleSubmit}>Submit</button>
         </section>
     </div>
+    </div> */}
+  </div>
   )
 }
