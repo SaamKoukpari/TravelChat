@@ -1,6 +1,8 @@
 //@import "./styles/variables.scss";
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;800&display=swap');
+
+
+
 
 .sidebar{
   display: flex;
@@ -22,16 +24,16 @@
     align-self: center;
   }
 
-  h1, a{
-    text-decoration: none;
-    font-family: 'Raleway', sans-serif;
-    margin-top: 20px;
-  }
+  // h1, a{
+  //   text-decoration: none;
+  //   font-family: 'Raleway', sans-serif;
+  //   margin-top: 20px;
+  // }
 
-  a{
-    color: inherit; /* blue colors for links too */
-    text-decoration: inherit; /* no underline */
-  }
+  // a{
+  //   color: inherit; /* blue colors for links too */
+  //   text-decoration: inherit; /* no underline */
+  // }
 
   hr{
     position: relative;
@@ -45,7 +47,7 @@
     width: 80%;
     height: auto;
     padding: 32px 0;
-    top: 44px;
+    top: 70px;
     position: relative;
   }
 
@@ -62,7 +64,7 @@
 
   button{
     padding: 10px 10px;
-    border-radius: 12px;
+    border-radius: 0px;
     font-family: 'Raleway', sans-serif;
     font-size: 28px;
     font-weight: bold;
@@ -71,8 +73,37 @@
     border: none;
     cursor:pointer;
     overflow: hidden;   
+    position: relative;
+  }
+
+  button:hover{
+    font-family: 'Raleway';
+    font-weight: bold;
+    font-size: 35px;
+    display: inline-block;
+    position: relative;
+  }
+
+  .nav-button:after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 5px;
+    bottom: 0;
+    left: 0;
+    background-color: #353d4f;
+    transform-origin: bottom left;
+    transition: transform 0.25s ease-out;
+  }
+
+  .nav-button:hover:after{
+    transform: scaleX(1); 
+    transform-origin: bottom left;
   }
 }
+
+
 
 .sidebar:before{
   content: "";
@@ -91,8 +122,8 @@
 
 .sidebar__menu{
   position: relative;
-  // left: -8px;
-  // top: 72px;
+  left: -8px;
+  top: 150px;
   text-align: right;
 }
 
@@ -110,16 +141,21 @@
   width: 90%;
   margin-top: 1rem;
  
-  img {
-    width: 5%;
-    height: auto;
+  span{
+    padding-left: 10px;
   }
+
+  a{
+    text-decoration: none;
+  }
+  // img {
+  //   padding-right: 5px;
+  // }
 
 }
 
 
 .component__container {
-  
   flex-direction: column;
   justify-content: flex-start;
   // margin-top: 3rem;
@@ -128,19 +164,14 @@
   margin-top: 35px;
   padding: 0;
   width: 75%;
-  height: 38rem;
+  height: 76%;
   //box-shadow: 0 0 1rem 0 rgba(255,255,255,0.3); 
   border-radius: 5px;
   position: relative;
   z-index: 1;
   background: inherit;
-
-
-  
   overflow:hidden;
   overflow-x:hidden;
-
-
 }
 
 .component__container:before {

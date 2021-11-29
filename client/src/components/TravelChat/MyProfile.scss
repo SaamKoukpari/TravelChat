@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
 
+@import "styles/variables.scss";
 img{
   max-width:200px;
   border-radius: 25px;
@@ -16,7 +16,7 @@ img{
 
 .inner_profile_container{
    
-   background-color: #ffffff5d;
+   background-color: $top-nav-color;
    display:flex;
   // flex-direction: row;
   border-radius: 25px
@@ -35,7 +35,7 @@ img{
   justify-content: center; 
   padding-bottom: 30px; 
   font-weight: bold;
-  font-family: 'Raleway', sans-serif;
+  font-family: $main-font;
   font-size: 30px;
 }
 

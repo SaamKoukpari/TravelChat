@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import PostItem from "./PostItem";
 import "./Newsfeed.scss";
+import { Avatar } from "@mui/material";
 
 export default function Newsfeed() {
   const [state, setState] = useState([]);
@@ -108,11 +109,8 @@ export default function Newsfeed() {
 
   return (
     <div className="main_newsfeed_container">
-      <section 
-        className="create_post"
-        >
-        <div>
-          <h1></h1>
+      <section className="create_post">
+      <Avatar alt="user_loggedin" src="./user-Lucy.jpeg" sx={{ width: 46, height: 46 }} />
           <form>
             <input
               className="create_post_field"
@@ -122,12 +120,10 @@ export default function Newsfeed() {
               onChange={(e) => setNewPost(e.target.value)}
             />
           </form>
-        </div>
-
         <button onClick={createPost}>post</button>
       </section>
 
-      <div>{newsfeedPosts}</div>
+      <section className="load_posts">{newsfeedPosts}</section>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
-
+import './Login.scss';
 
 export default function Login() { 
   const navigate = useNavigate()
@@ -49,7 +49,7 @@ export default function Login() {
   // }
 
   return(
-    <div>
+    <div className="login__container">
       <h1>Login</h1>
         <section className='login_circle'>
           <form>

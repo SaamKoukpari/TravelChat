@@ -1,10 +1,10 @@
+@import "styles/variables.scss";
+
 .main_newsfeed_container{
   overflow:scroll;
   overflow-x:hidden;
   height: 100%;
-
 }
-
 
 .main_newsfeed_container::-webkit-scrollbar {
   // width: 1em;
@@ -19,15 +19,29 @@
 //   outline: 1px solid #add5996d;
 // }
 
-.create_post{
+.load_posts{
   display: flex;
   flex-direction: column;
-  width: 94%;
-  padding-left: 2%;
+  width: auto;
+  padding-left: 4%;
   padding-right: 2%;
   background-color: #ffffff5d;
-  border-radius: 25px;
-  padding: 20px;
-  height: 150px;
-  margin: 15px;
+  // border-radius: 25px;
+  // padding: 20px;
+  // height: 150px;
+  // margin: 15px;
+  // margin-top: 20px;
+}
+
+.create_posts{
+  display: flex;
+  flex-direction: column;
+//   width: 94%;
+//   padding-left: 2%;
+//   padding-right: 2%;
+//   background-color: #ffffff5d;
+//   border-radius: 25px;
+//   padding: 20px;
+//   height: 150px;
+//   margin: 15px;
 }
