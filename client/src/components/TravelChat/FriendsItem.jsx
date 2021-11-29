@@ -32,9 +32,5 @@ export default function FriendsItem(props) {
         </div>
       </div>
     </section>
-<<<<<<< HEAD
   )
-=======
-  );
->>>>>>> 303622a8cf82c17f2d51b6de0616d9f7ef44144f
 }

@@ -54,6 +54,7 @@ export default function Newsfeed() {
       .catch((err) => err);
   }, []);
 
+  
   const newsfeedPosts = state.map((post) => {
     //state is an ARRAY not an object
     return (
@@ -67,33 +68,32 @@ export default function Newsfeed() {
     );
   });
   
-  // const createPost = (e) => {
-  //   e.preventDefault();
+  const createPost = (e) => {
+    e.preventDefault();
 
-  //   const posted = {
-  //     user_id: 3,
-  //     content: newPost,
-  //   };
-  //   console.log("POST", posted);
+    const posted = {
+      user_id: 3,
+      content: newPost,
+    };
+    console.log("POST", posted);
 
-  //   axios.post("/api/posts", posted)
-  //     .then(res => {
-  //       const currentPost = res.data;
+    axios.post("/api/posts", posted)
+      .then(res => {
+        const currentPost = res.data;
+        console.log("currentPost", currentPost)
 
-  //       const update = {
-  //         post_id: 3
-  //       }
+        const update = {
+          post_id: currentPost.id
+        }
 
-  //       axios.put('/api/users/3', update)
-  //       .then(res => {
-          
-  //       })
+        axios.put('/api/users/3', update)
+        .then(res => {
+          console.log("PUT RES", res.data)
+        })
 
-  //       //make the axios put!? to update the user's post_id array
-
-  //     })
-  //     .catch(err => err)
-  // }
+      })
+      .catch(err => err)
+  }
 
   return (
     <div className="main_newsfeed_container">
@@ -116,7 +116,7 @@ export default function Newsfeed() {
         <button onClick={createPost}>post</button>
       </section>
 
-      <div>{newsfeedPost}</div>
+      <div>{newsfeedPosts}</div>
     </div>
   );
 }
