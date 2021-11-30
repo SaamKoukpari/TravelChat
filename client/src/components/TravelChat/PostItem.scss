@@ -8,16 +8,55 @@
   padding-right: 2%;
   background-color: $top-nav-color;
   border-radius: 25px;
-  padding: 20px;
+  // padding: 20px;
   height: 150px;
   margin: 15px;
 }
 
-.likes_and_time{
+.news-item-header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 5px;
+  padding: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: left
+}
+
+.news-item-body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  margin-left: 10px;
+  margin: 5px;
+  padding: 3px;
+}
+
+
+.news-item-footer{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding-top: 12px;
+  position: relative;
+  margin: 5px;
+  padding: 5px;
+  width: auto;
   height: 30px;
+  font-size: 10pt;
+}
+
+.heart-count{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 40px;
+}
+
+.active-like{
+  color: rgb(249, 77, 77);
 }
