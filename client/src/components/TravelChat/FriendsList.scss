@@ -3,6 +3,7 @@
 .div{
   display: flex;
   flex-direction: column;
+  background-color: #ffffff5d;
 }
 
 .friend_nav{
@@ -12,6 +13,5 @@
   font-size: x-large;
   font-weight: bold;
   font-family: $main-font;
-  background-color: $top-nav-color;
-  // background-color: #ffffff5d;
+  background-color: #ffffff5d;
 }

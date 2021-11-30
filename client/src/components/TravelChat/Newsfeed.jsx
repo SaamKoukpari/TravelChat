@@ -34,8 +34,6 @@ export default function Newsfeed() {
               };
             })
             .sort((a, b) => {
-              console.log("ONE:", a);
-              console.log("TWO:", new Date(b.created_at));
               return (
                 new Date(b.created_at).getTime() -
                 new Date(a.created_at).getTime()
@@ -67,7 +65,7 @@ export default function Newsfeed() {
     })
     .filter(Boolean);
 
-  console.log("STATE>>>", state);
+  // console.log("STATE>>>", state);
 
   const createPost = (e) => {
     e.preventDefault();

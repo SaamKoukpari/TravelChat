@@ -14,7 +14,6 @@ export default function FriendsList() {
         const users = response.data; //all the users
         const user = response.data.find((user) => {
           //filtered to userID=1
-          console.log("LOOK:", user.id);
           return user.id === userID;
         });
 
@@ -31,7 +30,7 @@ export default function FriendsList() {
 
   const removeFriend = (friend_id) => {
     const userID = 1;
-    console.log("FRIEND ID:", friend_id);
+    // console.log("FRIEND ID:", friend_id);
 
     axios
       .get("/api/users")
@@ -51,40 +50,39 @@ export default function FriendsList() {
           },
         };
 
-      axios.put(`/api/users/${userID}`, patchObj)
-        .then((user1) => {
-          
-          const friends = user1.data.friend_id.map((id) => {
-      
-            const friend = response.data.find((user) => user.id === id); 
-            return friend;
-          });
-          setFriends(friends)
-        })
-  })
+        axios.put(`/api/users/${userID}`, patchObj)
+          .then((user1) => {
+            const friends = user1.data.friend_id.map((id) => {
+              const friend = response.data.find((user) => user.id === id); 
+              return friend;
+            });
+            setFriends(friends)
+          })
+      })
       .catch((err) => err);
   };
 
-  const loadFriend = () => {
-    const userID = 1;
+  // const loadFriend = () => {
+  //   const userID = 1;
     
-    axios
-      .get('/api/users')
-      .then((response) => {
-        const user = response.data.find((user) => {
-          return user.id === userID;
-        });
+  //   axios
+  //     .get('/api/users')
+  //     .then((response) => {
+  //       const user = response.data.find((user) => {
+  //         return user.id === userID;
+  //       });
 
-        const friends = user.friend_id.map((id) => {
+  //       const friends = user.friend_id.map((id) => {
           
-          const friend = user.find((user) => user.id === id);
-          return friend;
-        });
-        setFriends(friends)
-      })
-  }
+  //       const friend = user.find((user) => user.id === id);
+  //         return friend;
+  //       });
+  //       setFriends(friends)
+  //     })
+  // }
 
   // console.log("Friends OUTSIDE", friends)
+
   const friendListItem = friends.map((user) => {
     return (
       <FriendsItem
