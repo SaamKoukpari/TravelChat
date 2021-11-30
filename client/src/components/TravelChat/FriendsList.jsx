@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import FriendsItem from "./FriendsItem";
+import FriendsItem from "./FriendListItem";
 import "./FriendsList.scss";
 
 export default function FriendsList() {

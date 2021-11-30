@@ -42,10 +42,9 @@ export default function Newsfeed() {
               );
             });
         };
-
+        
         setState(getParsedPosts());
       })
-
       .catch((err) => err);
   };
 

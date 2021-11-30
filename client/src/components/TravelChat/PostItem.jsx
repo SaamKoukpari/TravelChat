@@ -1,6 +1,5 @@
 import React, {  useState } from "react";
 import './PostItem.scss'
-// import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import TimeAgo from 'timeago-react';
 import Icon from '@mui/material/Icon';
 import { Avatar } from "@mui/material";
@@ -15,9 +14,7 @@ export default function PostItem({post={}}){
     setCountLike(countLike + 1);
   };
   
-
   return(
-    <div>
       <section className="news_item">
         <div className="news-item-header">
           <table>
@@ -37,8 +34,6 @@ export default function PostItem({post={}}){
           </div>
         <TimeAgo datetime={post.created_at}/>
         </div>
-
       </section>
-    </div>
   )
 }

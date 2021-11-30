@@ -1,66 +1,85 @@
 // @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
-
 @import "styles/variables.scss";
 
-.find_frineds_main_container{
-
-}
+// .find_frineds_main_container{
+// }
 
 .find_friends_nav{
   display: flex;
   flex-direction: column;
   padding-top:15px;
   background-color: $top-nav-color;
-  padding-bottom: 30px;
-
+  padding-bottom: 20px;
 }
 
 .find_friends_title{
   display: flex;
   justify-content: center;
   font-family: 'Montserrat', sans-serif;
-  font-size: x-large;
+  font-size: 30px;
   font-weight: bold;
+  margin: 5px;
+  padding: 5px;
 }
 
 .location_interest_container{
-  display: flex;
-  justify-content: space-around;
-  padding-top:25px;
-  
-}
+  // display: flex;
+  // justify-content: space-around;
+  padding-top: 15px;
+  display: inline-flex;
+  margin-left: 2em;
+  font-weight: bold;
 
-.location_container{
-  display: flex;
-  flex-direction: column;
-  // padding-top: 20px;
-  padding-left: 100px;
-  
   span{
-    display: flex;
-    justify-content: center;
-    
-    font-family: $main-font;
+    margin-left: 40px;
+  }
+
+  .findFriends__create-input{
+    margin: 10px;
+    width: 200px;
   }
 }
 
-.interest_container{
-  display: flex;
-  flex-direction: column;
-  padding-left: 30px;
-  span{
-    display: flex;
-    justify-content: center;
-    font-family: $main-font;
-    
-  }
-}
 
 .button_container{
   display: flex;
-  flex-direction: row;
-  justify-content: center;
   width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
 
+.search-friends{
+  font-size: 13px;
+  color: black;
+  font-weight: bold;
+  background: transparent;
+  border: none;
+  border-radius: 0px;
+  margin-left: 5px;
+}
+
+.search-friends:hover{
+  display: inline-block;
+  position: relative;
+}
+
+.search-friends:after{
+  content: '';
+  position: absolute;
+  margin-left: 10%;
+  width: 79%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  transform-origin: bottom left;
+  transition: transform 0.25s ease-out;
+}
+
+.search-friends:hover:after{
+  transform: scaleX(1); 
+  transform-origin: bottom left;
 }

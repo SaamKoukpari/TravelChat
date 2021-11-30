@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Avatar } from "@mui/material";
-import "./FriendsItem.scss";
+import "./FriendListItem.scss";
 import Icon from '@mui/material/Icon';
 
 export default function FriendsItem(props) {
