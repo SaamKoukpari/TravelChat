@@ -1,32 +1,32 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from 'react-router-dom';
-import './Login.scss';
+import { useNavigate } from "react-router-dom";
+import "./Login.scss";
 
-export default function Login() { 
-  const navigate = useNavigate()
+export default function Login() {
+  const navigate = useNavigate();
 
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = () => {
     const user = {
       email: email,
-      password: password
-    }
+      password: password,
+    };
 
     axios
-      .get('/api/users', {
-        user
+      .get("/api/users", {
+        user,
       })
-      .then(response => {
-        setEmail(response.data)
-        navigate('/')
+      .then((response) => {
+        setEmail(response.data);
+        navigate("/");
       })
       .catch((error) => {
         console.log("Error: ", error);
       });
-  }
+  };
 
   // function validate() {
   //   if (name === "") {
@@ -43,57 +43,47 @@ export default function Login() {
   //     setError("Password cannot be blank");
   //     return;
   //   }
-    
+
   //   setError("");
   //   // props.onSave(name, email, password);
   // }
 
-  return(
+  return (
     <div className="full_page">
+      
+      <div>
+        <div className="logo_image_container">
+          <img  src="/loginChat.png" alt="Travel Chat logo" />
+        </div>
+      </div>
 
-    <div className="login_container">
+      <div className="login_container">
+        <h1>Login</h1>
 
-     
-
-      <h1>Login</h1>
-
-
-
-
-      <form>
-
-            Email:
-            <input
-              className='login__create-input'
-              name='email'
-              type='text'
-              placeholder='Enter email'
-              value={email}
-              onChange={(e) => setEmail(e.target.value)} 
-            />
-            
-            Password:
-            <input
-              className='login__create-input'
-              name='password'
-              type='password'
-              placeholder='Create password'
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </form>
-          <button onClick={handleSubmit}>Submit</button>
-    </div>
-
-
-
-
-
-
-
-
-
-
+        <form>
+          Email:
+          <input
+            className="login__create-input"
+            name="email"
+            type="text"
+            placeholder="Enter email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          Password:
+          <input
+            className="login__create-input"
+            name="password"
+            type="password"
+            placeholder="Enter password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </form>
+        <button className="login_button" onClick={handleSubmit}>
+          Submit
+        </button>
+      </div>
 
       {/* <div className="loging_padded_box">
     <div className="login__container">
@@ -126,6 +116,6 @@ export default function Login() {
         </section>
     </div>
     </div> */}
-  </div>
-  )
+    </div>
+  );
 }

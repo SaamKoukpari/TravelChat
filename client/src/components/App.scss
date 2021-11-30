@@ -1,7 +1,7 @@
 // @import "./styles/variables.scss";
 // @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
-
+@import "./TravelChat/styles/variables.scss";
 
 .sidebar{
   display: flex;
@@ -43,8 +43,8 @@
   }
 
   img {
-    width: 80%;
-    height: auto;
+    // width: 1px;
+    //height: auto;
     padding: 32px 0;
     top: 70px;
     position: relative;
@@ -64,8 +64,8 @@
   button{
     padding: 10px 10px;
     border-radius: 0px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 28px;
+    font-family: $nav-button-font;
+    font-size: $large;
     font-weight: bold;
     background-color: Transparent;
     background-repeat:no-repeat;
@@ -76,9 +76,9 @@
   }
 
   button:hover{
-    font-family: 'Montserrat';
+    font-family: $nav-button-font;
     font-weight: bold;
-    font-size: 35px;
+    font-size: $XL-large;
     display: inline-block;
     position: relative;
   }
@@ -161,7 +161,7 @@
   margin-top: 35px;
   padding: 0;
   width: 75%;
-  height: 76%;
+  height: 47rem;
   //box-shadow: 0 0 1rem 0 rgba(255,255,255,0.3); 
   border-radius: 5px;
   position: relative;
@@ -185,4 +185,36 @@
   filter: blur(15px);
   margin: -20px;
   // background-color: #ffffff5d;
+}
+
+
+
+@media only screen and (max-width: 375px) {
+  html {
+    font-size: 12px;
+  }
+
+  .layout {
+    flex-direction: column;
+
+  }
+
+  .sidebar{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    
+
+    img{
+
+      width: 20%;
+      padding: 0;
+
+    }
+
+  }
+
+
+
+
 }
