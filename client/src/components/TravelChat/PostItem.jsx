@@ -1,6 +1,5 @@
 import React, {  useState } from "react";
 import './PostItem.scss'
-// import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import TimeAgo from 'timeago-react';
 import Icon from '@mui/material/Icon';
 import { Avatar } from "@mui/material";
@@ -15,7 +14,6 @@ export default function PostItem({post={}}){
     setCountLike(countLike + 1);
   };
   
-
   return(
     <div>
       <section className="news_item">
@@ -33,7 +31,7 @@ export default function PostItem({post={}}){
         <div className="news-item-footer">
           <div className="heart-count">
               <Icon className={color === true ? 'active-like' : ''} onClick={(e) => increment(e.target.value)}>favorite</Icon>
-              {countLike}
+              <p>{countLike}</p>
           </div>
         <TimeAgo datetime={post.created_at}/>
         </div>

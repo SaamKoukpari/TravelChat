@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import FriendsItem from "./FriendsItem";
+import FriendsItem from "./FriendListItem";
 import "./FriendsList.scss";
 
 export default function FriendsList() {
@@ -102,11 +102,8 @@ export default function FriendsList() {
   return (
     <div>
       <section className="friend_nav">
-
-      <h1>Friends</h1>
-
+        <h1>Friends</h1>
       </section>
-      {/* Friend List  */}
       {friendListItem}
     </div>
   );

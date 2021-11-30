@@ -53,7 +53,10 @@ export default function Login() {
       
       <div>
         <div className="logo_image_container">
-          <img  src="/loginChat.png" alt="Travel Chat logo" />
+          <img  src="/logoWglow.png" alt="Travel Chat logo" />
+          <button className="login_button" >
+          <a href="/signup"> Sign up</a>
+          </button>
         </div>
       </div>
 
@@ -83,6 +86,7 @@ export default function Login() {
         <button className="login_button" onClick={handleSubmit}>
           Submit
         </button>
+        
       </div>
 
       {/* <div className="loging_padded_box">
