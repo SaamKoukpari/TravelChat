@@ -15,7 +15,6 @@ export default function PostItem({post={}}){
   };
   
   return(
-    <div>
       <section className="news_item">
         <div className="news-item-header">
           <table>
@@ -35,8 +34,6 @@ export default function PostItem({post={}}){
           </div>
         <TimeAgo datetime={post.created_at}/>
         </div>
-
       </section>
-    </div>
   )
 }
