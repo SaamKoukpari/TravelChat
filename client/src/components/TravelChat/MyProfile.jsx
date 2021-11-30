@@ -4,11 +4,14 @@ import ProfileEditForm from "./ProfileEditForm";
 import SettingsIcon from "@mui/icons-material/Settings";
 import Button from "@mui/material/Button";
 import "./MyProfile.scss";
+import './PostItem.scss'
+import TimeAgo from 'timeago-react';
+import Icon from '@mui/material/Icon';
+import { Avatar } from "@mui/material";
 
 export default function MyProfile(props) {
   const [user, setUser] = useState([]);
-  const [bday, setBday] = useState([]);
-  const [page, setPage] = useState(0);
+  const [bday, setBday] = useState([]); 
   const userID = 1;
 
   useEffect(() => {
@@ -35,6 +38,19 @@ export default function MyProfile(props) {
       .catch((error) => console.log("error:", error));
   }, []);
 
+
+  // useEffect(() => {
+  //   axios.get("./api/posts")
+  //   .then(res => {
+  //     console.log("res data postsss", res.data);
+  //     const usersPosts = res.data.find(user => {
+  //       return res.data.user_id === userID;
+  //     })
+  //     setUsersPost(usersPosts);
+  //   })
+  //   .catch(err => console.log(err))
+  // }, [])
+  
   return (
     <section className="main_profile_container">
      

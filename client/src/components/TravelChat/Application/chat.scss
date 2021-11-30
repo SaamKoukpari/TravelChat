@@ -3,10 +3,11 @@
   flex-direction: row;
   height: inherit;
   flex-grow: 1;
+  width: 100%;
 }
 
 .str-chat{
-  width: 100%;
+  width: 330px;
   height: 100%;
 }
 
@@ -14,4 +15,8 @@
   width: 100%;
   height: 100%;
   // width:70%;
+}
+
+.str-chat-channel{
+  width: 450px;
 }
