@@ -1,4 +1,4 @@
-import "./HomeStyles.scss";
+import "./App.scss";
 
 export default function Home() {
 

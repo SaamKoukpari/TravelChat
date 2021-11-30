@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "./Signup.scss";
+import "./App.scss";
 
 export default function Signup() {
   const navigate = useNavigate();

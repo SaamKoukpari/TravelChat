@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "./Login.scss";
+import "./App.scss";
 
 export default function Login() {
   const navigate = useNavigate();
