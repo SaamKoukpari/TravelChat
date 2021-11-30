@@ -4,7 +4,8 @@
   // overflow:scroll;
   // overflow-x:hidden;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: center;
   // padding-left: 8%;
   // padding-right: 8%;
   // padding-top: 13%;
@@ -20,12 +21,13 @@
 
 .inner_profile_container{
   background-color: $top-nav-color;
-  display:flex;
+  display: flex;
   // flex-direction: row;
   border-radius: 25px;
-  width: 100%;
+  width: 94%;
   height: 350px;
-  margin: 15px;
+  margin: 10px;
+  margin-left: 17px;
 }
 
 .profile_about{

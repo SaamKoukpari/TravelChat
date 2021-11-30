@@ -14,7 +14,6 @@ export default function FriendsList() {
         const users = response.data; //all the users
         const user = response.data.find((user) => {
           //filtered to userID=1
-          console.log("LOOK:", user.id);
           return user.id === userID;
         });
 
@@ -67,26 +66,27 @@ export default function FriendsList() {
       .catch((err) => err);
   };
 
-  const loadFriend = () => {
-    const userID = 1;
+  // const loadFriend = () => {
+  //   const userID = 1;
     
-    axios
-      .get('/api/users')
-      .then((response) => {
-        const user = response.data.find((user) => {
-          return user.id === userID;
-        });
+  //   axios
+  //     .get('/api/users')
+  //     .then((response) => {
+  //       const user = response.data.find((user) => {
+  //         return user.id === userID;
+  //       });
 
-        const friends = user.friend_id.map((id) => {
+  //       const friends = user.friend_id.map((id) => {
           
-          const friend = user.find((user) => user.id === id);
-          return friend;
-        });
-        setFriends(friends)
-      })
-  }
+  //       const friend = user.find((user) => user.id === id);
+  //         return friend;
+  //       });
+  //       setFriends(friends)
+  //     })
+  // }
 
   // console.log("Friends OUTSIDE", friends)
+
   const friendListItem = friends.map((user) => {
     return (
       <FriendsItem
@@ -102,7 +102,7 @@ export default function FriendsList() {
   //console.log("LOOP:", friendListItem)
 
   return (
-    <div>
+    <div className="friend_list_container">
       <section className="friend_nav">
         <h1>Friends</h1>
       </section>

@@ -61,7 +61,7 @@ export default function FindFriends(props) {
 
   return (
 
-    <div className="find_frineds_main_container">
+    <div className="find_friends_main_container">
       <div className="find_friends_nav">
         <span className="find_friends_title">Find new friends near you.</span>
 

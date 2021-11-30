@@ -5,9 +5,8 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import Button from "@mui/material/Button";
 import "./MyProfile.scss";
 import './PostItem.scss'
-import TimeAgo from 'timeago-react';
 import Icon from '@mui/material/Icon';
-import { Avatar } from "@mui/material";
+import MyProfilePosts from './MyProfilePosts'
 
 export default function MyProfile(props) {
   const [user, setUser] = useState([]);
@@ -16,70 +15,86 @@ export default function MyProfile(props) {
   const userID = 1;
 
   useEffect(() => {
-    axios
-      .get("/api/users")
-      .then((response) => {
-        const profile = response.data.find((user) => {
+    Promise.all([
+      axios.get("./api/users"),
+      axios.get("./api/posts"),
+    ])
+    .then((all) => {
+      const users = all[0].data;
+      const posts = all[1].data;
+
+      const profile = users.find((user) => {
           return user.id === userID;
+      });
+      
+      const age = profile.birthday;
+      const usersAge = (string) => {
+        const stringToArray = string.split("-");
+        const usersYearBorn = stringToArray[0];
+        const d = new Date();
+        let year = d.getFullYear();
+        return year - usersYearBorn;
+      };
+
+      setBday(usersAge(age));
+      console.log("PROFILE", profile);
+      setUser(profile);
+
+      const getUsersPosts = () => {
+        return profile.post_id.map(id => {
+          let post = posts.find(post => post.id === id);
+          return {profile, ...post};
+        })
+        .sort((a, b) => {
+          return (
+            new Date(b.posted_at).getTime() -
+            new Date(a.posted_at).getTime()
+          );
         });
-
-        const age = profile.birthday;
-        const usersAge = (string) => {
-          const stringToArray = string.split("-");
-          const usersYearBorn = stringToArray[0];
-          const d = new Date();
-          let year = d.getFullYear();
-
-          return year - usersYearBorn;
-        };
-
-        setBday(usersAge(age));
-        setUser(profile);
-      })
-      .catch((error) => console.log("error:", error));
-  }, []);
+      }
+      console.log("getUsersPosts", getUsersPosts());
+      setUsersPosts(getUsersPosts())
+    })
+    .catch((err) => err);
+  }, [])
 
   // const alert = function() {
   //   alert("I'm working")
   // }
+  const profilePosts = usersPosts.map(post => {
+      return (
+        <MyProfilePosts
+          key={post.id}
+          post={post}
+        />
+      )
+  })
 
-  // useEffect(() => {
-  //   axios.get("./api/posts")
-  //   .then(res => {
-  //     console.log("res data postsss", res.data);
-  //     const usersPosts = res.data.find(user => {
-  //       return res.data.user_id === userID;
-  //     })
-  //     setUsersPost(usersPosts);
-  //   })
-  //   .catch(err => console.log(err))
-  // }, [])
-  
   return (
     <section className="main_profile_container">
      
-     <div className="inner_profile_container">
-      <section className="profile_photo">
-        <img src={user.profile_picture}></img>
-      </section>
+      <div className="inner_profile_container">
+        <section className="profile_photo">
+          <img src={user.profile_picture}></img>
+        </section>
 
-      <section className="profile_about">
-        <span className="name">{user.name}</span>
+        <section className="profile_about">
+          <span className="name">{user.name}</span>
 
-          <div className="info">
-            <div className="static-info">
-              <p className="title">AGE</p>
-              <p className="data">{bday}</p>
+            <div className="info">
+              <div className="static-info">
+                <p className="title">AGE</p>
+                <p className="data">{bday}</p>
+              </div>
+              <div className="static-info">
+                <p className="title">FROM</p>
+                <p className="data">{user.hometown}</p>
+              </div>
+              <div className="static-info">
+                <p className="title">LOCATION</p>
+                <p className="data">{user.location}</p>
+              </div>
             </div>
-            <div className="static-info">
-              <p className="title">FROM</p>
-              <p className="data">{user.hometown}</p>
-            </div>
-            <div className="static-info">
-              <p className="title">LOCATION</p>
-              <p className="data">{user.location}</p>
-            </div>
-          </div>
 
           <span className="description">{user.description}</span>
           <span className="edit_profile">
@@ -97,6 +112,8 @@ export default function MyProfile(props) {
           </span>
         </section>
       </div>
+      
+      <div className="load_her_posts">{profilePosts}</div>
     </section>
   );
 }
