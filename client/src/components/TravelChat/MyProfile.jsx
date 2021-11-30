@@ -38,7 +38,6 @@ export default function MyProfile(props) {
   return (
     <section className="main_profile_container">
      
-      
      <div className="inner_profile_container">
       <section className="profile_photo">
         <img src={user.profile_picture}></img>
@@ -47,29 +46,34 @@ export default function MyProfile(props) {
       <section className="profile_about">
         <span className="name">{user.name}</span>
 
-        <span className="static_data">
-          <h1>AGE</h1>
-          <h1>FROM</h1>
-          <h1>HERE I AM</h1>
-        </span>
-        <span className="dynamic_data">
-          <h1>{bday}</h1>
-          <h1>{user.hometown}</h1>
-          <h1>{user.location}</h1>
-        </span>
-        <span className="discrip">{user.description}</span>
-        <span className="edit_profile">
-          <Button
-            onClick={console.log("clicked")}
-            size="small"
-            variant="outlined"
-            startIcon={<SettingsIcon />}
-          >
-            Edit Discription
-          </Button>
-        </span>
+          <div className="info">
+            <div className="static-info">
+              <p className="title">AGE</p>
+              <p className="data">{bday}</p>
+            </div>
+            <div className="static-info">
+              <p className="title">FROM</p>
+              <p className="data">{user.hometown}</p>
+            </div>
+            <div className="static-info">
+              <p className="title">LOCATION</p>
+              <p className="data">{user.location}</p>
+            </div>
+          </div>
+
+          <span className="description">{user.description}</span>
+          <span className="edit_profile">
+            <Button
+              onClick={console.log("clicked")}
+              size="small"
+              variant="outlined"
+              startIcon={<SettingsIcon />}
+            >
+              Edit Description
+            </Button>
+          </span>
         </section>
-       </div>
+      </div>
     </section>
   );
 }

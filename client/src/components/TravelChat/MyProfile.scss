@@ -1,5 +1,5 @@
-
 @import "styles/variables.scss";
+
 img{
   max-width:200px;
   border-radius: 25px;
@@ -11,16 +11,14 @@ img{
   padding-left: 8%;
   padding-right: 8%;
   padding-top: 13%;
-  //background-color: #ffffff5d;
+  background-color: #ffffff5d;
 }
 
 .inner_profile_container{
-   
-   background-color: $top-nav-color;
-   display:flex;
+  background-color: $top-nav-color;
+  display:flex;
   // flex-direction: row;
   border-radius: 25px
-
 }
 
 .profile_about{
@@ -36,29 +34,33 @@ img{
   padding-bottom: 30px; 
   font-weight: bold;
   font-family: $main-font;
-  font-size: 30px;
+  font-size: 40px;
 }
 
-.static_data{
+.info{
   display: flex;
   flex-direction: row;
-  justify-content: center;
-
-  h1{
-    padding: 0px 25px;
-    margin:0;
-  }
+  padding-left: 65px;
 }
-.dynamic_data{
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
 
-  
-  justify-content: center;
-  h1{
-    padding: 0px 25px
-  }
+.static-info{
+  margin-top: 25px;
+  text-align: center;
+  padding-bottom: 20px;
+  font-family: 'Montserrat', sans-serif;
+  padding-right: 50px;
+}
+
+.title{
+  margin-top: -15px;
+  font-size: 10pt;
+}
+
+.data{
+  padding: 0px;
+  font-size: 14pt;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .edit_profile{
@@ -67,11 +69,13 @@ img{
     padding-right: 20px;
 }
 
-.discrip{
-  flex-direction: row;
+.description{
   display: flex;
   justify-content: center; 
   padding-bottom: 30px; 
   padding-left: 5%;
-  // width:20%;
+  width: 350px;
+  text-align: center;
+  margin-left: 45px;
+  padding: 10px;
 }
