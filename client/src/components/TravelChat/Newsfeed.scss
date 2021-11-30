@@ -44,10 +44,10 @@
   padding: 8px;
   border: none;
   border-radius: 30px;
-  width: 550px;
   height: 40px;
   text-indent: calc(3% - 8px);
   outline: none;
+  width: 550px;
 }
 
 .post-save{
@@ -82,4 +82,8 @@
 .post-save:hover:after{
   transform: scaleX(1); 
   transform-origin: bottom left;
+}
+
+.user-post{
+  margin-right: 8px;
 }

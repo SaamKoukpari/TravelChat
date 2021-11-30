@@ -1,9 +1,9 @@
-.friend_item_main{
+.friendlist_item{
   display:flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 10px 20px 20px 10px;
-  
+  background-color: #ffffff5d;
 }
 
 .name_and_avatar{
@@ -14,7 +14,6 @@
   span{
     padding-left: 15px;
   }
-
 }
 
 .add_and_message{
