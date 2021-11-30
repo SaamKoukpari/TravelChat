@@ -6,7 +6,7 @@ import Icon from '@mui/material/Icon';
 import { Avatar } from "@mui/material";
 
 export default function PostItem({post={}}){
-  const [countLike, setCountLike] = useState(post.likes)
+  const [countLike, setCountLike] = useState(post.likes || 0)
   const [color, setColor] = useState(false);
   
   // Functions to change  the counter state item

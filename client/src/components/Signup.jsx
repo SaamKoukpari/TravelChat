@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "./Signup.scss";
 
 export default function Signup() {
   const navigate = useNavigate();
@@ -28,11 +29,25 @@ export default function Signup() {
   };
 
   return (
+
+    <div className="full_page">
+      
     <div>
-      <h1>Signup</h1>
-        <section className="signup_circle">
+      <div className="logo_image_container">
+        <img  src="/logoWglow.png" alt="Travel Chat logo" />
+        <button className="login_button" >
+        <a href="/login"> Login</a>
+        </button>
+      </div>
+    </div>
+         
+
+
+    <div className="signup_container">
+        <h1>Sign-up</h1>
+
           <form>
-            <h5>Name:</h5>
+            Name:
             <input
               className="signup__create-input"
               name="name"
@@ -44,8 +59,7 @@ export default function Signup() {
               }
             />
 
-          <br />
-          <h5>Email:</h5>
+         Email:
           <input
             className="signup__create-input"
             name="email"
@@ -57,7 +71,7 @@ export default function Signup() {
             }
           />
 
-          <h5>Password:</h5>
+         Password:
           <input
             className="signup__create-input"
             name="password"
@@ -70,28 +84,10 @@ export default function Signup() {
           />
         </form>
 
-        <button onClick={handleSubmit}>Submit</button>
-      </section>
+        <button className="signup_button" onClick={handleSubmit}>Submit</button>
+     
+    </div>
     </div>
   );
 }
 
-// function validate() {
-//   if (name === "") {
-//     setError("Name cannot be blank");
-//     return;
-//   }
-
-//   if (email === "") {
-//     setError("Email cannot be blank");
-//     return;
-//   }
-
-//   if (password === "") {
-//     setError("Password cannot be blank");
-//     return;
-//   }
-
-//   setError("");
-//   // props.onSave(name, email, password);
-// }

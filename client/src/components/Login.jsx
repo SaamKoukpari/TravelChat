@@ -55,7 +55,7 @@ export default function Login() {
         <div className="logo_image_container">
           <img  src="/logoWglow.png" alt="Travel Chat logo" />
           <button className="login_button" >
-          <a href="/signup"> Sign up</a>
+          <a href="/signup"> Sign-up</a>
           </button>
         </div>
       </div>
