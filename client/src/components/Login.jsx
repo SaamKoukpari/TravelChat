@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "./Login.scss";
+import "./App.scss";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -55,7 +55,7 @@ export default function Login() {
         <div className="logo_image_container">
           <img  src="/logoWglow.png" alt="Travel Chat logo" />
           <button className="login_button" >
-          <a href="/signup"> Sign up</a>
+          <a href="/signup"> Sign-up</a>
           </button>
         </div>
       </div>

@@ -12,6 +12,7 @@ import { Avatar } from "@mui/material";
 export default function MyProfile(props) {
   const [user, setUser] = useState([]);
   const [bday, setBday] = useState([]); 
+  const [editPage, setEditPage] = useState([]); 
   const userID = 1;
 
   useEffect(() => {
@@ -38,6 +39,9 @@ export default function MyProfile(props) {
       .catch((error) => console.log("error:", error));
   }, []);
 
+  // const alert = function() {
+  //   alert("I'm working")
+  // }
 
   // useEffect(() => {
   //   axios.get("./api/posts")
@@ -80,11 +84,14 @@ export default function MyProfile(props) {
           <span className="description">{user.description}</span>
           <span className="edit_profile">
             <Button
+              value={editPage}
+              onClick={() => setEditPage(true)}
               onClick={console.log("clicked")}
               size="small"
               variant="outlined"
               startIcon={<SettingsIcon />}
             >
+              {<ProfileEditForm props={props}/>}
               Edit Description
             </Button>
           </span>
