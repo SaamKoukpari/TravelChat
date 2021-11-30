@@ -128,12 +128,7 @@ export default function Newsfeed() {
   return (
     <div className="main_newsfeed_container">
       <section className="create_post">
-        <Avatar
-          className="user-post"
-          alt="user_loggedin"
-          src="./user-Lucy.jpeg"
-          sx={{ width: 46, height: 46 }}
-        />
+        <Avatar className="user-post" alt="user_loggedin" src="./lucy-angel.png" sx={{ width: 46, height: 46 }} />
         <form>
           <input
             className="create_post_field"

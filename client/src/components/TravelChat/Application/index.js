@@ -29,7 +29,7 @@ export default function Application() {
       await chatClient.connectUser({
         id: id, 
         name: id,
-        image: "https://64.media.tumblr.com/244d07f72f855a9aa16694944eeaec9a/184becad82a964a0-32/s640x960/2657b319f38c652b9b393cdbefbe934c81b456ce.jpg"
+        image: "./lucy-angel.png"
         },
         chatClient.devToken(id)
       );

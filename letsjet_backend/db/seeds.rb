@@ -13,13 +13,13 @@ User.create!(
   friend_id: [2, 3, 4, 5],
   post_id: [1, 2],
   calendar_id: [],
-  name: 'Lucy', 
+  name: 'Lucy Charlie', 
   email: 'lucy@littlemermaid.com',
   password: 'password',
   birthday: '1994-04-07',
   hometown: 'Vancouver',
   location: 'Barcelona',
-  profile_picture: 'https://video-images.vice.com/_uncategorized/1630621230611-gettyimages-115363484.jpeg',
+  profile_picture: "./lucy-angel.png",
   description: 'Little mermaid from the Pacific looking to sight-see and cliff-dive in the Mediterranean',
   active: true,
   traveller: true,
@@ -31,10 +31,10 @@ User.create!(
   friend_id: [1],
   post_id: [4, 5],
   calendar_id: [],
-  name: 'Shaun', 
+  name: 'Shaun Robinson', 
   email: 'shaun@robs.ca',
   password: 'password',
-  birthday: '1989-06-15',
+  birthday: '1992-06-15',
   hometown: 'Vancouver',
   location: 'Vancouver',
   profile_picture: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/ct-white-4560-1619794724.jpg',
@@ -49,13 +49,13 @@ User.create!(
   friend_id: [1],
   post_id: [6],
   calendar_id: [],
-  name: 'Simba', 
+  name: 'Alexa Google', 
   email: 'lions@google.com',
   password: 'password',
-  birthday: '1993-04-07',
+  birthday: '1997-04-07',
   hometown: 'Toronto',
   location: 'Bali',
-  profile_picture: 'https://images.goodsmile.info/cgm/images/product/20200114/9164/66743/large/04c45b878e5a2be879d9137a18905611.jpg',
+  profile_picture: 'https://i.pinimg.com/originals/ac/c0/17/acc01701dbc609ee8be4b55afb896b22.jpg',
   description: 'Lion from the Jungle looking to do yoga in the Saharan Desert',
   active: true,
   traveller: true,
@@ -67,7 +67,7 @@ User.create!(
   friend_id: [1],
   post_id: [],
   calendar_id: [],
-  name: 'George', 
+  name: 'George Emery', 
   email: 'g@curious.com',
   password: 'password',
   birthday: '1998-03-16',
@@ -85,14 +85,14 @@ User.create!(
   friend_id: [1],
   post_id: [3],
   calendar_id: [],
-  name: 'Tim', 
-  email: 'cookingwithtime@hotmail.com',
+  name: 'Tim Tats', 
+  email: 'tattootime@hotmail.com',
   password: 'password',
-  birthday: '1989-03-10',
+  birthday: '1993-03-10',
   hometown: 'Toronto',
   location: 'Bali',
-  profile_picture: 'http://pm1.narvii.com/7234/e77bfd73a13901d675d3ca234e48654d2f0d9128r1-279-282v2_uhq.jpg',
-  description: 'Chef Tim here looking to bring new tastes to places I\ve never been to, like Honolulu!',
+  profile_picture: 'https://www.verywellmind.com/thmb/zqjlPGA4B2vtk9dKKJ4_nKIQzpE=/2122x1194/smart/filters:no_upscale()/happy-relaxed-man-wearing-glasses-ee2f1576532643e0845952e209bad8ee.jpg',
+  description: 'Hey all! Tattoo Tim here looking to find inspiration for my next pieces. Let me know if you want a shot at my at home tattoo gun ;)',
   active: true,
   traveller: true,
   local: false
@@ -103,14 +103,14 @@ User.create!(
   friend_id: [],
   post_id: [3],
   calendar_id: [],
-  name: 'NoFriendFred', 
+  name: 'Freddie Lane', 
   email: 'lonelyme@hotmail.com',
   password: 'password',
-  birthday: '1989-03-10',
+  birthday: '1991-03-10',
   hometown: 'Toronto',
   location: 'Vancouver',
-  profile_picture: 'http://pm1.narvii.com/7234/e77bfd73a13901d675d3ca234e48654d2f0d9128r1-279-282v2_uhq.jpg',
-  description: 'I am so lonely',
+  profile_picture: 'hhttps://cdn.pixabay.com/photo/2018/10/22/22/23/portrait-3766552_1280.jpg',
+  description: 'Just moved here from the east coast! Anybody want to show me around?',
   active: true,
   traveller: true,
   local: false
@@ -123,7 +123,7 @@ user_id: 1,
 photo_id: [1],
 comment_ids: [],
 content: "Watch me and my girls kick ass on the big screen!",
-likes: 7000,
+likes: 351,
 published: true,
 posted_at: '2000-04-20 15:16:38 UTC'
 )
@@ -136,7 +136,7 @@ comment_ids: [],
 content: "Absolute legends!",
 likes: 220,
 published: true,
-posted_at: '2000-04-12 15:26:38 UTC'
+posted_at: '2021-10-12 15:26:38 UTC'
 )
 
 #post.id = 3
@@ -145,9 +145,9 @@ user_id: 5,
 photo_id: [],
 comment_ids: [],
 content: "Tim Cook here looking for cooks to get this cooking show done?",
-likes: 1,
+likes: 14,
 published: true,
-posted_at: '2020-04-27 20:23:38 UTC'
+posted_at: '2021-11-27 20:23:38 UTC'
 )
   
 #post.id = 4
@@ -156,9 +156,9 @@ Post.create!(
   photo_id: [],
   comment_ids: [],
   content: "GOING CLIFF-DIVING IF ANYBODY WANTS TO COME!!!",
-  likes: 5,
+  likes: 20,
   published: true,
-  posted_at: '2020-07-01 15:16:38 UTC'
+  posted_at: '2021-10-01 15:16:38 UTC'
 )
 
 #post.id = 5
@@ -169,7 +169,7 @@ Post.create!(
   content: "Howdy YALL! 🤠🤠🤠🤠",
   likes: 55,
   published: true,
-  posted_at: '2010-07-01 15:16:38 UTC'
+  posted_at: '2021-11-29 15:16:38 UTC'
 )
 
 #post.id = 6
@@ -178,9 +178,9 @@ Post.create!(
   photo_id: [],
   comment_ids: [],
   content: "Hey guys, this is my first post. Simba here just treking with my lion pack.",
-  likes: 101,
+  likes: 89,
   published: true,
-  posted_at: '2012-10-01 18:16:38 UTC'
+  posted_at: '2021-11-29 00:16:38 UTC'
 )
 
 

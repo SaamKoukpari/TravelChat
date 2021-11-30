@@ -169,6 +169,7 @@
   background: inherit;
   overflow:hidden;
   overflow-x:hidden;
+  // background-color: #ffffff5d;
 }
 
 .component__container:before {
@@ -183,4 +184,5 @@
   box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
   filter: blur(15px);
   margin: -20px;
+  // background-color: #ffffff5d;
 }
