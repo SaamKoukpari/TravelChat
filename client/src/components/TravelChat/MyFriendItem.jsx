@@ -3,29 +3,24 @@ import { Avatar } from "@mui/material";
 import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import "./MyFriendItem.scss";
+import Icon from '@mui/material/Icon';
 
 export default function MyFriendItem(props) {
   const [buttonText, setButtonText] = useState("Add Friend");
 
   const changeText = (text) => setButtonText(text);
 
-
   return (
     <div className="found_content">
-      <section className="friend_item_main">
+      <section className="friendlist_item">
         <section className="name_and_avatar">
-          <Avatar alt="Remy Sharp" src={props.avatar} sx={{ width: 56, height: 56 }} />
-          <span>
-          {props.name}  
-
-          </span>
-
+          <Avatar alt="friend-icon" src={props.avatar} sx={{ width: 56, height: 56 }} />
+          <span>{props.name}</span>
         </section>
       
-      
         <section className="add_and_message">
-          <AddCircleOutlineIcon fontSize="large" style={{ color: '#ffffffdb' }}onClick={() => changeText("Requested")}> AddCircleOutlineIcon </AddCircleOutlineIcon>
-          <ChatBubbleIcon fontSize="large" style={{ color: '#ffffffdb' }}> ChatBubbleIcon </ChatBubbleIcon>
+          <AddCircleOutlineIcon fontSize="small" style={{ color: '#ffffffdb' }} onClick={() => changeText("Requested")}> AddCircleOutlineIcon </AddCircleOutlineIcon>
+          <ChatBubbleIcon fontSize="small" style={{ color: '#ffffffdb' }}> ChatBubbleIcon </ChatBubbleIcon>
           {/* <button className="send__message">Message</button> */}
         </section>
       </section>

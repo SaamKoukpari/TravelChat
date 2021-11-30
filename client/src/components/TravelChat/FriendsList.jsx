@@ -102,11 +102,8 @@ export default function FriendsList() {
   return (
     <div>
       <section className="friend_nav">
-
-      <h1>Friends</h1>
-
+        <h1>Friends</h1>
       </section>
-      {/* Friend List  */}
       {friendListItem}
     </div>
   );

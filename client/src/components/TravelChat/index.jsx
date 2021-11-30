@@ -6,7 +6,7 @@ import Newsfeed from './Newsfeed';
 import Application from './Application';
 import { Avatar } from "@mui/material";
 
-export default function TravelChat() {
+export default function TravelChat() { 
   const [page, setPage] = useState(1); 
 
   return(

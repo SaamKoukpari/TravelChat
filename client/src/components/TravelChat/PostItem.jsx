@@ -32,7 +32,7 @@ export default function PostItem(props){
         <div className="news-item-footer">
           <div className="heart-count">
               <Icon className={color === true ? 'active-like' : ''} onClick={(e) => increment(e.target.value)}>favorite</Icon>
-              {countLike}
+              <p>{countLike}</p>
           </div>
         <TimeAgo datetime={props.time}/>
         </div>

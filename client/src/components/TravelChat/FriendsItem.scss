@@ -3,8 +3,10 @@
   align-content: center;
   justify-content: space-between;
   padding: 15px 17px 16px;
+  margin: 30px;
+  background-color: #ffffff5d;
+  border-radius: 20px;
 }
-
 
 .friend_photo_friend_name{
   display: flex;
@@ -13,12 +15,9 @@
   h1{
     padding-left: 25px;
   }
-
 }
 
-.add_message{
-
-  
+.friend-options{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
