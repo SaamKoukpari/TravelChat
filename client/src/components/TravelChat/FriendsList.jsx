@@ -98,7 +98,7 @@ export default function FriendsList() {
   //console.log("LOOP:", friendListItem)
 
   return (
-    <div>
+    <div className="friend_list_container">
       <section className="friend_nav">
         <h1>Friends</h1>
       </section>

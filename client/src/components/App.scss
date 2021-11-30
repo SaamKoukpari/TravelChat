@@ -1,9 +1,10 @@
 // @import "./styles/variables.scss";
 // @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 @import "./TravelChat/styles/variables.scss";
 
-.sidebar{
+.sidebar {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -34,7 +35,7 @@
   //   text-decoration: inherit; /* no underline */
   // }
 
-  hr{
+  hr {
     position: relative;
     left: -13px;
     top: 1px;
@@ -50,32 +51,31 @@
     position: relative;
   }
 
-  nav{
+  nav {
     width: 90%;
   }
- 
 
-  ul{
+  ul {
     position: relative;
     left: -6px;
-    top: 2px; 
+    top: 2px;
   }
 
-  button{
+  button {
     padding: 10px 10px;
     border-radius: 0px;
     font-family: $nav-button-font;
     font-size: $large;
     font-weight: bold;
     background-color: Transparent;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     border: none;
-    cursor:pointer;
-    overflow: hidden;   
+    cursor: pointer;
+    overflow: hidden;
     position: relative;
   }
 
-  button:hover{
+  button:hover {
     font-family: $nav-button-font;
     font-weight: bold;
     font-size: $XL-large;
@@ -83,8 +83,8 @@
     position: relative;
   }
 
-  .nav-button:after{
-    content: '';
+  .nav-button:after {
+    content: "";
     position: absolute;
     width: 100%;
     transform: scaleX(0);
@@ -96,41 +96,40 @@
     transition: transform 0.25s ease-out;
   }
 
-  .nav-button:hover:after{
-    transform: scaleX(1); 
+  .nav-button:hover:after {
+    transform: scaleX(1);
     transform-origin: bottom left;
   }
 }
 
-
-.sidebar:before{
+.sidebar:before {
   content: "";
   position: absolute;
   // background: inherit;
-  background-color: #eafeff;
+  background-color: $sidebar-bg-color;
   z-index: -1;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+  box-shadow: $sidebar-shadow;
   filter: blur(10px);
   margin: -20px;
 }
 
-.sidebar__menu{
+.sidebar__menu {
   position: relative;
   left: -8px;
   top: 150px;
   text-align: right;
 }
 
-.profile__status__container{
+.profile__status__container {
   flex-direction: column;
   width: 100%;
 }
 
-.status__container{
+.status__container {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -138,18 +137,15 @@
   height: 3rem;
   width: 90%;
   margin-top: 1rem;
- 
-  span{
+
+  span {
     padding-left: 10px;
   }
 
-  a{
+  a {
     text-decoration: none;
+    color: $text-color-for-links;
   }
-  // img {
-  //   padding-right: 5px;
-  // }
-
 }
 
 .component__container {
@@ -162,13 +158,13 @@
   padding: 0;
   width: 75%;
   height: 47rem;
-  //box-shadow: 0 0 1rem 0 rgba(255,255,255,0.3); 
+  //box-shadow: 0 0 1rem 0 rgba(255,255,255,0.3);
   border-radius: 5px;
   position: relative;
   z-index: 1;
   background: inherit;
-  overflow:hidden;
-  overflow-x:hidden;
+  overflow: hidden;
+  overflow-x: hidden;
   // background-color: #ffffff5d;
 }
 
@@ -181,40 +177,317 @@
   left: 0;
   right: 0;
   bottom: 0;
-  box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+  box-shadow: $sidebar-shadow;
   filter: blur(15px);
   margin: -20px;
   // background-color: #ffffff5d;
 }
 
+////////////////////////////////////////////////////////////////////
+///////////////////////////// Styles for homepage /////////////////
 
+.full_page2 {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: $main-gradient-background;
+  justify-content: center;
+  overflow-x: hidden;
+}
 
-@media only screen and (max-width: 375px) {
-  html {
-    font-size: 12px;
-  }
+.main_coloumn {
+  display: flex;
+  flex-direction: column;
+}
 
-  .layout {
-    flex-direction: column;
+.singup_login_row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-bottom: 20%;
 
-  }
+  span {
+    padding-left: 15px;
+    padding-top: 10px;
+    margin-right: 20px;
 
-  .sidebar{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    
-
-    img{
-
-      width: 20%;
-      padding: 0;
-
+    a {
+      cursor: pointer;
+      font-family: $nav-button-font;
+      font-weight: bold;
+      font-size: $large;
+      text-decoration: none;
+      color: $text-color-for-links;
     }
+  }
+}
 
+.main_logo {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 25%;
+}
+
+///////////////////////////////////////////////////////////////////
+////////////////////////// STYLES FOR LOGIN ///////////////////////
+
+.full_page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: $main-gradient-background;
+  justify-content: center;
+}
+
+.logo_image_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  // background-color: #eafeff95;
+
+  img {
+    padding-left: 20px;
+    padding-top: 10px;
+    width: 450px;
   }
 
+  a {
+    text-decoration: none;
+    cursor: pointer;
+    color: $text-color-for-links;
+  }
+}
 
+.login_container {
+  width: 400px;
+  height: 400px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-top: 150px;
+  position: relative;
+  z-index: 1;
+  background: inherit;
+  overflow: hidden;
 
+  margin-left: 40%;
+  margin-bottom: 30%;
 
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  h1 {
+    margin-top: 50px;
+    font-family: $nav-button-font;
+  }
+  button {
+    padding: 10px 10px;
+    border-radius: 0px;
+    font-family: $nav-button-font;
+    font-size: $large;
+    font-weight: bold;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+  }
+}
+
+.login_container:before {
+  content: "";
+  position: absolute;
+  // background: inherit;
+  background-color: $circle-background;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: $sidebar-shadow;
+  filter: blur(10px);
+  margin: -20px;
+}
+
+form {
+  font-family: $main-font;
+}
+
+.login__create-input {
+  margin-bottom: 20px;
+}
+
+.login_button {
+  padding: 10px 10px;
+  border-radius: 0px;
+  font-family: $nav-button-font;
+  font-size: $large;
+  font-weight: bold;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+.login_button:hover {
+  font-family: $nav-button-font;
+  font-weight: bold;
+  font-size: $XL-large;
+  display: inline-block;
+  position: relative;
+}
+
+.login_button:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 5px;
+  bottom: 0;
+  left: 0;
+
+  transform-origin: bottom left;
+  transition: transform 0.25s ease-out;
+}
+
+.login_button:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+////////////////////////////////////////////////////////////////
+//////////////////////////-- SIGN UP --////////////////////////
+
+.full_page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: $main-gradient-background;
+  justify-content: center;
+}
+
+.logo_image_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  img {
+    padding-left: 20px;
+    padding-top: 30px;
+    width: 450px;
+  }
+}
+
+.signup_container {
+  width: 400px;
+  height: 400px;
+  //background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-top: 150px;
+  position: relative;
+  z-index: 1;
+  background: inherit;
+  overflow: hidden;
+  font-family: $main-font;
+
+  margin-left: 40%;
+  margin-bottom: 30%;
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  h1 {
+    margin-top: 50px;
+    font-family: $nav-button-font;
+  }
+  button {
+    padding: 10px 10px;
+    border-radius: 0px;
+    font-family: $nav-button-font;
+    font-size: $large;
+    font-weight: bold;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+  }
+  a {
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+.signup_container:before {
+  content: "";
+  position: absolute;
+  // background: inherit;
+  background-color: $circle-background;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  //box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.05);
+  filter: blur(10px);
+  margin: -20px;
+}
+
+.signup__create-input {
+  margin-bottom: 20px;
+}
+
+.signup_button {
+  padding: 10px 10px;
+  border-radius: 0px;
+  font-family: $nav-button-font;
+  font-size: $large;
+  font-weight: bold;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+.signup_button:hover {
+  font-family: $nav-button-font;
+  font-weight: bold;
+  font-size: $XL-large;
+  display: inline-block;
+  position: relative;
+}
+
+.signup_button:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 5px;
+  bottom: 0;
+  left: 0;
+  //background-color: #353d4f;
+  transform-origin: bottom left;
+  transition: transform 0.25s ease-out;
+}
+
+.signup_button:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }

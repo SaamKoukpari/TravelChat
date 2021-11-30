@@ -4,8 +4,12 @@ $main-font: 'Montserrat', sans-serif;
 $nav-button-font:'Montserrat', sans-serif;;
 
 //Colors 
+$text-color-for-links: #000000;
 $top-nav-color: #ffffff5d;
-
+$main-gradient-background: linear-gradient(to bottom left, #b4e6e9, #bba2ed);
+$sidebar-shadow: inset 0 0 2000px rgba(255, 255, 255, .5) ;
+$sidebar-bg-color: #eafeff; 
+$circle-background: #eafeff9a;
 
 //Font sizes
 $large: 24px;

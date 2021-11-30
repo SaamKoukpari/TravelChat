@@ -2,9 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 @import "styles/variables.scss";
 
-// .find_friends_main_container{
-//   background-color: #ffffff5d;
-// }
+.find_frineds_main_container{
+  overflow:scroll;
+  overflow-x:hidden;
+  height: 100%;
+
+}
 
 .find_friends_nav{
   display: flex;
