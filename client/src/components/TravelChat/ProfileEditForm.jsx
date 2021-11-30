@@ -5,7 +5,7 @@ import axios from 'axios';
 //2. to actually make a post / put request to the backend
 
 export default function Form() {
-  const userID = 1;
+  // const userID = 1;
   const [textAreaText, setTextAreaText] = useState("");
 
   const handleEdit = (description) => {

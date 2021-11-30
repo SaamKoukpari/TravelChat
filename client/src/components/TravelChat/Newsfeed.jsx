@@ -9,7 +9,7 @@ export default function Newsfeed() {
   const [newPost, setNewPost] = useState([]);
   const userID = 1;
 
-  useEffect(() => {
+  const func = function () {
     Promise.all([
       axios.get("./api/users"),
       axios.get("./api/posts"),
@@ -52,10 +52,14 @@ export default function Newsfeed() {
 
         //if the post has comments, return the comments
       })
+
       .catch((err) => err);
+  };
+
+  useEffect(() => {
+    func() 
   }, []);
 
-  
   const newsfeedPosts = state.map((post) => {
     //state is an ARRAY not an object
     return (
@@ -68,7 +72,8 @@ export default function Newsfeed() {
       />
     );
   });
-  
+  console.log("STATE>>>", state)
+
   const createPost = (e) => {
     e.preventDefault();
 
@@ -76,41 +81,59 @@ export default function Newsfeed() {
       user_id: 3,
       content: newPost,
     };
-    console.log("POST", posted);
+    console.log("POST: ", posted);
 
-    axios.post("/api/posts", posted)
-      .then(res => {
+    axios
+      .post("/api/posts", posted)
+      .then((res) => {
         const currentPost = res.data;
-        console.log("currentPost", currentPost)
+        console.log("currentPost", currentPost);
 
         const update = {
-          post_id: currentPost.id
+          post_id: currentPost.id,
           //.array.isRequired
-        }
+        };
 
-        const updateArray = Object.keys(update)
+        // const updateArray = Object.keys(update)
 
-        axios.put('/api/users/3', updateArray)
-        .then(user3 => {
-          console.log("PUT RES", res.data)
+        axios.put("/api/users/3", update).then((res) => {
+          console.log("PUT RES", res.data);
+          const user3Obj = res.data;
+          console.log("USEROBJ", user3Obj.post_id);
+          const postArray = user3Obj.post_id;
 
-          const posts = user3.data.post_id.map((id) => {
-      
-             const post = res.data.find((post) => post.id === id); 
-             return post;
-          });
-          console.log("LOOK: ", posts)
-          setNewPost(posts)
-        })
+          // for (post_id in user3Obj) {
+          //   console.log("???", user3Obj.post_id)
+          //   return user3Obj.post_id
+          // }
 
+          // Object.keys(user3Obj).forEach(function(key) {
+
+          //   return user3Obj.post_id
+          // })
+
+          // const posts = postArray.map((id) => {
+
+          //    const post = res.data.find((post) => post.id === id);
+          //    return post;
+          // });
+          // console.log("LOOK: ", posts)]
+          func();
+          // setNewPost(postArray)
+        });
       })
-      .catch(err => err)
-  }
+      .catch((err) => err);
+  };
 
   return (
     <div className="main_newsfeed_container">
       <section className="create_post">
-        <Avatar className="user-post" alt="user_loggedin" src="./user-Lucy.jpeg" sx={{ width: 46, height: 46 }} />
+        <Avatar
+          className="user-post"
+          alt="user_loggedin"
+          src="./user-Lucy.jpeg"
+          sx={{ width: 46, height: 46 }}
+        />
         <form>
           <input
             className="create_post_field"
@@ -120,7 +143,9 @@ export default function Newsfeed() {
             onChange={(e) => setNewPost(e.target.value)}
           />
         </form>
-        <button className="post-save" onClick={createPost}>POST</button>
+        <button className="post-save" onClick={createPost}>
+          POST
+        </button>
       </section>
       <section className="load_posts">{newsfeedPosts}</section>
     </div>
