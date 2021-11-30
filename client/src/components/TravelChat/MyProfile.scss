@@ -1,9 +1,6 @@
 @import "styles/variables.scss";
 
-img{
-   max-width:300px;
-  // border-radius: 25px;
-}
+
 
 .main_profile_container{
   display: flex;
@@ -12,6 +9,11 @@ img{
   padding-right: 8%;
   padding-top: 13%;
   background-color: #ffffff5d;
+
+  img{
+    max-width:300px;
+   // border-radius: 25px;
+ }
 }
 
 .inner_profile_container{
