@@ -5,6 +5,14 @@
   flex-direction: column;
 }
 
+
+.friend_list_container{
+  overflow:scroll;
+  overflow-x:hidden;
+  height: 100%;
+
+}
+
 .friend_nav{
   display: flex;
   flex-direction: row;
