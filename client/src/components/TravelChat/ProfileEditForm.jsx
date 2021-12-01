@@ -4,7 +4,7 @@ import axios from 'axios';
 //1. When I click the button i need to extract the information from our textbox
 //2. to actually make a post / put request to the backend
 
-export default function Form({update={}}) {
+export default function Form(props) {
   // const userID = 1;
   const [textAreaText, setTextAreaText] = useState("");
 

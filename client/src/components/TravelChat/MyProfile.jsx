@@ -71,7 +71,6 @@ export default function MyProfile() {
       )
   })
 
-
   const [state, setState] = useState(false);
   const [desc, setDesc] = useState(user.description);  
 
