@@ -34,10 +34,10 @@ export default function Application() {
         chatClient.devToken(id)
       );
       
-      const channel = chatClient.channel("messaging", "convoID", {
-        name: "Super Safaris"
+      const channel = chatClient.channel("messaging", "convo6", {
+        name: "Let's go to LA"
       })
-      await channel.create("convoID");
+      await channel.create("convo6");
 
       if (!channel.state.members[id]) await channel.addMembers([id]);
 
