@@ -11,7 +11,6 @@ import MyProfilePosts from './MyProfilePosts'
 export default function MyProfile(props) {
   const [user, setUser] = useState([]);
   const [bday, setBday] = useState([]); 
-  const [editPage, setEditPage] = useState(false); 
   const [usersPosts, setUsersPosts] = useState([]);
   const userID = 1;
 
@@ -76,11 +75,16 @@ export default function MyProfile(props) {
     <section className="main_profile_container">
      
       <div className="inner_profile_container">
+
         <section className="profile_photo">
           <img src={user.profile_picture}></img>
         </section>
 
         <section className="profile_about">
+          <div className="profile-edit">
+            <Icon>border_color</Icon>
+          </div>
+
           <span className="name">{user.name}</span>
 
             <div className="info">
@@ -98,23 +102,17 @@ export default function MyProfile(props) {
               </div>
             </div>
 
-          <span 
-            className="description" 
-            onClick={() => changeState()}>{user.description}
-          </span>
-          {/* <span className="edit_profile">
-            <Button
-              value={editPage}
-              onClick={() => changeState()}
-              onClick={console.log("clicked")}
-              size="small"
-              variant="outlined"
-              startIcon={<SettingsIcon />}
-            >{editPage}
-              {/* {<ProfileEditForm props={props}/>}
-              Edit Description
-            </Button> */}
-          {/* </span> */}
+            <span className="description">{user.description}</span>
+            {/* <span className="edit_profile">
+              <Button
+                onClick={console.log("clicked")}
+                size="small"
+                variant="outlined"
+                startIcon={<SettingsIcon />}
+              >
+                Edit Description
+              </Button>
+            </span> */}
         </section>
       </div>
       

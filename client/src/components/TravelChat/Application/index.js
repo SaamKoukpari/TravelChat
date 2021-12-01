@@ -37,7 +37,7 @@ export default function Application() {
       const channel = chatClient.channel("messaging", "convo6", {
         name: "Let's go to LA"
       })
-      await channel.create("convoID");
+      await channel.create("convo6");
 
       if (!channel.state.members[id]) await channel.addMembers([id]);
 
