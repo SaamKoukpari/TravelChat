@@ -28,8 +28,9 @@ export default function Form(props) {
             className="appointment__create-input text--semi-bold"
             name="name"
             type="text"
-            placeholder={"edit"}
-            value={textAreaText} onChange={(event) => setTextAreaText(event.target.value)} 
+            placeholder="Edit description"
+            value={textAreaText} 
+            onChange={(event) => setTextAreaText(event.target.value)} 
           />
         </div>
         <div>

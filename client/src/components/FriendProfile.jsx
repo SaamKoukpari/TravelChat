@@ -13,6 +13,7 @@ export default function FriendProfile() {
   const [bday, setBday] = useState([]); 
   const [usersPosts, setUsersPosts] = useState([]);
   const userID = 2;
+  const [button, setButton] = useState("add_circle");
 
   useEffect(() => {
     Promise.all([
@@ -67,6 +68,10 @@ export default function FriendProfile() {
       )
   })
 
+  const changeButton = () => {
+    setButton("hourglass_top")
+  }
+
   return (
   <main className="layout">
     <section className="sidebar">
@@ -103,6 +108,11 @@ export default function FriendProfile() {
         </section>
 
         <section className="profile_about">
+
+        <div className="profile-edit">
+          <Icon onClick={() => changeButton()}>{button}</Icon>
+        </div>
+
           <span className="name">{user.name}</span>
 
             <div className="info">
