@@ -89,7 +89,7 @@ export default function FriendProfile() {
     <section className= "profile__status__container">
       <section className="status__container">
         <Avatar alt="user_loggedin" src="./lucy-angel.png" sx={{ width: 30, height: 30 }} />
-        <span className="logout_status"><a href="/login">Logout</a> </span>
+        <span className="logout_status"><a href="/login">LOGOUT</a> </span>
       </section>
     </section>
 

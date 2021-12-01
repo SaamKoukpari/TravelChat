@@ -29,15 +29,15 @@ export default function Application() {
       await chatClient.connectUser({
         id: id, 
         name: id,
-        image: "./lucy-angel.png"
+        image: "https://www.billboard.com/wp-content/uploads/2021/10/Adele-cr-Simon-Emmett-press-2021-billboard-1548-1634265632.jpg"
         },
         chatClient.devToken(id)
       );
       
-      const channel = chatClient.channel("messaging", "convoID", {
-        name: "Super Safaris"
+      const channel = chatClient.channel("messaging", "convo6", {
+        name: "Let's go to LA"
       })
-      await channel.create("convoID");
+      await channel.create("convo6");
 
       if (!channel.state.members[id]) await channel.addMembers([id]);
 
@@ -45,7 +45,7 @@ export default function Application() {
       setChannel(channel);
     }
 
-    loadChat("Lucy");
+    loadChat("Violet");
     return () => chatClient.disconnectUser();
   }, []);
 
