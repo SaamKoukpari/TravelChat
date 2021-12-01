@@ -30,7 +30,8 @@ export default function FriendsList() {
 
   const removeFriend = (friend_id) => {
     const userID = 1;
-    // console.log("FRIEND ID:", friend_id);
+    console.log("FRIEND ID:", friend_id);
+    
 
     axios
       .get("/api/users")
@@ -50,15 +51,18 @@ export default function FriendsList() {
           },
         };
 
-        axios.put(`/api/users/${userID}`, patchObj)
-          .then((user1) => {
-            const friends = user1.data.friend_id.map((id) => {
-              const friend = response.data.find((user) => user.id === id); 
-              return friend;
-            });
-            setFriends(friends)
-          })
-      })
+      axios.put(`/api/users/${userID}`, patchObj)
+        .then((user1) => {
+          const friends = user1.data.friend_id.map((id) => {
+            
+            const friend = response.data.find((user) => user.id === id); 
+            return friend;
+          });
+          console.log("USER1.DATA>>>", user1.data)
+          console.log("RESPONSE.DATA>>>", response.data)
+          setFriends(friends)
+        })
+  })
       .catch((err) => err);
   };
 

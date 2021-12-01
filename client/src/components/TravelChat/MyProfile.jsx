@@ -11,7 +11,7 @@ import MyProfilePosts from './MyProfilePosts'
 export default function MyProfile(props) {
   const [user, setUser] = useState([]);
   const [bday, setBday] = useState([]); 
-  const [usersPosts, setUsersPosts] = useState([]);
+  const [editPage, setEditPage] = useState([]); 
   const userID = 1;
 
   useEffect(() => {
@@ -58,6 +58,9 @@ export default function MyProfile(props) {
     .catch((err) => err);
   }, [])
 
+  // const alert = function() {
+  //   alert("I'm working")
+  // }
   const profilePosts = usersPosts.map(post => {
       return (
         <MyProfilePosts
@@ -98,6 +101,7 @@ export default function MyProfile(props) {
               </div>
             </div>
 
+<<<<<<< HEAD
             <span className="description">{user.description}</span>
             {/* <span className="edit_profile">
               <Button
@@ -109,6 +113,22 @@ export default function MyProfile(props) {
                 Edit Description
               </Button>
             </span> */}
+=======
+          <span className="description">{user.description}</span>
+          <span className="edit_profile">
+            <Button
+              value={editPage}
+              onClick={() => setEditPage(true)}
+              onClick={console.log("clicked")}
+              size="small"
+              variant="outlined"
+              startIcon={<SettingsIcon />}
+            >
+              {<ProfileEditForm props={props}/>}
+              Edit Description
+            </Button>
+          </span>
+>>>>>>> b39ef395e18759e3688899307ddca44b679c2938
         </section>
       </div>
       
