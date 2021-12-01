@@ -11,8 +11,8 @@
   align-items: center;
   padding-left: 2rem;
   padding: 0;
-  margin-left: 5em;
-  width: 450px;
+  margin-left: 9em;
+  width: 500px;
   border-radius: 5px;
   position: fixed;
   position: relative;
@@ -37,7 +37,7 @@
     width: 300px;
     //height: auto;
     padding: 32px 0;
-    top: 70px;
+    top: 75px;
     position: relative;
   }
 
@@ -52,10 +52,11 @@
   }
 
   button {
-    padding: 10px 10px;
+    padding: 17px  17px;
+    padding-right: 12px;
     border-radius: 0px;
     font-family: $nav-button-font;
-    font-size: $large;
+    font-size: 32px;
     font-weight: bold;
     background-color: Transparent;
     background-repeat: no-repeat;
@@ -68,7 +69,7 @@
   button:hover {
     font-family: $nav-button-font;
     font-weight: bold;
-    font-size: $XL-large;
+    font-size: 34px;
     display: inline-block;
     position: relative;
   }
@@ -110,7 +111,7 @@
 .sidebar__menu {
   position: relative;
   left: -8px;
-  top: 150px;
+  top: 200px;
   text-align: right;
 }
 
@@ -124,10 +125,11 @@
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  height: 3rem;
+  height: 2rem;
   width: 90%;
-  margin-top: 1rem;
-
+  margin-top: 3rem;
+  padding-right: 62px;
+  padding-top: 50px;
   span {
     padding-left: 10px;
   }
@@ -143,8 +145,8 @@
   justify-content: flex-start;
   // margin-top: 3rem;
   margin-bottom: 3rem;
-  margin-left: 7rem;
-  margin-top: 35px;
+  margin-left: 10rem;
+  margin-top: 120px;
   padding: 0;
   width: 75%;
   height: 47rem;
@@ -552,10 +554,11 @@ form {
   }
 
   button {
-    padding: 10px 10px;
+    padding: 17px  17px;
+    padding-right: 12px;
     border-radius: 0px;
     font-family: $nav-button-font;
-    font-size: $large;
+    font-size: 32px;
     font-weight: bold;
     background-color: Transparent;
     background-repeat: no-repeat;
@@ -568,7 +571,7 @@ form {
   button:hover {
     font-family: $nav-button-font;
     font-weight: bold;
-    font-size: $XL-large;
+    font-size: 34px;
     display: inline-block;
     position: relative;
   }
@@ -610,7 +613,7 @@ form {
 .sidebar__menu2 {
   position: relative;
   left: -8px;
-  top: 150px;
+  top: 200px;
   text-align: right;
 }
 
@@ -624,10 +627,11 @@ form {
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  height: 3rem;
+  height: 2rem;
   width: 90%;
-  margin-top: 1rem;
-
+  margin-top: 3rem;
+  padding-right: 62px;
+  padding-top: 50px;
   span {
     padding-left: 10px;
   }
@@ -643,8 +647,8 @@ form {
   justify-content: flex-start;
   // margin-top: 3rem;
   margin-bottom: 3rem;
-  margin-left: 7rem;
-  margin-top: 35px;
+  margin-left: 10rem;
+  margin-top: 120px;
   padding: 0;
   width: 75%;
   height: 47rem;
@@ -701,7 +705,7 @@ form {
   width: 94%;
   height: 350px;
   margin: 10px;
-  margin-left: 17px;
+  margin-left: 28px;
 }
 
 .profile_about2{
@@ -760,14 +764,28 @@ form {
   padding-bottom: 30px; 
   padding-left: 5%;
   width: 350px;
+  max-width: 350px;
+  min-height: 80px;
+  height: auto;
   text-align: center;
-  margin-left: 15%;
+  margin-left: 27%;
   padding: 10px;
-.logout_status{
+  border: 0;
+  word-wrap: break-word;
+  font-family: $main-font;
+  border: 0px;
+
+}
+
+  .logout_status{
   position: relative;
   color: #000;
   text-decoration: none;
   font-size: 14px;
+
+  a{
+    font-size: 18px;
+  }
 }
 
 .logout_status:hover{

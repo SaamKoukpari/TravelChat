@@ -31,9 +31,10 @@
   // display: flex;
   // justify-content: space-around;
   padding-top: 15px;
-  display: inline-flex;
-  margin-left: 2em;
+  display: flex;
+  // margin-left: 2em;
   font-weight: bold;
+  justify-content: center;
 
   span{
     margin-left: 40px;

@@ -57,6 +57,15 @@ export default function FriendProfile() {
       .catch((err) => err);
   }, []);
 
+  const profilePosts = usersPosts.map(post => {
+    return (
+      <FriendProfilePosts
+        key={post.id}
+        post={post}
+      />
+    )
+})
+
   const changeButton = () => {
     setButton("hourglass_top")
   }
@@ -86,7 +95,7 @@ export default function FriendProfile() {
         <span className="logout_status"><a href="/login">LOGOUT</a> </span>
       </section>
 
-      <section className="profile__status__container2">
+      {/* <section className="profile__status__container2">
         <section className="status__container2">
           <Avatar
             alt="user_loggedin"
@@ -96,7 +105,7 @@ export default function FriendProfile() {
           <span className="logout_status">
             <a href="/login">Logout</a>{" "}
           </span>
-        </section>
+        </section> */}
       <section className="component__container2">
         <section className="main_profile_container">
           <div className="inner_profile_container2">
@@ -135,7 +144,7 @@ export default function FriendProfile() {
         </section>
       </section>
       </section>
-
+      
     </main>
   );
 }

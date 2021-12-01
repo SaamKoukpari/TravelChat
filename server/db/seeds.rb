@@ -10,7 +10,7 @@ User.destroy_all
 
 #user.id = 1
 User.create!(
-  friend_id: [2, 3, 4, 5, 17, 18, 19, 20, 21],
+  friend_id: [3, 4, 5, 17, 18, 19, 20, 21],
   post_id: [1, 2],
   calendar_id: [],
   name: 'Lucy Charlie', 
@@ -20,7 +20,7 @@ User.create!(
   hometown: 'Vancouver',
   location: 'Barcelona',
   profile_picture: "./lucy-angel.png",
-  description: 'Little mermaid from the Pacific looking to sight-see and cliff-dive in the Mediterranean',
+  description: 'Frist time in spain love the culture already, everyone here is amazing',
   active: true,
   traveller: true,
   local: false
@@ -28,7 +28,7 @@ User.create!(
 
 #user.id = 2
 User.create!(
-  friend_id: [1],
+  friend_id: [],
   post_id: [4, 5],
   calendar_id: [],
   name: 'Shaun Robinson', 
@@ -36,9 +36,9 @@ User.create!(
   password: 'password',
   birthday: '1992-06-15',
   hometown: 'Vancouver',
-  location: 'Vancouver',
+  location: 'Los Angeles',
   profile_picture: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/ct-white-4560-1619794724.jpg',
-  description: 'West Coast born and raised, male model looking for friends who want to do photoshoots in the mountains!',
+  description: 'West Coast born and raised, whos main passion is photography',
   active: true,
   traveller: false,
   local: true
@@ -149,7 +149,7 @@ User.create!(
   hometown: 'Vancouver',
   location: 'Chiang Mai',
   profile_picture: 'https://www.lighthouselabs.ca/uploads/team_member/avatar/330/medium_Andy_Lindsay_profile.jpeg',
-  description: 'Fullstack web developer visiting Chaing Mai! What a beautiful place! ',
+  description: 'photography ',
   active: true,
   traveller: true,
   local: false
@@ -221,7 +221,7 @@ User.create!(
   hometown: 'Los Angeles',
   location: 'Chiang Mai',
   profile_picture: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Zendaya_-_2019_by_Glenn_Francis.jpg/220px-Zendaya_-_2019_by_Glenn_Francis.jpg',
-  description: 'Eat sleep code repeat. Live laugh love',
+  description: 'photography',
   active: true,
   traveller: true,
   local: false
@@ -239,7 +239,7 @@ User.create!(
   hometown: 'New york',
   location: 'Los Angeles',
   profile_picture: 'https://m.media-amazon.com/images/M/MV5BMjE3NTE4Nzg3Ml5BMl5BanBnXkFtZTgwODc5OTUxMTI@._V1_.jpg',
-  description: 'Love coaching soccer',
+  description: 'photography',
   active: true,
   traveller: true,
   local: false
@@ -293,7 +293,7 @@ User.create!(
   hometown: 'Bogota',
   location: 'Los Angeles',
   profile_picture: 'https://gossipgist.com/uploads/26970/egan-bernal-cyclist.png',
-  description: 'First Latin american rider to win the tour de france',
+  description: 'photography',
   active: true,
   traveller: true,
   local: false

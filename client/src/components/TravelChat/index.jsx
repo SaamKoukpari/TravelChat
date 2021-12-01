@@ -20,9 +20,9 @@ export default function TravelChat() {
       />
       <nav className="sidebar__menu">
         <ul>
-          <h1><button className="nav-button" onClick={()=>(setPage(1))}>Newsfeed</button></h1>
+          <h1><button className="nav-button" onClick={()=>(setPage(1))}>My Profile</button></h1>
           {/* <hr className="sidebar__separator sidebar--centered" /> */}
-          <h1><button className="nav-button" onClick={()=>(setPage(2))}>My Profile</button></h1>
+          <h1><button className="nav-button" onClick={()=>(setPage(2))}>Newsfeed</button></h1>
           {/* <hr className="sidebar__separator sidebar--centered" /> */}
           <h1><button className="nav-button" onClick={()=>(setPage(3))}>Friends List</button></h1>
           {/* <hr className="sidebar__separator sidebar--centered" /> */}
@@ -42,8 +42,8 @@ export default function TravelChat() {
     </section>
    
     <section className='component__container'>
-      {page === 1 && <Newsfeed/>}
-      {page === 2 && <MyProfile/>}
+      {page === 1 && <MyProfile/>}
+      {page === 2 && <Newsfeed/>}
       {page === 3 && <FriendsList/>}
       {page === 4 && <Application/>}
       {page === 5 && <FindFriends/>}
