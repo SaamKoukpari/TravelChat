@@ -11,7 +11,8 @@ import MyProfilePosts from './MyProfilePosts'
 export default function MyProfile(props) {
   const [user, setUser] = useState([]);
   const [bday, setBday] = useState([]); 
-  const [editPage, setEditPage] = useState([]); 
+  const [editPage, setEditPage] = useState(false); 
+  const [usersPosts, setUsersPosts] = useState([]);
   const userID = 1;
 
   useEffect(() => {
@@ -58,9 +59,6 @@ export default function MyProfile(props) {
     .catch((err) => err);
   }, [])
 
-  // const alert = function() {
-  //   alert("I'm working")
-  // }
   const profilePosts = usersPosts.map(post => {
       return (
         <MyProfilePosts
@@ -69,6 +67,10 @@ export default function MyProfile(props) {
         />
       )
   })
+
+  const changeState = function() {
+    setEditPage(true)
+  }
 
   return (
     <section className="main_profile_container">
@@ -96,20 +98,23 @@ export default function MyProfile(props) {
               </div>
             </div>
 
-          <span className="description">{user.description}</span>
-          <span className="edit_profile">
+          <span 
+            className="description" 
+            onClick={() => changeState()}>{user.description}
+          </span>
+          {/* <span className="edit_profile">
             <Button
               value={editPage}
-              onClick={() => setEditPage(true)}
+              onClick={() => changeState()}
               onClick={console.log("clicked")}
               size="small"
               variant="outlined"
               startIcon={<SettingsIcon />}
-            >
-              {<ProfileEditForm props={props}/>}
+            >{editPage}
+              {/* {<ProfileEditForm props={props}/>}
               Edit Description
-            </Button>
-          </span>
+            </Button> */}
+          {/* </span> */}
         </section>
       </div>
       

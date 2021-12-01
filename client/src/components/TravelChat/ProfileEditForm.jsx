@@ -4,7 +4,7 @@ import axios from 'axios';
 //1. When I click the button i need to extract the information from our textbox
 //2. to actually make a post / put request to the backend
 
-export default function Form({update={}}) {
+export default function Form(props) {
   // const userID = 1;
   const [textAreaText, setTextAreaText] = useState("");
 
@@ -28,7 +28,7 @@ export default function Form({update={}}) {
             className="appointment__create-input text--semi-bold"
             name="name"
             type="text"
-            placeholder="Edit description"
+            placeholder={"edit"}
             value={textAreaText} onChange={(event) => setTextAreaText(event.target.value)} 
           />
         </div>
