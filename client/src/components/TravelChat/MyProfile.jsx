@@ -67,9 +67,9 @@ export default function MyProfile(props) {
       )
   })
 
-  const changeState = function() {
-    setEditPage(true)
-  }
+  // const changeState = function() {
+  //   setEditPage(true)
+  // }
 
   return (
     <section className="main_profile_container">
