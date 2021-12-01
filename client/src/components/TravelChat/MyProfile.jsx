@@ -58,9 +58,6 @@ export default function MyProfile(props) {
     .catch((err) => err);
   }, [])
 
-  // const alert = function() {
-  //   alert("I'm working")
-  // }
   const profilePosts = usersPosts.map(post => {
       return (
         <MyProfilePosts
