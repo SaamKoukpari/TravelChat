@@ -29,7 +29,8 @@ export default function Form({update={}}) {
             name="name"
             type="text"
             placeholder="Edit description"
-            value={textAreaText} onChange={(event) => setTextAreaText(event.target.value)} 
+            value={textAreaText} 
+            onChange={(event) => setTextAreaText(event.target.value)} 
           />
         </div>
         <div>

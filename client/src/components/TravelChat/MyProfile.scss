@@ -93,7 +93,13 @@
   padding-bottom: 30px; 
   padding-left: 5%;
   width: 350px;
+  max-width: 350px;
+  min-height: 80px;
+  height: auto;
   text-align: center;
   margin-left: 15%;
   padding: 10px;
+  border: 0;
+  word-wrap: break-word;
+  // background: transparent;
 }
