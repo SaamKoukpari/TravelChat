@@ -71,11 +71,16 @@ export default function MyProfile(props) {
     <section className="main_profile_container">
      
       <div className="inner_profile_container">
+
         <section className="profile_photo">
           <img src={user.profile_picture}></img>
         </section>
 
         <section className="profile_about">
+          <div className="profile-edit">
+            <Icon>border_color</Icon>
+          </div>
+
           <span className="name">{user.name}</span>
 
             <div className="info">
@@ -94,7 +99,7 @@ export default function MyProfile(props) {
             </div>
 
             <span className="description">{user.description}</span>
-            <span className="edit_profile">
+            {/* <span className="edit_profile">
               <Button
                 onClick={console.log("clicked")}
                 size="small"
@@ -103,7 +108,7 @@ export default function MyProfile(props) {
               >
                 Edit Description
               </Button>
-            </span>
+            </span> */}
         </section>
       </div>
       
