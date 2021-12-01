@@ -8,13 +8,13 @@ import './PostItem.scss'
 import Icon from '@mui/material/Icon';
 import MyProfilePosts from './MyProfilePosts'
 
-export default function MyProfile(props) {
+export default function MyProfile() {
   const [user, setUser] = useState([]);
   const [bday, setBday] = useState([]); 
   const [usersPosts, setUsersPosts] = useState([]);
   const userID = 1;
 
-  useEffect(() => {
+  const getProfileProps = function(){
     Promise.all([
       axios.get("./api/users"),
       axios.get("./api/posts"),
@@ -56,6 +56,10 @@ export default function MyProfile(props) {
       setUsersPosts(getUsersPosts())
     })
     .catch((err) => err);
+  };
+
+  useEffect(() => {
+    getProfileProps()
   }, [])
 
   const profilePosts = usersPosts.map(post => {
@@ -67,18 +71,45 @@ export default function MyProfile(props) {
       )
   })
 
+  const [state, setState] = useState(false);
+  const [desc, setDesc] = useState(user.description);  
+
+  const handleEdit = () => {
+    setState(state === true ? false : true);
+  }
+
+  const saveEdit = (description) => {
+    let data = {description: description};
+    
+    axios.put('/api/users/1', data)
+    .then(response => {
+      getProfileProps();
+      setDesc("");
+    })
+    .catch(err => err)
+  }
+
   return (
     <section className="main_profile_container">
      
       <div className="inner_profile_container">
+
         <section className="profile_photo">
           <img src={user.profile_picture}></img>
         </section>
 
         <section className="profile_about">
+
+          <div className="profile-edit">
+            <Icon> 
+              {state === true && <Icon onClick={function(){saveEdit(desc); handleEdit()}}>check_circle_outline</Icon>}
+              {state === false && <Icon onClick={handleEdit}>border_color</Icon>}
+            </Icon>
+          </div>
+
           <span className="name">{user.name}</span>
 
-            <div className="info">
+          <div className="info">
               <div className="static-info">
                 <p className="title">AGE</p>
                 <p className="data">{bday}</p>
@@ -93,17 +124,20 @@ export default function MyProfile(props) {
               </div>
             </div>
 
-            <span className="description">{user.description}</span>
-            <span className="edit_profile">
-              <Button
-                onClick={console.log("clicked")}
-                size="small"
-                variant="outlined"
-                startIcon={<SettingsIcon />}
-              >
-                Edit Description
-              </Button>
+            {state === true ? (
+              <span>
+              <textarea
+                className="description"
+                type="text"
+                placeholder={user.description}
+                value={desc}
+                onChange={e => setDesc(e.target.value)}
+              />
             </span>
+            ) : (
+              <span className="description">{user.description}</span>
+            )}
+          
         </section>
       </div>
       

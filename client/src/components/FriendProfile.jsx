@@ -13,6 +13,7 @@ export default function FriendProfile() {
   const [bday, setBday] = useState([]);
   const [usersPosts, setUsersPosts] = useState([]);
   const userID = 2;
+  const [button, setButton] = useState("add_circle");
 
   useEffect(() => {
     Promise.all([axios.get("./api/users"), axios.get("./api/posts")])
@@ -56,39 +57,33 @@ export default function FriendProfile() {
       .catch((err) => err);
   }, []);
 
-  const profilePosts = usersPosts.map((post) => {
-    return <FriendProfilePosts key={post.id} post={post} />;
-  });
+  const changeButton = () => {
+    setButton("hourglass_top")
+  }
 
   return (
-    <main className="layout">
-      <section className="sidebar2">
-        <img
-          className="sidebar--centered"
-          src="/chat.png"
-          alt="Travel Chat logo"
-        />
-        <nav className="sidebar__menu2">
-          <ul>
-            <h1>
-              <button className="nav-button">Newsfeed</button>
-            </h1>
-            <h1>
-              <button className="nav-button">My Profile</button>
-            </h1>
-            <h1>
-              <button className="nav-button">Friends List</button>
-            </h1>
-            <h1>
-              <button className="nav-button">Chat</button>
-            </h1>
-            <h1>
-              <button className="nav-button" onClick={() => <Link to="/" />}>
-                Find Friends
-              </button>
-            </h1>
-          </ul>
-        </nav>
+  <main className="layout">
+    <section className="sidebar">
+      <img
+        className="sidebar--centered" 
+        src="/chat.png"
+        alt="Travel Chat logo"
+      />
+      <nav className="sidebar__menu">
+        <ul>
+          <h1><button className="nav-button">Newsfeed</button></h1>
+          <h1><button className="nav-button">My Profile</button></h1>
+          <h1><button className="nav-button">Friends List</button></h1>
+          <h1><button className="nav-button">Chat</button></h1>
+          <h1><button className="nav-button" onClick={() => <Link to='/'/>}>Find Friends</button></h1>
+        </ul>
+      </nav>
+    </section>
+
+    <section className= "profile__status__container">
+      <section className="status__container">
+        <Avatar alt="user_loggedin" src="./lucy-angel.png" sx={{ width: 30, height: 30 }} />
+        <span className="logout_status"><a href="/login">LOGOUT</a> </span>
       </section>
 
       <section className="profile__status__container2">
@@ -109,8 +104,13 @@ export default function FriendProfile() {
               <img src={user.profile_picture}></img>
             </section>
 
-            <section className="profile_about2">
-              <span className="name2">{user.name}</span>
+        <section className="profile_about">
+
+        <div className="profile-edit">
+          <Icon onClick={() => changeButton()}>{button}</Icon>
+        </div>
+
+          <span className="name">{user.name}</span>
 
               <div className="info2">
                 <div className="static-info2">

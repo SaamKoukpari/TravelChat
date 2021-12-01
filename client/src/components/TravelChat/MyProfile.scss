@@ -1,8 +1,8 @@
 @import "styles/variables.scss";
 
 .main_profile_container{
-  // overflow:scroll;
-  // overflow-x:hidden;
+  overflow:scroll;
+  overflow-x:hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,6 +35,13 @@
   flex-direction: column;
   padding-top: 5%;
   width: 100%;
+}
+
+.profile-edit{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  padding-left: 100%
 }
 
 .name{
@@ -74,11 +81,11 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-.edit_profile{
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 20px;
-}
+// .edit_profile{
+//     display: flex;
+//     justify-content: flex-end;
+//     padding-right: 20px;
+// }
 
 .description{
   display: flex;
@@ -86,7 +93,13 @@
   padding-bottom: 30px; 
   padding-left: 5%;
   width: 350px;
+  max-width: 350px;
+  min-height: 80px;
+  height: auto;
   text-align: center;
   margin-left: 15%;
   padding: 10px;
+  border: 0;
+  word-wrap: break-word;
+  // background: transparent;
 }

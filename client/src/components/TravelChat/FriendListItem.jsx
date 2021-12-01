@@ -17,7 +17,7 @@ export default function FriendsItem(props) {
             component={Link} to='/myfriends'
             // onClick={props.loadFriend(props.userId)}
           />
-          <Link to='/myfriends'>{props.name}</Link>
+          <button className="friends-link">{props.name}</button>
         </div>
 
         <div className="friend-options">

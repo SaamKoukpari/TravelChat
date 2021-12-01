@@ -57,6 +57,7 @@
   align-items: center;
   position: relative;
   width: 40px;
+  cursor: pointer;
   p{
     padding-left: 10px;
   }
@@ -64,4 +65,8 @@
 
 .active-like{
   color: rgb(249, 77, 77);
+}
+
+.options{
+  cursor: pointer;
 }

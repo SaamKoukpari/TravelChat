@@ -763,4 +763,32 @@ form {
   text-align: center;
   margin-left: 15%;
   padding: 10px;
+.logout_status{
+  position: relative;
+  color: #000;
+  text-decoration: none;
+  font-size: 14px;
 }
+
+.logout_status:hover{
+  color: #000;
+}
+
+.logout_status::before {
+  content: "";
+  position: absolute;
+  display: block;
+  margin-left: 15%;
+  width: 90%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  transform: scaleX(0);
+  transition: transform 0.25s ease-out;
+  transform-origin: bottom left;
+}
+
+.logout_status:hover::before {
+  transform: scaleX(1);
+} 
