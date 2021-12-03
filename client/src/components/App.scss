@@ -11,8 +11,8 @@
   align-items: center;
   padding-left: 2rem;
   padding: 0;
-  margin-left: 5em;
-  width: 450px;
+  margin-left: 9em;
+  width: 500px;
   border-radius: 5px;
   position: fixed;
   position: relative;
@@ -24,16 +24,6 @@
     align-self: center;
   }
 
-  // h1, a{
-  //   text-decoration: none;
-  //   font-family: 'Raleway', sans-serif;
-  //   margin-top: 20px;
-  // }
-
-  // a{
-  //   color: inherit; /* blue colors for links too */
-  //   text-decoration: inherit; /* no underline */
-  // }
 
   hr {
     position: relative;
@@ -47,7 +37,7 @@
     width: 300px;
     //height: auto;
     padding: 32px 0;
-    top: 70px;
+    top: 75px;
     position: relative;
   }
 
@@ -62,10 +52,11 @@
   }
 
   button {
-    padding: 10px 10px;
+    padding: 17px  17px;
+    padding-right: 12px;
     border-radius: 0px;
     font-family: $nav-button-font;
-    font-size: $large;
+    font-size: 32px;
     font-weight: bold;
     background-color: Transparent;
     background-repeat: no-repeat;
@@ -78,7 +69,7 @@
   button:hover {
     font-family: $nav-button-font;
     font-weight: bold;
-    font-size: $XL-large;
+    font-size: 34px;
     display: inline-block;
     position: relative;
   }
@@ -120,7 +111,7 @@
 .sidebar__menu {
   position: relative;
   left: -8px;
-  top: 150px;
+  top: 200px;
   text-align: right;
 }
 
@@ -134,10 +125,11 @@
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  height: 3rem;
+  height: 2rem;
   width: 90%;
-  margin-top: 1rem;
-
+  margin-top: 3rem;
+  padding-right: 62px;
+  padding-top: 50px;
   span {
     padding-left: 10px;
   }
@@ -153,8 +145,8 @@
   justify-content: flex-start;
   // margin-top: 3rem;
   margin-bottom: 3rem;
-  margin-left: 7rem;
-  margin-top: 35px;
+  margin-left: 10rem;
+  margin-top: 120px;
   padding: 0;
   width: 75%;
   height: 47rem;
@@ -182,6 +174,19 @@
   margin: -20px;
   // background-color: #ffffff5d;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ////////////////////////////////////////////////////////////////////
 ///////////////////////////// Styles for homepage /////////////////
@@ -493,11 +498,294 @@ form {
 }
 
 
-.logout_status{
+
+
+
+//////////////////////////////////////////////////////////////////
+/////////////////// STYLES FOR FRIENDS PAGE DONE WRONG 
+
+
+
+.sidebar2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 2rem;
+  padding: 0;
+  margin-left: 5em;
+  width: 450px;
+  border-radius: 5px;
+  position: fixed;
+  position: relative;
+  z-index: 1;
+  background: inherit;
+  overflow: hidden;
+
+  &--centered {
+    align-self: center;
+  }
+
+
+  hr {
+    position: relative;
+    left: -13px;
+    top: 1px;
+    transition: none 0s ease 0s;
+    cursor: move;
+  }
+
+  img {
+    width: 300px;
+    //height: auto;
+    padding: 32px 0;
+    top: 70px;
+    position: relative;
+  }
+
+  nav {
+    width: 90%;
+  }
+
+  ul {
+    position: relative;
+    left: -6px;
+    top: 2px;
+  }
+
+  button {
+    padding: 17px  17px;
+    padding-right: 12px;
+    border-radius: 0px;
+    font-family: $nav-button-font;
+    font-size: 32px;
+    font-weight: bold;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+  }
+
+  button:hover {
+    font-family: $nav-button-font;
+    font-weight: bold;
+    font-size: 34px;
+    display: inline-block;
+    position: relative;
+  }
+
+  .nav-button:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 5px;
+    bottom: 0;
+    left: 0;
+    background-color: #353d4f;
+    transform-origin: bottom left;
+    transition: transform 0.25s ease-out;
+  }
+
+  .nav-button:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+}
+
+.sidebar2:before {
+  content: "";
+  position: absolute;
+  // background: inherit;
+  background-color: $sidebar-bg-color;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: $sidebar-shadow;
+  filter: blur(10px);
+  margin: -20px;
+}
+
+.sidebar__menu2 {
+  position: relative;
+  left: -8px;
+  top: 200px;
+  text-align: right;
+}
+
+.profile__status__container2 {
+  flex-direction: column;
+  width: 100%;
+}
+
+.status__container2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  height: 2rem;
+  width: 90%;
+  margin-top: 3rem;
+  padding-right: 62px;
+  padding-top: 50px;
+  span {
+    padding-left: 10px;
+  }
+
+  a {
+    text-decoration: none;
+    color: $text-color-for-links;
+  }
+}
+
+.component__container2 {
+  flex-direction: column;
+  justify-content: flex-start;
+  // margin-top: 3rem;
+  margin-bottom: 3rem;
+  margin-left: 10rem;
+  margin-top: 120px;
+  padding: 0;
+  width: 75%;
+  height: 47rem;
+  //box-shadow: 0 0 1rem 0 rgba(255,255,255,0.3);
+  border-radius: 5px;
+  position: relative;
+  z-index: 1;
+  background: inherit;
+  overflow: hidden;
+  overflow-x: hidden;
+  // background-color: #ffffff5d;
+}
+
+.component__container2:before {
+  content: "";
+  position: absolute;
+  background: inherit;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: $sidebar-shadow;
+  filter: blur(15px);
+  margin: -20px;
+  // background-color: #ffffff5d;
+}
+
+
+.main_profile_container2{
+  // overflow:scroll;
+  // overflow-x:hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // padding-left: 8%;
+  // padding-right: 8%;
+  // padding-top: 13%;
+  padding: 30px;
+  background-color: #ffffff5d;
+
+  img{
+    max-width:300px;
+    border-radius: 25px;
+    height: 100%
+  }
+}
+
+.inner_profile_container2{
+  background-color: $top-nav-color;
+  display: flex;
+  // flex-direction: row;
+  border-radius: 25px;
+  width: 94%;
+  height: 350px;
+  margin: 10px;
+  margin-left: 28px;
+}
+
+.profile_about2{
+  display:flex;
+  flex-direction: column;
+  padding-top: 5%;
+  width: 100%;
+}
+
+.name2{
+  flex-direction: row;
+  display: flex;
+  justify-content: center; 
+  padding-bottom: 30px; 
+  font-weight: bold;
+  font-family: $main-font;
+  font-size: 40px;
+}
+
+.info2{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-left: 65px;
+}
+
+.static-info2{
+  margin-top: 25px;
+  text-align: center;
+  padding-bottom: 20px;
+  font-family: 'Montserrat', sans-serif;
+  padding-right: 50px;
+}
+
+.title2{
+  margin-top: -15px;
+  font-size: 10pt;
+}
+
+.data2{
+  padding: 0px;
+  font-size: 14pt;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.edit_profile2{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+
+.description2{
+  display: flex;
+  justify-content: center; 
+  padding-bottom: 30px; 
+  padding-left: 5%;
+  width: 350px;
+  max-width: 350px;
+  min-height: 80px;
+  height: auto;
+  text-align: center;
+  margin-left: 27%;
+  padding: 10px;
+  border: 0;
+  word-wrap: break-word;
+  font-family: $main-font;
+  border: 0px;
+
+}
+
+  .logout_status{
   position: relative;
   color: #000;
   text-decoration: none;
   font-size: 14px;
+
+  a{
+    font-size: 18px;
+  }
 }
 
 .logout_status:hover{
@@ -521,4 +809,4 @@ form {
 
 .logout_status:hover::before {
   transform: scaleX(1);
-}
+} 

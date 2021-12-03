@@ -15,14 +15,14 @@ export default function TravelChat() {
     <section className="sidebar">
       <img
         className="sidebar--centered" 
-        src="/chat.png"
+        src="/CHAT.png"
         alt="Travel Chat logo"
       />
       <nav className="sidebar__menu">
         <ul>
-          <h1><button className="nav-button" onClick={()=>(setPage(1))}>Newsfeed</button></h1>
+          <h1><button className="nav-button" onClick={()=>(setPage(1))}>My Profile</button></h1>
           {/* <hr className="sidebar__separator sidebar--centered" /> */}
-          <h1><button className="nav-button" onClick={()=>(setPage(2))}>My Profile</button></h1>
+          <h1><button className="nav-button" onClick={()=>(setPage(2))}>Newsfeed</button></h1>
           {/* <hr className="sidebar__separator sidebar--centered" /> */}
           <h1><button className="nav-button" onClick={()=>(setPage(3))}>Friends List</button></h1>
           {/* <hr className="sidebar__separator sidebar--centered" /> */}
@@ -33,14 +33,17 @@ export default function TravelChat() {
         </ul>
       </nav>
     </section>
+
+
     <section className= "profile__status__container">
       <section className="status__container">
       <Avatar alt="user_loggedin" src="./lucy-angel.png" sx={{ width: 30, height: 30 }} />
       <span className="logout_status"><a href="/login">Logout</a> </span>
     </section>
+   
     <section className='component__container'>
-      {page === 1 && <Newsfeed/>}
-      {page === 2 && <MyProfile/>}
+      {page === 1 && <MyProfile/>}
+      {page === 2 && <Newsfeed/>}
       {page === 3 && <FriendsList/>}
       {page === 4 && <Application/>}
       {page === 5 && <FindFriends/>}

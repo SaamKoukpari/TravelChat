@@ -1,3 +1,5 @@
+@import "./styles/variables.scss";
+
 .friend_item{
   display: flex;
   align-content: center;
@@ -14,6 +16,16 @@
 
   h1{
     padding-left: 25px;
+  }
+  a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    
+    cursor:pointer;
+    text-decoration: none;
+    color: $text-color-for-links;
   }
 }
 
