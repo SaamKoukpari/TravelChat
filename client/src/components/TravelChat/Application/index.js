@@ -29,11 +29,7 @@ export default function Application() {
       await chatClient.connectUser({
         id: id, 
         name: id,
-<<<<<<< HEAD
-        image: "https://www.billboard.com/wp-content/uploads/2021/10/Adele-cr-Simon-Emmett-press-2021-billboard-1548-1634265632.jpg?w=910&h=511&crop=1"
-=======
         image: "../lucy-angel.png"
->>>>>>> 1beb6611e9912a1545e9e18f2ec26b7e5c01a56b
         },
         chatClient.devToken(id)
       );
@@ -49,11 +45,7 @@ export default function Application() {
       setChannel(channel);
     }
 
-<<<<<<< HEAD
-    loadChat("Violet");
-=======
     loadChat("Lucy");
->>>>>>> 1beb6611e9912a1545e9e18f2ec26b7e5c01a56b
     return () => chatClient.disconnectUser();
   }, []);
 
