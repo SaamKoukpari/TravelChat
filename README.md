@@ -17,14 +17,14 @@ Travel Chat is a social media app built for active travellers or nomads who are 
 ## Set Up
 
 React front-end:
-Install dependencies in "client" folder with ***npm install***
-Run ***npm start*** to render on http://localhost:3000
-Components are tailored to a 1920x1080 screen size.
+* Install dependencies in "client" folder with ***npm install***
+* Run ***npm start*** to render on http://localhost:3000
+* Components are tailored to a 1920x1080 screen size.
 
 Rails back-end:
-Install dependecies in "letsjet-backend" folder with ***bundle install***
-Run ***rake db:reset*** to create, load, and seed database
-Run ***rails s -p 3001*** to render JSON:API on http://localhost:3001
+* Install dependecies in "letsjet-backend" folder with ***bundle install***
+* Run ***rake db:reset*** to create, load, and seed database
+* Run ***rails s -p 3001*** to render JSON:API on http://localhost:3001
 
 
 ## Dependencies
